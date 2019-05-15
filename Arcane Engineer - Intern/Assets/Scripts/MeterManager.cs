@@ -14,15 +14,13 @@ public class MeterManager : MonoBehaviour {
 		if (GameObject.FindGameObjectWithTag ("EarthMeter")) { earthMeter = GameObject.FindGameObjectWithTag("EarthMeter").GetComponent<Slider>(); } else { Debug.Log("Error: Could not find the EarthMeter object"); }
 		if (GameObject.FindGameObjectWithTag ("FireMeter")) { fireMeter = GameObject.FindGameObjectWithTag("FireMeter").GetComponent<Slider>(); } else { Debug.Log("Error: Could not find the FireMeter object"); }
 		if (GameObject.FindGameObjectWithTag ("AirMeter")) { airMeter = GameObject.FindGameObjectWithTag("AirMeter").GetComponent<Slider>(); } else { Debug.Log("Error: Could not find the AirMeter object"); }
-
-		waterMeter.value = 0.25f;
-		earthMeter.value = 0.5f;
-		fireMeter.value = 0.25f;
-		airMeter.value = 0.75f;
 	}
 
 	void Update () {
-
+		waterMeter.value -= 0.001f;
+		earthMeter.value -= 0.001f;
+		fireMeter.value -= 0.001f;
+		airMeter.value -= 0.001f;
 	}
 
 	// MARK: Private
