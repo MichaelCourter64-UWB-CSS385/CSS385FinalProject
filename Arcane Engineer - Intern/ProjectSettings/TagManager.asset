@@ -9,6 +9,7 @@ TagManager:
   - FireMeter
   - AirMeter
   - MeterManager
+  - Affected
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - Interaction
-  - 
+  - Elements
   - 
   - 
   - 
@@ -43,6 +44,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SpriteAndUI
+    uniqueID: 1646360347
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
