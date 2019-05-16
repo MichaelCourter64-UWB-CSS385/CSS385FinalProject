@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DismissScene : MonoBehaviour {
 
+    [SerializeField] ScenesList sceneToGoBackTo;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +15,7 @@ public class DismissScene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Q)) {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadSceneAsync(sceneToGoBackTo.ToString());
         }
 	}
 }

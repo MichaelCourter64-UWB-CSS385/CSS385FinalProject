@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 // MARK: - Class
 public class SceneLoader : MonoBehaviour {
-	// MARK: Properties
+    [SerializeField] ScenesList elementMeterScene;
+    [SerializeField] ScenesList elementScene;
+    [SerializeField] ScenesList interactionScene;
+    [SerializeField] ScenesList finalPuzzleScene;
+    [SerializeField] ScenesList selectionWheelScene;
 
+    // MARK: Properties
+    
 
 	// MARK: Life Cycle
 	void Start () {
@@ -22,19 +28,24 @@ public class SceneLoader : MonoBehaviour {
 
 	// MARK: Public
 	public void loadElementalMetersUI() {
-		SceneManager.LoadScene(0);
+		SceneManager.LoadSceneAsync(elementMeterScene.ToString());
 	}
 
-	public void loadPlayerMovement() {
-		SceneManager.LoadScene(1);
+	public void loadInteractionPrototype() {
+		SceneManager.LoadSceneAsync(elementScene.ToString());
 	}
+
+    public void loadElementPrototype()
+    {
+        SceneManager.LoadSceneAsync(interactionScene.ToString());
+    }
 
 	public void loadFinalPuzzle() {
-		SceneManager.LoadScene(2);
+		SceneManager.LoadSceneAsync(finalPuzzleScene.ToString());
 	}
 
 	public void loadSelectionWheel() {
-		SceneManager.LoadScene(4);
+		SceneManager.LoadSceneAsync(selectionWheelScene.ToString());
 	}
 
 }
