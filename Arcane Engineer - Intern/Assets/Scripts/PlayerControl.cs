@@ -25,9 +25,13 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
 
+    [SerializeField] GameObject waterStream;
+
     Rigidbody playersRigidBody;
 
     float xDirection = 0;
+
+    Elements currentElement = Elements.water;
 
     // Use this for initialization
     void Start () {
@@ -40,11 +44,7 @@ public class PlayerControl : MonoBehaviour
         UpdateMovement();
         UpdateGameObjectRotation();
         CheckForInteraction();
-
-        if (Input.GetKey(elementUseKey))
-        {
-
-        }
+        CheckForElementUse();
     }
 
     // Update is called once per frame
@@ -105,6 +105,21 @@ public class PlayerControl : MonoBehaviour
             {
                 foundInteractable.transform.GetComponent<Interactable>().Interact();
             }
+        }
+    }
+
+    void CheckForElementUse()
+    {
+        if (Input.GetKey(elementUseKey))
+        {
+            if (currentElement == Elements.water)
+            {
+                waterStream.SetActive(true);
+            }
+        }
+        else
+        {
+            waterStream.SetActive(false);
         }
     }
 }
