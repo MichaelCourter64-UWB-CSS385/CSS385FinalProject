@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// MARK: Enum
+public enum Element { Water, Earth, Fire, Air }
+
 // MARK: - Class
 public class ButtonHandler : MonoBehaviour {
 	// MARK: Properties
-	enum Element { Water, Earth, Fire, Air }
-
 	Element selectedElement;
 
 	// MARK: Life Cycle
@@ -44,5 +45,10 @@ public class ButtonHandler : MonoBehaviour {
 		}
 
 		Debug.Log("You've successfully selected: " + selectedElement);
+	}
+
+	// MARK: Public
+	public Element getSelectedElement() {
+		return selectedElement;
 	}
 }

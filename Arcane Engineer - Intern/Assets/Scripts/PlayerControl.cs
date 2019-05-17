@@ -35,11 +35,13 @@ public class PlayerControl : MonoBehaviour
     float xDirection = 0;
 
 	// Pull this from the select code
-    Elements currentElement = Elements.fire;
+    Element currentElement;
+    ButtonHandler buttonHandler;
 
     // Use this for initialization
     void Start () {
         playersRigidBody = GetComponent<Rigidbody>();
+		buttonHandler = GameObject.FindGameObjectWithTag("ButtonHandler").GetComponent<ButtonHandler>();
 	}
 	
 	// Update is called once per frame
@@ -116,30 +118,30 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKey(elementUseKey))
         {
-
+        	currentElement = buttonHandler.getSelectedElement();
 			MeterManager meterManager = GameObject.FindGameObjectWithTag("MeterManager").GetComponent<MeterManager>();
-            if (currentElement == Elements.water)
+            if (currentElement == Element.Water)
             {
                 waterStream.SetActive(true);
 
                 // Decrease water resource
                 meterManager.waterMeter.value -= 0.001f;
             }
-            else if (currentElement == Elements.earth)
+            else if (currentElement == Element.Earth)
             {
 				earthStream.SetActive(true);
 
                 // Decrease earth resource
                 meterManager.earthMeter.value -= 0.001f;
 			}
-			else if (currentElement == Elements.fire)
+			else if (currentElement == Element.Fire)
             {
 				fireStream.SetActive(true);
 
                 // Decrease fire resource
                 meterManager.fireMeter.value -= 0.001f;
 			}
-			else if (currentElement == Elements.air)
+			else if (currentElement == Element.Air)
             {
 				airStream.SetActive(true);
 
