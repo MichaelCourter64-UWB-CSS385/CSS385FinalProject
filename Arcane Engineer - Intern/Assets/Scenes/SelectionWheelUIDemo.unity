@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 227893908}
   - component: {fileID: 227893907}
   - component: {fileID: 227893906}
+  - component: {fileID: 227893909}
   m_Layer: 5
   m_Name: EarthButton
   m_TagString: Untagged
@@ -263,6 +264,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227893904}
+--- !u!114 &227893909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227893904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementId: 1
 --- !u!1 &420523976
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +571,7 @@ GameObject:
   - component: {fileID: 816837140}
   - component: {fileID: 816837139}
   - component: {fileID: 816837138}
+  - component: {fileID: 816837141}
   m_Layer: 5
   m_Name: WaterButton
   m_TagString: Untagged
@@ -669,6 +683,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 816837136}
+--- !u!114 &816837141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816837136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementId: 0
 --- !u!1 &887657429
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +968,7 @@ GameObject:
   - component: {fileID: 1288562264}
   - component: {fileID: 1288562263}
   - component: {fileID: 1288562262}
+  - component: {fileID: 1288562265}
   m_Layer: 5
   m_Name: AirButton
   m_TagString: Untagged
@@ -1053,6 +1080,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1288562260}
+--- !u!114 &1288562265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1288562260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementId: 3
 --- !u!1 &1434075755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1230,7 @@ GameObject:
   - component: {fileID: 1501206982}
   - component: {fileID: 1501206981}
   - component: {fileID: 1501206980}
+  - component: {fileID: 1501206983}
   m_Layer: 5
   m_Name: FireButton
   m_TagString: Untagged
@@ -1302,6 +1342,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1501206978}
+--- !u!114 &1501206983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1501206978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementId: 2
 --- !u!1 &1502992953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1365,7 @@ GameObject:
   - component: {fileID: 1502992954}
   m_Layer: 0
   m_Name: ButtonHandler
-  m_TagString: Untagged
+  m_TagString: ButtonHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
