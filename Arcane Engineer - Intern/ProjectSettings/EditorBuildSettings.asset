@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneLoader.unity
     guid: a469a96a609b1498e88bebf220eaef22
   - enabled: 1
-    path: Assets/Scenes/Meters UI Demo.unity
+    path: Assets/Scenes/MetersUIDemo.unity
     guid: ed42571ab72cb47008e2f2b5b8ab4bd3
   - enabled: 1
     path: Assets/Scenes/InteractionPrototype.unity
@@ -18,5 +18,5 @@ EditorBuildSettings:
     path: Assets/Scenes/ElementPrototype.unity
     guid: 1c38225a53ba353449cebcff2240e7e9
   - enabled: 1
-    path: Assets/Scenes/Selection Wheel UI Demo.unity
+    path: Assets/Scenes/SelectionWheelUIDemo.unity
     guid: 13fe4f66d80a844bc8b8490fdd7860d0
