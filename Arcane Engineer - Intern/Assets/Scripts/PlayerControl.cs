@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,12 +26,16 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
 
     [SerializeField] GameObject waterStream;
+    [SerializeField] GameObject earthStream;
+    [SerializeField] GameObject fireStream;
+    [SerializeField] GameObject airStream;
 
     Rigidbody playersRigidBody;
 
     float xDirection = 0;
 
-    Elements currentElement = Elements.water;
+	// Pull this from the select code
+    Elements currentElement = Elements.fire;
 
     // Use this for initialization
     void Start () {
@@ -112,14 +116,43 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKey(elementUseKey))
         {
+
+			MeterManager meterManager = GameObject.FindGameObjectWithTag("MeterManager").GetComponent<MeterManager>();
             if (currentElement == Elements.water)
             {
                 waterStream.SetActive(true);
+
+                // Decrease water resource
+                meterManager.waterMeter.value -= 0.001f;
             }
+            else if (currentElement == Elements.earth)
+            {
+				earthStream.SetActive(true);
+
+                // Decrease earth resource
+                meterManager.earthMeter.value -= 0.001f;
+			}
+			else if (currentElement == Elements.fire)
+            {
+				fireStream.SetActive(true);
+
+                // Decrease fire resource
+                meterManager.fireMeter.value -= 0.001f;
+			}
+			else if (currentElement == Elements.air)
+            {
+				airStream.SetActive(true);
+
+                // Decrease air resource
+                meterManager.airMeter.value -= 0.001f;
+			}
         }
         else
         {
             waterStream.SetActive(false);
+            earthStream.SetActive(false);
+            fireStream.SetActive(false);
+            airStream.SetActive(false);
         }
     }
 }
