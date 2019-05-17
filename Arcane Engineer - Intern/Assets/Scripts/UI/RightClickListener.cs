@@ -8,7 +8,7 @@ public class RightClickListener : MonoBehaviour {
 	// MARK: Properites
 	[SerializeField] GameObject selectionWheel;
 
-	bool isRightClicking = false;
+	public bool isRightClicking = false;
 
 	// MARK: Life Cycle
 	void Start () {
