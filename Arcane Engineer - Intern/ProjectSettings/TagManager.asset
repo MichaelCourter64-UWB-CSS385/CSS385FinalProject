@@ -10,6 +10,8 @@ TagManager:
   - AirMeter
   - MeterManager
   - Affected
+  - BackgroundPanel
+  - SelectionWheel
   layers:
   - Default
   - TransparentFX
