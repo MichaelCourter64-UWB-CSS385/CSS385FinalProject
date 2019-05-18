@@ -6,7 +6,7 @@ using UnityEngine.UI;
 // MARK: - Class
 public class MeterManager : MonoBehaviour {
 	// MARK: Properties
-	Slider waterMeter, earthMeter, fireMeter, airMeter;
+	public Slider waterMeter, earthMeter, fireMeter, airMeter;
 
 	// MARK: Life Cycle
 	void Start () {
@@ -17,10 +17,7 @@ public class MeterManager : MonoBehaviour {
 	}
 
 	void Update () {
-		waterMeter.value -= 0.001f;
-		earthMeter.value -= 0.001f;
-		fireMeter.value -= 0.001f;
-		airMeter.value -= 0.001f;
+
 	}
 
 	// MARK: Private

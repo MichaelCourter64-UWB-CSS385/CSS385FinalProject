@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,25 +22,36 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] Vector3 interactionBoxHalfs;
     [SerializeField] float interactionBoxTravelDistance;
     [SerializeField] LayerMask interactionlayer;
-
+	// Element casting.
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
-
     [SerializeField] GameObject waterStream;
+    [SerializeField] GameObject earthStream;
+    [SerializeField] GameObject fireStream;
+    [SerializeField] GameObject airStream;
 
     Rigidbody playersRigidBody;
 
     float xDirection = 0;
 
-    Elements currentElement = Elements.water;
+	// Pull this from the select code
+	ElementManager elementManager;
+    ElementManager.Elements currentElement;
 
     // Use this for initialization
     void Start () {
         playersRigidBody = GetComponent<Rigidbody>();
+		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+		// Check if we're selecting an element
+		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
+		if (rightClickListener.isRightClicking) {
+			return;
+		}
+
         UpdateMovement();
         UpdateGameObjectRotation();
         CheckForInteraction();
@@ -91,6 +102,14 @@ public class PlayerControl : MonoBehaviour
         // Limits the rotation in the x-axis to the given lower and upper limits.
         xDirection = Mathf.Clamp(xDirection, lowerVerticalAngleLimit, upperVerticalAngleLimit);
 
+
+		// Check if we're selecting an element
+		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
+
+		if (rightClickListener.isRightClicking) {
+			return;
+		}
+		
         cameraHolder.transform.eulerAngles = new Vector3(xDirection * ANALOG_TO_DEGREES, transform.eulerAngles.y, transform.eulerAngles.z);
     }
 
@@ -112,14 +131,44 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKey(elementUseKey))
         {
-            if (currentElement == Elements.water)
+        	currentElement = elementManager.getSelectedElement();
+			MeterManager meterManager = GameObject.FindGameObjectWithTag("MeterManager").GetComponent<MeterManager>();
+
+            if (currentElement == ElementManager.Elements.Water)
             {
                 waterStream.SetActive(true);
+
+                // Decrease water resource
+                meterManager.waterMeter.value -= 0.001f;
             }
+            else if (currentElement == ElementManager.Elements.Earth)
+            {
+				earthStream.SetActive(true);
+
+                // Decrease earth resource
+                meterManager.earthMeter.value -= 0.001f;
+			}
+			else if (currentElement == ElementManager.Elements.Fire)
+            {
+				fireStream.SetActive(true);
+
+                // Decrease fire resource
+                meterManager.fireMeter.value -= 0.001f;
+			}
+			else if (currentElement == ElementManager.Elements.Air)
+            {
+				airStream.SetActive(true);
+
+                // Decrease air resource
+                meterManager.airMeter.value -= 0.001f;
+			}
         }
         else
         {
             waterStream.SetActive(false);
+            earthStream.SetActive(false);
+            fireStream.SetActive(false);
+            airStream.SetActive(false);
         }
     }
 }
