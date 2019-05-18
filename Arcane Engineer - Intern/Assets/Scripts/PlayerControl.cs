@@ -87,6 +87,13 @@ public class PlayerControl : MonoBehaviour
 
     void UpdateCameraRotation()
     {
+		// Check if we're selecting an element
+		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
+
+		if (rightClickListener.isRightClicking) {
+			return;
+		}
+
         const short ANALOG_TO_DEGREES = 360;
 
         // Adds the look input to the rotation of the camera.
@@ -101,14 +108,6 @@ public class PlayerControl : MonoBehaviour
 
         // Limits the rotation in the x-axis to the given lower and upper limits.
         xDirection = Mathf.Clamp(xDirection, lowerVerticalAngleLimit, upperVerticalAngleLimit);
-
-
-		// Check if we're selecting an element
-		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
-
-		if (rightClickListener.isRightClicking) {
-			return;
-		}
 		
         cameraHolder.transform.eulerAngles = new Vector3(xDirection * ANALOG_TO_DEGREES, transform.eulerAngles.y, transform.eulerAngles.z);
     }
