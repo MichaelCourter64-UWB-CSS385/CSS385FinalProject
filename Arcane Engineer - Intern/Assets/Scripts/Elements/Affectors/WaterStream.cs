@@ -20,7 +20,7 @@ public class WaterStream : MonoBehaviour {
     {
         if (other.gameObject.tag == affectedTag)
         {
-            other.GetComponent<ElementAffected>().Affect(Elements.water);
+            other.GetComponent<ElementAffected>().Affect(ElementManager.Elements.Water);
         }
     }
 }

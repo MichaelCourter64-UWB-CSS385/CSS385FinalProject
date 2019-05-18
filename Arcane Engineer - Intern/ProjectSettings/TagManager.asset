@@ -13,6 +13,7 @@ TagManager:
   - BackgroundPanel
   - SelectionWheel
   - ButtonHandler
+  - RightClickListener
   layers:
   - Default
   - TransparentFX

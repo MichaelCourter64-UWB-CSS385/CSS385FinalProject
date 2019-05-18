@@ -10,11 +10,11 @@ public class OnHighlight : MonoBehaviour, IPointerEnterHandler {
 	// MARK: Properties
 	[SerializeField] int elementId;
 
-	ButtonHandler buttonHandler;
+	ElementManager elementManager;
 
 	// MARK: Life Cycle
 	void Start () {
-		buttonHandler = GameObject.FindGameObjectWithTag("ButtonHandler").GetComponent<ButtonHandler>();
+		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +23,6 @@ public class OnHighlight : MonoBehaviour, IPointerEnterHandler {
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
-		buttonHandler.pickElement(elementId);
+		elementManager.pickElement(elementId);
 	}
 }

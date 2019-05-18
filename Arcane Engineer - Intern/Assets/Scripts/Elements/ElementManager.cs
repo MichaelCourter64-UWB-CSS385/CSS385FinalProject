@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// MARK: Enum
-public enum Element { Water, Earth, Fire, Air }
-
 // MARK: - Class
-public class ButtonHandler : MonoBehaviour {
+public class ElementManager : MonoBehaviour {
 	// MARK: Properties
-	Element selectedElement;
+	public enum Elements { Water, Earth, Fire, Air }
+
+	Elements selectedElement;
 
 	// MARK: Life Cycle
 	void Start () {
@@ -28,16 +27,16 @@ public class ButtonHandler : MonoBehaviour {
 	public void pickElement(int elementId) {
 		switch (elementId) {
 		case 0:
-			selectedElement = Element.Water;
+			selectedElement = Elements.Water;
 			break;
 		case 1:
-			selectedElement = Element.Earth;
+			selectedElement = Elements.Earth;
 			break;
 		case 2:
-			selectedElement = Element.Fire;
+			selectedElement = Elements.Fire;
 			break;
 		case 3:
-			selectedElement = Element.Air;
+			selectedElement = Elements.Air;
 			break;
 		default:
 			Debug.Log("Error: The ElementId of " + elementId + " is not a valid elementId");
@@ -48,7 +47,7 @@ public class ButtonHandler : MonoBehaviour {
 	}
 
 	// MARK: Public
-	public Element getSelectedElement() {
+	public Elements getSelectedElement() {
 		return selectedElement;
 	}
 }

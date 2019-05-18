@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,13 +17,13 @@ public class Soot : ElementAffected {
 	void Update () {
         if (Input.GetKey(KeyCode.M))
         {
-            Affect(Elements.water);
+            Affect(ElementManager.Elements.Water);
         }
     }
 
-    public override void Affect(Elements affectingElement)
+    public override void Affect(ElementManager.Elements affectingElement)
     {
-        if (affectingElement == Elements.water)
+        if (affectingElement == ElementManager.Elements.Water)
         {
             sootRenderer.color -= new Color(0, 0, 0, cleanSpeed * Time.deltaTime);
         }

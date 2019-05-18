@@ -22,9 +22,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] Vector3 interactionBoxHalfs;
     [SerializeField] float interactionBoxTravelDistance;
     [SerializeField] LayerMask interactionlayer;
-
+	// Element casting.
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
-
     [SerializeField] GameObject waterStream;
     [SerializeField] GameObject earthStream;
     [SerializeField] GameObject fireStream;
@@ -35,13 +34,13 @@ public class PlayerControl : MonoBehaviour
     float xDirection = 0;
 
 	// Pull this from the select code
-    Element currentElement;
-    ButtonHandler buttonHandler;
+	ElementManager elementManager;
+    ElementManager.Elements currentElement;
 
     // Use this for initialization
     void Start () {
         playersRigidBody = GetComponent<Rigidbody>();
-		buttonHandler = GameObject.FindGameObjectWithTag("ButtonHandler").GetComponent<ButtonHandler>();
+		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	
 	// Update is called once per frame
@@ -49,7 +48,6 @@ public class PlayerControl : MonoBehaviour
     {
 		// Check if we're selecting an element
 		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
-
 		if (rightClickListener.isRightClicking) {
 			return;
 		}
@@ -133,30 +131,31 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKey(elementUseKey))
         {
-        	currentElement = buttonHandler.getSelectedElement();
+        	currentElement = elementManager.getSelectedElement();
 			MeterManager meterManager = GameObject.FindGameObjectWithTag("MeterManager").GetComponent<MeterManager>();
-            if (currentElement == Element.Water)
+
+            if (currentElement == ElementManager.Elements.Water)
             {
                 waterStream.SetActive(true);
 
                 // Decrease water resource
                 meterManager.waterMeter.value -= 0.001f;
             }
-            else if (currentElement == Element.Earth)
+            else if (currentElement == ElementManager.Elements.Earth)
             {
 				earthStream.SetActive(true);
 
                 // Decrease earth resource
                 meterManager.earthMeter.value -= 0.001f;
 			}
-			else if (currentElement == Element.Fire)
+			else if (currentElement == ElementManager.Elements.Fire)
             {
 				fireStream.SetActive(true);
 
                 // Decrease fire resource
                 meterManager.fireMeter.value -= 0.001f;
 			}
-			else if (currentElement == Element.Air)
+			else if (currentElement == ElementManager.Elements.Air)
             {
 				airStream.SetActive(true);
 
