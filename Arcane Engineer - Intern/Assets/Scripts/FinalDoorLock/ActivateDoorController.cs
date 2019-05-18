@@ -55,15 +55,15 @@ public class LockActivationController : Interactable {
         timeoutTimer = Time.time + timeoutDuration;
         inTimeout = true;
         isOn = !isOn;
-        StartCoroutine(CheckLock());
+        // StartCoroutine(CheckLock());
     }
 
-    IEnumerator CheckLock()
-    {
-        while (Time.time < timeoutTimer)
-        {
+    //IEnumerator CheckLock()
+    //{
+    //    while (Time.time < timeoutTimer)
+    //    {
 
-        }
-    }
+    //    }
+    //}
 
 }
