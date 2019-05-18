@@ -12,8 +12,8 @@ TagManager:
   - Affected
   - BackgroundPanel
   - SelectionWheel
-  - ButtonHandler
   - RightClickListener
+  - ElementManager
   layers:
   - Default
   - TransparentFX
