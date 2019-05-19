@@ -13,16 +13,18 @@ public class WheelController : Interactable {
     private int currentPosition;
     private float currentAngle;
     private bool inMotion;
+    private bool canInteract;
 
 	// Use this for initialization
 	void Start () {
-		currentAngle = this.transform.rotation.y;
+		currentAngle = this.transform.rotation.y;   // May need to be readjusted on asset reimport
         inMotion = false;
-	}
+        canInteract = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.E) && inMotion == false)
+        if (Input.GetKeyDown(KeyCode.E) && canInteract && !inMotion)
         {
             Interact();
         }
@@ -55,5 +57,17 @@ public class WheelController : Interactable {
             this.gameObject.transform.Rotate(0, currentRotation, 0, Space.Self);
             yield return new WaitForFixedUpdate(); // Possibly not the way we want this set up.
         }
+    }
+
+    public void Activate()
+    {
+        canInteract = true;
+        // BONUS: add material/emissive switch here if there is time.
+    }
+
+    public void Deactivate()
+    {
+        canInteract = false;
+        // BONUS: add material/emissive switch here if there is time.
     }
 }
