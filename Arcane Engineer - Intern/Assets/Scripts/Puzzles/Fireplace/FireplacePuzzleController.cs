@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePlacePuzzleController : MonoBehaviour
+public class FireplacePuzzleController : MonoBehaviour
 {
     [SerializeField] GameObject[] lightHolders;
     [SerializeField] Color offLight;
@@ -94,6 +94,8 @@ public class FirePlacePuzzleController : MonoBehaviour
 
         isInteractable = false;
 
+        SetAllLights(offLight);
+
         for (int i = 0; i < totalAnimationFramesIterations; i++)
         {
             if (isRed)
@@ -113,8 +115,6 @@ public class FirePlacePuzzleController : MonoBehaviour
                 yield return new WaitForSeconds(incorrectAnimationFlashDelay);
             }
         }
-
-        SetAllLights(offLight);
 
         isInteractable = true;
     }

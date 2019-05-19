@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54877086605202464}
   - component: {fileID: 23040618046683788}
   - component: {fileID: 95579117327054580}
-  - component: {fileID: 114763639640640200}
+  - component: {fileID: 114186868389494534}
   m_Layer: 8
   m_Name: FireplaceButton
   m_TagString: Untagged
@@ -147,7 +147,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114763639640640200
+--- !u!114 &114186868389494534
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -73,7 +73,7 @@ public class PlayerControl : MonoBehaviour
 
         if (horizontalValue != 0 || verticalValue != 0)
         {
-            playersRigidBody.AddForce(transform.TransformPoint(new Vector3(horizontalValue * speed * Time.deltaTime, 0, verticalValue * speed * Time.deltaTime)));
+            playersRigidBody.AddForce(transform.TransformDirection(new Vector3(horizontalValue * speed * Time.deltaTime, 0, verticalValue * speed * Time.deltaTime)));
         }
     }
 
@@ -114,6 +114,8 @@ public class PlayerControl : MonoBehaviour
 
     void CheckForInteraction()
     {
+        
+
         if (Input.GetKeyDown(interactKey))
         {
             RaycastHit foundInteractable;

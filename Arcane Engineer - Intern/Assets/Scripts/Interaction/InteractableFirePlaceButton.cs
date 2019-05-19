@@ -7,12 +7,12 @@ public class InteractableFireplaceButton : Interactable {
     [SerializeField] int patternNumber = 0;
     [SerializeField] string buttonAnimationTriggerName;
 
-    FirePlacePuzzleController panelController;
+    FireplacePuzzleController panelController;
     Animator buttonAnimator;
 
     void Start()
     {
-        panelController = firePlacePanelControllerHolder.GetComponent<FirePlacePuzzleController>();
+        panelController = firePlacePanelControllerHolder.GetComponent<FireplacePuzzleController>();
         buttonAnimator = GetComponent<Animator>();
     }
 
