@@ -1642,55 +1642,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4356309615508384, guid: 80553864f298b304aa696b731d0911b8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4356309615508384, guid: 80553864f298b304aa696b731d0911b8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4356309615508384, guid: 80553864f298b304aa696b731d0911b8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849740441620340, guid: 80553864f298b304aa696b731d0911b8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849740441620340, guid: 80553864f298b304aa696b731d0911b8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4849740441620340, guid: 80553864f298b304aa696b731d0911b8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114776433138822432, guid: 80553864f298b304aa696b731d0911b8,
-        type: 2}
-      propertyPath: interactionBoxTravelDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114776433138822432, guid: 80553864f298b304aa696b731d0911b8,
-        type: 2}
-      propertyPath: interactionBoxHalfs.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114776433138822432, guid: 80553864f298b304aa696b731d0911b8,
-        type: 2}
-      propertyPath: interactionBoxHalfs.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114776433138822432, guid: 80553864f298b304aa696b731d0911b8,
-        type: 2}
-      propertyPath: interactionBoxHalfs.z
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 20700719657923198, guid: 80553864f298b304aa696b731d0911b8,
-        type: 2}
-      propertyPath: field of view
-      value: 90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80553864f298b304aa696b731d0911b8, type: 2}
   m_IsPrefabParent: 0

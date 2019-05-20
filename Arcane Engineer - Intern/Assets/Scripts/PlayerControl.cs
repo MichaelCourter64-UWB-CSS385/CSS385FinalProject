@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] Vector3 interactionBoxHalfs;
     [SerializeField] float interactionBoxTravelDistance;
     [SerializeField] LayerMask interactionlayer;
+    [SerializeField] GameObject interactionIndicatorUIHolder;
+
 	// Element casting.
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
     [SerializeField] GameObject waterStream;
@@ -30,6 +33,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] GameObject airStream;
 
     Rigidbody playersRigidBody;
+
+    Image interactionIndicatorUI;
 
     float xDirection = 0;
 
@@ -40,6 +45,7 @@ public class PlayerControl : MonoBehaviour
     // Use this for initialization
     void Start () {
         playersRigidBody = GetComponent<Rigidbody>();
+        interactionIndicatorUI = interactionIndicatorUIHolder.GetComponent<Image>();
 		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	
@@ -114,13 +120,21 @@ public class PlayerControl : MonoBehaviour
 
     void CheckForInteraction()
     {
-        
+        RaycastHit foundInteractable;
+        Physics.BoxCast(cameraHolder.transform.position, interactionBoxHalfs, cameraHolder.transform.TransformDirection(Vector3.forward), out foundInteractable, Quaternion.Euler(Vector3.forward), interactionBoxTravelDistance, interactionlayer.value);
+
+        if(foundInteractable.transform != null)
+        {
+            interactionIndicatorUI.enabled = true;
+        }
+        else
+        {
+            interactionIndicatorUI.enabled = false;
+        }
 
         if (Input.GetKeyDown(interactKey))
         {
-            RaycastHit foundInteractable;
-            Physics.BoxCast(cameraHolder.transform.position, interactionBoxHalfs, cameraHolder.transform.TransformDirection(Vector3.forward), out foundInteractable, Quaternion.Euler(Vector3.forward), interactionBoxTravelDistance, interactionlayer.value);
-
+            
             if (foundInteractable.transform != null)
             {
                 foundInteractable.transform.GetComponent<Interactable>().Interact();
