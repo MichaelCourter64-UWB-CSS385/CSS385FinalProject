@@ -17,7 +17,7 @@ public class WheelController : Interactable {
 
 	// Use this for initialization
 	void Start () {
-		currentAngle = this.transform.rotation.y;   // May need to be readjusted on asset reimport
+		currentAngle = this.transform.rotation.y;   // Axis may need to be readjusted on asset reimport
         inMotion = false;
         canInteract = false;
     }
@@ -33,13 +33,16 @@ public class WheelController : Interactable {
     // Override method for interacting with this wheel object
     public override void Interact()
     {
-        // inMotion prevents spamming the interaction
-        inMotion = true;
-        StartCoroutine(RotateWheel());
-        inMotion = false;
-        // Update the wheel position in the DialController
-        currentPosition = (currentPosition++) % 4;
-        this.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber] = currentPosition;
+        if (canInteract)
+        {
+            // inMotion prevents spamming the interaction
+            inMotion = true;
+            StartCoroutine(RotateWheel());
+            inMotion = false;
+            // Update the wheel position in the DialController
+            currentPosition = (currentPosition++) % 4;
+            this.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber] = currentPosition;
+        }
     }
 
     // Coroutine for moving the wheel
@@ -62,12 +65,10 @@ public class WheelController : Interactable {
     public void Activate()
     {
         canInteract = true;
-        // BONUS: add material/emissive switch here if there is time.
     }
 
     public void Deactivate()
     {
         canInteract = false;
-        // BONUS: add material/emissive switch here if there is time.
     }
 }

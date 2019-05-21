@@ -8,28 +8,35 @@ public class DialController : MonoBehaviour {
     [SerializeField] GameObject upstreamObjectLeft;
     [SerializeField] GameObject upstreamObjectRight;
 
-    // Public so that wheels can modify and initials can be set in engine if needed
-    // Set to four to match current light configuration, but code adapts to size elsewhere
+    // Public so that wheels can modify and initial values can be set in engine if needed
     public int[] WheelPositions = new int[4];
 
     // Public bool for Final Door Lock system to easily track whether positioning is valid
     // Also used in for passing error light array
     public bool errorState;
+    private bool hasPower;
 
-    // Array for storing the values from the "upstream" light panel
+    // Array for storing the values from the "upstream" light panels
     // private Color[] lightColors = new Color[4];
     int[] upstreamValuesLeft;
     int[] upstreamValuesRight;
 
-    //// Old Version
-    //// Array for storing color values from the "upstream" light panel
-    //// private Color[] lightColors = new Color[4];
-    //Color[] upstreamColorsLeft;
-    //Color[] upstreamColorsRight;
 
     void Start()
     {
         errorState = false;
+    }
+
+    void FixedUpdate()
+    {
+        if (hasPower)
+        {
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                if (this.transform.GetChild(i).GetComponent<WheelController>() != null)
+                    this.transform.GetChild(i).GetComponent<WheelController>().Activate();
+            }
+        }
     }
 
     // Validate Wheel Positions
@@ -47,7 +54,7 @@ public class DialController : MonoBehaviour {
                 }
             }
         }
-        errorState = true;
+        errorState = false;
     }
 
 
@@ -80,7 +87,7 @@ public class DialController : MonoBehaviour {
             int[] errorLights = new int[upstreamValuesLeft.Length];
             for (int i = 0; i < upstreamValuesLeft.Length; i++)
             {
-                errorLights[i] = 5;
+                errorLights[i] = 5; // Set all to error light shader's index in material array
             }
             return errorLights;
         }
@@ -96,10 +103,26 @@ public class DialController : MonoBehaviour {
         return permutedCopy;
     }
 
+    public void Activate()
+    {
+        hasPower = true;
+        GetUpstreamValues(true);
+        GetUpstreamValues(true);
+    }
 
+    public void Deactivate()
+    {
+        hasPower = false;
+    }
 
     ////-------------------------------------- OLD VERSION (Color) --------------------------------------------
-    ////
+    // 
+    //
+    //// Array for storing color values from the "upstream" light panel
+    //// private Color[] lightColors = new Color[4];
+    //Color[] upstreamColorsLeft;
+    //Color[] upstreamColorsRight;
+    //
     //// Gets values from previous object in "the chain"
     //public void GetUpstreamValues(bool rightStream)
     //{

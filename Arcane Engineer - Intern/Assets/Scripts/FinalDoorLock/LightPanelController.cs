@@ -44,7 +44,7 @@ public class LightPanelController : MonoBehaviour {
     }
 
     // Illuminates the indicator lights based on the current settings the panel received
-    void Activate()
+    public void Activate()
     {
         this.GetUpstreamValues();
         isOn = true;
@@ -54,7 +54,7 @@ public class LightPanelController : MonoBehaviour {
         }
     }
 
-    void Deactivate()
+    public void Deactivate()
     {
         isOn = false;
         for (int i = 0; i < lights.Length; i++)
