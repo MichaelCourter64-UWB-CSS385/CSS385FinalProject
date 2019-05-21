@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 23906501852026386}
   - component: {fileID: 64617847684601724}
   - component: {fileID: 95378062294958028}
+  - component: {fileID: 114914283420678826}
   m_Layer: 0
   m_Name: DialLock
   m_TagString: Untagged
@@ -1228,3 +1229,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114914283420678826
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1564003100757546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4165775c6226fd74282009bf033d2a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upstreamObjectLeft: {fileID: 0}
+  upstreamObjectRight: {fileID: 0}
+  WheelPositions: 00000000000000000000000000000000
+  errorState: 0

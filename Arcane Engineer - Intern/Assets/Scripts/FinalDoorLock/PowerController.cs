@@ -48,8 +48,8 @@ public class PowerController : MonoBehaviour {
     void PowerOn()
     {
         lockActivator.GetComponent<LockActivationController>().hasPower = true;
-        dial1.GetComponent<LightPanelController>().Activate();
-        dial2.GetComponent<LightPanelController>().Activate();
+        dial1.GetComponent<DialController>().Activate();
+        dial2.GetComponent<DialController>().Activate();
         leftStart.GetComponent<LightPanelController>().Activate();
         rightStart.GetComponent<LightPanelController>().Activate();
         leftTarget.GetComponent<LightPanelController>().Activate();

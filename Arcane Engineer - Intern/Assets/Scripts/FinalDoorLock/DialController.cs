@@ -107,7 +107,7 @@ public class DialController : MonoBehaviour {
     {
         hasPower = true;
         GetUpstreamValues(true);
-        GetUpstreamValues(true);
+        GetUpstreamValues(false);
     }
 
     public void Deactivate()

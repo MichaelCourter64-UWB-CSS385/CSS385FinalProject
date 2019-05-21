@@ -28,7 +28,12 @@ public class LightPanelController : MonoBehaviour {
 
     public void GetUpstreamValues()
     {
-        settings = upstreamObject.GetComponent<DialController>().PassValues(rightStream);
+        if (upstreamObject.GetComponent<DialController>() != null)
+            settings = upstreamObject.GetComponent<DialController>().PassValues(rightStream);
+        if (upstreamObject.GetComponent<LightPanelController>() != null)
+            settings = upstreamObject.GetComponent<LightPanelController>().PassValues();
+        if (upstreamObject.GetComponent<PowerboxOutput>() != null)
+            settings = upstreamObject.GetComponent<PowerboxOutput>().PassValues();
     }
 
     // Returns a copy of the array of current indicator light settings
@@ -50,7 +55,7 @@ public class LightPanelController : MonoBehaviour {
         isOn = true;
         for (int i = 0; i < lights.Length; i++)
         {
-            lights[i].AddComponent<Renderer>().material = mats[settings[i]];
+            lights[i].GetComponent<Renderer>().material = mats[settings[i]];
         }
     }
 
@@ -59,7 +64,7 @@ public class LightPanelController : MonoBehaviour {
         isOn = false;
         for (int i = 0; i < lights.Length; i++)
         {
-            lights[i].AddComponent<Renderer>().material = mats[0];
+            lights[i].GetComponent<Renderer>().material = mats[0];
         }
     }
 
