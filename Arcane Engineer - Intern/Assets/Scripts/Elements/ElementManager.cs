@@ -5,7 +5,6 @@ using UnityEngine;
 // MARK: - Class
 public class ElementManager : MonoBehaviour {
 	// MARK: Properties
-	public enum Elements { Water, Earth, Fire, Air }
 
 	Elements selectedElement;
 

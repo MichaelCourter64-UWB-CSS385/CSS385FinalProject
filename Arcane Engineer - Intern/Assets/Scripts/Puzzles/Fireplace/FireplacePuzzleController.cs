@@ -8,6 +8,7 @@ public class FireplacePuzzleController : MonoBehaviour
     [SerializeField] Color offLight;
     [SerializeField] Color correctLight;
     [SerializeField] Color incorrectLight;
+    [SerializeField] GameObject progressionSystemHolder;
     [SerializeField] int incorrectAnimationFlashCycles;
     [SerializeField] float incorrectAnimationFlashDelay;
     [SerializeField] int solvedAnimationFlashCycles;
@@ -20,10 +21,12 @@ public class FireplacePuzzleController : MonoBehaviour
     bool isInteractable = true;
     int previousButtonIndex = NEUTRAL_VALUE;
     int completionCounter = 0;
+    ProgressionSystem progressionSystem;
 
     void Start()
     {
         lights = new Light[lightHolders.Length];
+        progressionSystem = progressionSystemHolder.GetComponent<ProgressionSystem>();
 
         for(int i = 0; i < lightHolders.Length; i++)
         {
@@ -40,7 +43,7 @@ public class FireplacePuzzleController : MonoBehaviour
         {
             return;
         }
-
+        //Debug.Log("received at " + Time.time);
         // If the button sequence isn't started, then:
         if (previousButtonIndex == NEUTRAL_VALUE)
         {
@@ -82,6 +85,8 @@ public class FireplacePuzzleController : MonoBehaviour
     {
         if(completionCounter == lights.Length - 1)
         {
+            progressionSystem.Completed(ProgressionMarks.FireplaceFixed.ToString());
+
             StartCoroutine(PlaySolvedAnimtation());
         }
     }

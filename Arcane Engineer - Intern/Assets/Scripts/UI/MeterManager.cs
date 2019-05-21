@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 // MARK: - Class
 public class MeterManager : MonoBehaviour {
+    [SerializeField] float amountToRestore;
+
 	// MARK: Properties
 	public Slider waterMeter, earthMeter, fireMeter, airMeter;
 
@@ -25,4 +27,22 @@ public class MeterManager : MonoBehaviour {
 
 	// MARK: Public
 
+    public void RestoreElement(Elements elementToRestore)
+    {
+        switch (elementToRestore)
+        {
+            case Elements.Water:
+                waterMeter.value += amountToRestore * Time.deltaTime;
+                break;
+            case Elements.Earth:
+                earthMeter.value += amountToRestore * Time.deltaTime;
+                break;
+            case Elements.Fire:
+                fireMeter.value += amountToRestore * Time.deltaTime;
+                break;
+            case Elements.Air:
+                airMeter.value += amountToRestore * Time.deltaTime;
+                break;
+        }
+    }
 }

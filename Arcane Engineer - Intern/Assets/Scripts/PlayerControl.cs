@@ -40,7 +40,7 @@ public class PlayerControl : MonoBehaviour
 
 	// Pull this from the select code
 	ElementManager elementManager;
-    ElementManager.Elements currentElement;
+    Elements currentElement;
 
     // Use this for initialization
     void Start () {
@@ -125,6 +125,7 @@ public class PlayerControl : MonoBehaviour
 
         if(foundInteractable.transform != null)
         {
+            //Debug.Log(foundInteractable.transform.name);
             interactionIndicatorUI.enabled = true;
         }
         else
@@ -132,7 +133,7 @@ public class PlayerControl : MonoBehaviour
             interactionIndicatorUI.enabled = false;
         }
 
-        if (Input.GetKeyDown(interactKey))
+        if (Input.GetKey(interactKey))
         {
             
             if (foundInteractable.transform != null)
@@ -149,28 +150,28 @@ public class PlayerControl : MonoBehaviour
         	currentElement = elementManager.getSelectedElement();
 			MeterManager meterManager = GameObject.FindGameObjectWithTag("MeterManager").GetComponent<MeterManager>();
 
-            if (currentElement == ElementManager.Elements.Water)
+            if (currentElement == Elements.Water)
             {
                 waterStream.SetActive(true);
 
                 // Decrease water resource
                 meterManager.waterMeter.value -= 0.001f;
             }
-            else if (currentElement == ElementManager.Elements.Earth)
+            else if (currentElement == Elements.Earth)
             {
 				earthStream.SetActive(true);
 
                 // Decrease earth resource
                 meterManager.earthMeter.value -= 0.001f;
 			}
-			else if (currentElement == ElementManager.Elements.Fire)
+			else if (currentElement == Elements.Fire)
             {
 				fireStream.SetActive(true);
 
                 // Decrease fire resource
                 meterManager.fireMeter.value -= 0.001f;
 			}
-			else if (currentElement == ElementManager.Elements.Air)
+			else if (currentElement == Elements.Air)
             {
 				airStream.SetActive(true);
 

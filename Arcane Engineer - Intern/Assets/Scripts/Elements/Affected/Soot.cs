@@ -17,13 +17,13 @@ public class Soot : ElementAffected {
 	void Update () {
         if (Input.GetKey(KeyCode.M))
         {
-            Affect(ElementManager.Elements.Water);
+            Affect(Elements.Water);
         }
     }
 
-    public override void Affect(ElementManager.Elements affectingElement)
+    public override void Affect(Elements affectingElement)
     {
-        if (affectingElement == ElementManager.Elements.Water)
+        if (affectingElement == Elements.Water)
         {
             sootRenderer.color -= new Color(0, 0, 0, cleanSpeed * Time.deltaTime);
         }
