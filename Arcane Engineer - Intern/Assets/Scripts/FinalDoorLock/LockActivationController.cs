@@ -64,6 +64,14 @@ public class LockActivationController : Interactable {
             if (go.GetComponent<DialController>() != null)
                 go.GetComponent<DialController>().Activate();
         }
+        foreach (GameObject go in executionOrder2)
+        {
+            // Ugly, but seemingly the only way to get unity to allow this
+            if (go.GetComponent<LightPanelController>() != null)
+                go.GetComponent<LightPanelController>().Activate();
+            if (go.GetComponent<DialController>() != null)
+                go.GetComponent<DialController>().Activate();
+        }
         if (validateLockCombo())
         {
             door.GetComponent<DoorController>().Open();
@@ -74,6 +82,14 @@ public class LockActivationController : Interactable {
     void Deactivate()
     {
         foreach (GameObject go in executionOrder1)
+        {
+            // Ugly, but seemingly the only way to get unity to allow this
+            if (go.GetComponent<LightPanelController>() != null)
+                go.GetComponent<LightPanelController>().Deactivate();
+            if (go.GetComponent<DialController>() != null)
+                go.GetComponent<DialController>().Deactivate();
+        }
+        foreach (GameObject go in executionOrder2)
         {
             // Ugly, but seemingly the only way to get unity to allow this
             if (go.GetComponent<LightPanelController>() != null)
