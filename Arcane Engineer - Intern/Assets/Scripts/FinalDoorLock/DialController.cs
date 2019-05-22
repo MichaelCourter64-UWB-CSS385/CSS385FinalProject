@@ -51,6 +51,7 @@ public class DialController : MonoBehaviour {
                 if (WheelPositions[n] == WheelPositions[m])
                 {
                     errorState = true;
+                    return;
                 }
             }
         }

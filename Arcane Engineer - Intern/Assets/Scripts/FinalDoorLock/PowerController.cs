@@ -33,10 +33,15 @@ public class PowerController : MonoBehaviour {
 
     // Initialization
     void Start () {
-        waterOn = false;
-        fireOn = false;
-        earthOn = false;
-        windOn = false;
+        //waterOn = false;
+        //fireOn = false;
+        //earthOn = false;
+        //windOn = false;
+
+        waterOn = true;
+        fireOn = true;
+        earthOn = true;
+        windOn = true;
     }
 	
 	// Update is called once per frame
