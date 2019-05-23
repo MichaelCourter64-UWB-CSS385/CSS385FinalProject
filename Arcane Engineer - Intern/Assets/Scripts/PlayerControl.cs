@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] GameObject cameraHolder;
+    [SerializeField] float cameraCrouchOffset;
     [SerializeField] Vector3 cameraOffset = new Vector3(0, 0.5f, 0);
     [SerializeField] string horizontalName;
     [SerializeField] string verticalName;
+
+    [SerializeField] KeyCode crouchKey;
     [SerializeField] float speed;
     [SerializeField] string mouseXName;
     [SerializeField] float horizontalSensitivity;
@@ -31,6 +34,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] GameObject earthStream;
     [SerializeField] GameObject fireStream;
     [SerializeField] GameObject airStream;
+
+    bool isCrouching = false;
 
     Rigidbody playersRigidBody;
 
@@ -67,7 +72,15 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        cameraHolder.transform.position = transform.position + cameraOffset;
+        if (isCrouching)
+        {
+            cameraHolder.transform.position = transform.position + cameraOffset + new Vector3(0, cameraCrouchOffset, 0);
+        }
+        else
+        {
+            cameraHolder.transform.position = transform.position + cameraOffset;
+        }
+        
 
         UpdateCameraRotation();
     }
@@ -76,6 +89,11 @@ public class PlayerControl : MonoBehaviour
     {
         float horizontalValue = Input.GetAxis(horizontalName);
         float verticalValue = Input.GetAxis(verticalName);
+
+        if (Input.GetKeyDown(crouchKey))
+        {
+            isCrouching = !isCrouching;
+        }
 
         if (horizontalValue != 0 || verticalValue != 0)
         {

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableFireplaceButton : KeyDownInteractable {
+public class InteractableFireplaceButton : KeyDownInteractable
+{
     [SerializeField] GameObject firePlacePanelControllerHolder;
     [SerializeField] int patternNumber = 0;
     [SerializeField] string buttonAnimationTriggerName;

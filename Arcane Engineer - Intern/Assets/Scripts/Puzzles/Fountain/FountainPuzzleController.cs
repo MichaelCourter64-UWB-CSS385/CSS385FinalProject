@@ -41,26 +41,27 @@ public class FountainPuzzleController : MonoBehaviour {
         waterLevel = Mathf.Clamp(waterLevel, 0, int.MaxValue);
 
         // If the water level is close enough to the amount to reach, then:
-        if (waterLevel < waterLevelToReach + waterLevelToReachDeadZoneHalf && 
-            waterLevel > waterLevelToReach - waterLevelToReachDeadZoneHalf)
+        if (waterLevel <= waterLevelToReach && waterLevel > waterLevelToReach - waterLevelToReachDeadZoneHalf)
         {
             progressionSystem.Completed(progressMarkToCheckOff.ToString());
         }
-        else if (waterLevel > waterLevelToReach)
+
+        if (waterLevel > waterLevelToReach)
         {
             indicatorAnimator.SetBool(overpressureParamName, true);
         }
-        else if (waterLevel < waterLevelToReach)
+        else if (waterLevel <= waterLevelToReach)
         {
             indicatorAnimator.SetBool(overpressureParamName, false);
         }
 
         Debug.Log("new water level: " + waterLevel);
-        Debug.Log("level / toReach: " + waterLevel / waterLevelToReach);
+        Debug.Log("is shaking: " + (waterLevel > waterLevelToReach));
+        //Debug.Log("level / toReach: " + waterLevel / waterLevelToReach);
         waterFloatPercentage = Mathf.Clamp(waterLevel / waterLevelToReach, 0, 1);
-        Debug.Log("waterFloatPercentage: " + waterFloatPercentage);
+        //Debug.Log("waterFloatPercentage: " + waterFloatPercentage);
         levelIndicatorNewLevel = (waterFloatPercentage * waterLevelIndicatorRange) + indicatorStartingPoint;
-        Debug.Log("levelIndicatorNewLevel: " + levelIndicatorNewLevel);
+        //Debug.Log("levelIndicatorNewLevel: " + levelIndicatorNewLevel);
         waterLevelIndicator.transform.position = new Vector3(waterLevelIndicator.transform.position.x, levelIndicatorNewLevel, waterLevelIndicator.transform.position.z);
     }
 }
