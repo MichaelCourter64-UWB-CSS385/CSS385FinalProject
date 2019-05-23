@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableLever : Interactable
+public class InteractableLever : KeyDownInteractable
 {
     [SerializeField] GameObject leverRotationPoint;
     [SerializeField] float onAngleDifference;
@@ -27,7 +27,7 @@ public class InteractableLever : Interactable
         }
 	}
 
-    public override void Interact()
+    protected override void ForInteract()
     {
         StartCoroutine(ShiftLever(!isOn));
         isOn = !isOn;
