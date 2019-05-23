@@ -23,7 +23,7 @@ public class ElementManager : MonoBehaviour {
 
 	// MARK: Public Control Handlers
 	// Determine the element and store
-	public void pickElement(int elementId) {
+	public void PickElement(int elementId) {
 		switch (elementId) {
 		case 0:
 			selectedElement = Elements.Water;

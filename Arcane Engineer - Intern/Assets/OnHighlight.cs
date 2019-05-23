@@ -63,7 +63,7 @@ public class OnHighlight : MonoBehaviour, IPointerEnterHandler {
 	}
 
 	public void OnPointerEnter(PointerEventData eventData) {
-		elementManager.pickElement(elementId);
+		elementManager.PickElement(elementId);
 
 		// Set the color on the Panel
 		//Color bgColor = pickColor();

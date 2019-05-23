@@ -8,6 +8,9 @@ public class FireplacePuzzleController : MonoBehaviour
     [SerializeField] Color offLight;
     [SerializeField] Color correctLight;
     [SerializeField] Color incorrectLight;
+    [SerializeField] Material offMat;
+    [SerializeField] Material correctMat;
+    [SerializeField] Material incrorrectMat;
     [SerializeField] GameObject progressionSystemHolder;
     [SerializeField] int incorrectAnimationFlashCycles;
     [SerializeField] float incorrectAnimationFlashDelay;
@@ -18,6 +21,7 @@ public class FireplacePuzzleController : MonoBehaviour
     const int LOOP_AROUND_VALUE = -1;
     
     Light[] lights;
+    MeshRenderer[] lightRends;
     bool isInteractable = true;
     int previousButtonIndex = NEUTRAL_VALUE;
     int completionCounter = 0;
@@ -26,14 +30,16 @@ public class FireplacePuzzleController : MonoBehaviour
     void Start()
     {
         lights = new Light[lightHolders.Length];
+        lightRends = new MeshRenderer[lightHolders.Length];
         progressionSystem = progressionSystemHolder.GetComponent<ProgressionSystem>();
 
         for(int i = 0; i < lightHolders.Length; i++)
         {
             lights[i] = lightHolders[i].GetComponent<Light>();
+            lightRends[i] = lightHolders[i].GetComponent<MeshRenderer>();
         }
 
-        SetAllLights(offLight);
+        SetAllLights(offLight, offMat);
     }
 
     public void ReceiveButtonPress(int buttonNumber)
@@ -48,6 +54,7 @@ public class FireplacePuzzleController : MonoBehaviour
         if (previousButtonIndex == NEUTRAL_VALUE)
         {
             lights[buttonNumber].color = correctLight;
+            lightRends[buttonNumber].material = correctMat;
 
             previousButtonIndex = buttonNumber;
         }
@@ -72,6 +79,7 @@ public class FireplacePuzzleController : MonoBehaviour
             else
             {
                 lights[buttonNumber].color = correctLight;
+                lightRends[buttonNumber].material = correctMat;
 
                 previousButtonIndex = buttonNumber;
                 completionCounter++;
@@ -99,17 +107,19 @@ public class FireplacePuzzleController : MonoBehaviour
 
         isInteractable = false;
 
-        SetAllLights(offLight);
+        SetAllLights(offLight, offMat);
 
         for (int i = 0; i < totalAnimationFramesIterations; i++)
         {
             if (isRed)
             {
                 lights[incorrectButtonIndex].color = offLight;
+                lightRends[incorrectButtonIndex].material = offMat;
             }
             else
             {
                 lights[incorrectButtonIndex].color = incorrectLight;
+                lightRends[incorrectButtonIndex].material = incrorrectMat;
             }
 
             isRed = !isRed;
@@ -136,11 +146,11 @@ public class FireplacePuzzleController : MonoBehaviour
         {
             if (isGreen)
             {
-                SetAllLights(offLight);
+                SetAllLights(offLight, offMat);
             }
             else
             {
-                SetAllLights(correctLight);
+                SetAllLights(correctLight, correctMat);
             }
 
             isGreen = !isGreen;
@@ -149,11 +159,12 @@ public class FireplacePuzzleController : MonoBehaviour
         }
     }
 
-    void SetAllLights(Color colorToUse)
+    void SetAllLights(Color colorToUse, Material materialToUse)
     {
         for (int i = 0; i < lightHolders.Length; i++)
         {
             lights[i].color = colorToUse;
+            lightRends[i].material = materialToUse;
         }
     }
 }

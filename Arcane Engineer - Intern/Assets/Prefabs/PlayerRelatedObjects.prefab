@@ -158,7 +158,6 @@ GameObject:
   - component: {fileID: 33657479478683476}
   - component: {fileID: 136227764115936994}
   - component: {fileID: 23092590166026238}
-  - component: {fileID: 114374019397593480}
   m_Layer: 0
   m_Name: EarthStream
   m_TagString: Untagged
@@ -193,7 +192,6 @@ GameObject:
   - component: {fileID: 33811189077767676}
   - component: {fileID: 136704488578721330}
   - component: {fileID: 23803202618033704}
-  - component: {fileID: 114976058201733092}
   m_Layer: 0
   m_Name: AirStream
   m_TagString: Untagged
@@ -402,7 +400,7 @@ GameObject:
   - component: {fileID: 33913094047074284}
   - component: {fileID: 136783639974535914}
   - component: {fileID: 23202037056673492}
-  - component: {fileID: 114540883399403648}
+  - component: {fileID: 114343047493073910}
   m_Layer: 0
   m_Name: FireStream
   m_TagString: Untagged
@@ -420,6 +418,23 @@ GameObject:
   - component: {fileID: 224991002466132544}
   m_Layer: 0
   m_Name: Fill Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1563730801859672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4639050638398278}
+  - component: {fileID: 114958248976602288}
+  - component: {fileID: 114086426445601852}
+  m_Layer: 0
+  m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,6 +677,19 @@ Transform:
   m_Father: {fileID: 4959725871768650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!4 &4639050638398278
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563730801859672}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -38.14, y: -0.96, z: 5.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4959725871768650}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4689962884761796
 Transform:
   m_ObjectHideFlags: 1
@@ -731,6 +759,7 @@ Transform:
   - {fileID: 4356309615508384}
   - {fileID: 4849740441620340}
   - {fileID: 224542840287538486}
+  - {fileID: 4639050638398278}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1104,6 +1133,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectionWheel: {fileID: 1276738925785764}
   isRightClicking: 0
+--- !u!114 &114086426445601852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563730801859672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!114 &114090789993918528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1366,15 +1413,15 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114374019397593480
+--- !u!114 &114343047493073910
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1257061971587004}
+  m_GameObject: {fileID: 1552275722469482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc55d27add54b4429e00756fd526686, type: 3}
+  m_Script: {fileID: 11500000, guid: 66a046cfc2408cc47b7d06056920acf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   affectedTag: Affected
@@ -1532,18 +1579,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114540883399403648
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1552275722469482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc55d27add54b4429e00756fd526686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  affectedTag: Affected
 --- !u!114 &114544815440593436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1761,9 +1796,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraHolder: {fileID: 1463247464290294}
+  cameraCrouchOffset: -0.5
   cameraOffset: {x: 0, y: 0.5, z: 0}
   horizontalName: Horizontal
   verticalName: Vertical
+  crouchKey: 99
   speed: 5000
   mouseXName: Mouse X
   horizontalSensitivity: 500
@@ -2058,6 +2095,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114958248976602288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1563730801859672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 5
 --- !u!114 &114963187581836828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2106,18 +2157,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114976058201733092
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282726131622354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdc55d27add54b4429e00756fd526686, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  affectedTag: Affected
 --- !u!114 &114985417689744518
 MonoBehaviour:
   m_ObjectHideFlags: 1
