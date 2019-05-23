@@ -20,12 +20,12 @@ public class InteractableLever : KeyDownInteractable
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            Interact();
-        }
-	}
+	//void Update () {
+ //       if (Input.GetKeyDown(KeyCode.N))
+ //       {
+ //           Interact();
+ //       }
+	//}
 
     protected override void ForInteract()
     {

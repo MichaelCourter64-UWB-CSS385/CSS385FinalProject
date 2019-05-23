@@ -15,7 +15,6 @@ public abstract class KeyDownInteractable : Interactable
         {
             //Debug.Log("button pressed at " + Time.time);
             isInteractable = false;
-
             ForInteract();
 
             StartCoroutine(WaitToAllowInteraction());

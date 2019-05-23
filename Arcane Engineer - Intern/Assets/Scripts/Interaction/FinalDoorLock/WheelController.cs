@@ -17,50 +17,51 @@ public class WheelController : KeyDownInteractable {
 
 	// Use this for initialization
 	void Start () {
-		currentAngle = this.transform.rotation.y;   // Axis may need to be readjusted on asset reimport
+		currentAngle = this.transform.eulerAngles.y;   // Axis may need to be readjusted on asset reimport
         inMotion = false;
-        canInteract = false;
+        canInteract = true;
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.E) && canInteract && !inMotion)
-        {
-            Interact();
-        }
-    }
-
     // Override method for interacting with this wheel object
     protected override void ForInteract()
     {
         if (canInteract)
         {
+            this.transform.Rotate(0, 90, 0, Space.Self);
             // inMotion prevents spamming the interaction
-            inMotion = true;
-            StartCoroutine(RotateWheel());
-            inMotion = false;
+            //inMotion = true;
+            //StartCoroutine(RotateWheel());
+            //inMotion = false;
             // Update the wheel position in the DialController
-            currentPosition = (currentPosition++) % 4;
-            this.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber] = currentPosition;
+            currentPosition++;
+            currentPosition = currentPosition % 4;
+            Debug.Log("In WheelController - ForInteract() - currentPosition = " + currentPosition);
+            Debug.Log("In WheelController - ForInteract() - parentname = " + this.transform.parent.transform.parent.name);
+            this.transform.parent.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber - 1] = currentPosition;
+            //Debug.Log("in interact");
         }
     }
 
     // Coroutine for moving the wheel
-    IEnumerator RotateWheel()
-    {
-        float targetAngle = currentAngle + rotationModifier;
-        float currentRotation = 0;
+    //IEnumerator RotateWheel()
+    //{
+        
+        //float targetAngle = currentAngle + rotationModifier;
+        //float currentRotation = 0;
 
-        while (currentRotation < targetAngle)
-        {
-            if (currentRotation + rotationSpeed < targetAngle)
-                currentRotation += rotationSpeed;
-            else
-                currentRotation = targetAngle;
-            this.gameObject.transform.Rotate(0, currentRotation, 0, Space.Self);
-            yield return new WaitForFixedUpdate(); // Possibly not the way we want this set up.
-        }
-    }
+        //while (currentRotation < targetAngle)
+        //{
+        //    if (currentRotation + rotationSpeed < targetAngle)
+        //        currentRotation += rotationSpeed;
+        //    else
+        //        currentRotation = targetAngle;
+        //    //this.gameObject.transform.Rotate(0, currentRotation, 0, Space.Self);
+        //    Debug.Log("in RotateWheel");
+        //    //transform.eulerAngles = new Vector3( transform.eulerAngles.x, currentRotation, transform.eulerAngles.z);
+        //    transform.Rotate(transform.eulerAngles.x, currentRotation, transform.eulerAngles.z, Space.Self);
+        //    yield return new WaitForSeconds(.05f); // Possibly not the way we want this set up.
+        //}
+    //}
 
     public void Activate()
     {

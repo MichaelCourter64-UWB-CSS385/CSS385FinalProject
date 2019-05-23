@@ -27,17 +27,17 @@ public class DialController : MonoBehaviour {
         errorState = false;
     }
 
-    void FixedUpdate()
-    {
-        if (hasPower)
-        {
-            for (int i = 0; i < this.transform.childCount; i++)
-            {
-                if (this.transform.GetChild(i).GetComponent<WheelController>() != null)
-                    this.transform.GetChild(i).GetComponent<WheelController>().Activate();
-            }
-        }
-    }
+    //void FixedUpdate()      // Possibly the problem?? Needs a firstActivation bool??  Probably just remove or move to activate()...
+    //{
+    //    if (hasPower)
+    //    {
+    //        for (int i = 0; i < this.transform.childCount; i++)
+    //        {
+    //            if (this.transform.GetChild(i).GetComponent<WheelController>() != null)
+    //                this.transform.GetChild(i).GetComponent<WheelController>().Activate();
+    //        }
+    //    }
+    //}
 
     // Validate Wheel Positions
     // Checks whether any wheels are pointed to the same position; if so, returns false. 
@@ -46,11 +46,14 @@ public class DialController : MonoBehaviour {
     {
         for (int n = 0; n < 3; n++)
         {
-            for (int m = (n + 1); m < 4; m++)
+            int m = (n + 1);
+            for (; m < 4; m++)
             {
                 if (WheelPositions[n] == WheelPositions[m])
                 {
                     errorState = true;
+                    Debug.Log("In DialController - Validate Wheel Positions - Invalid Wheel Positions:");
+                    Debug.Log("Wheel " + n + " = " + WheelPositions[n] + "and Wheel " + m + " = " + WheelPositions[m]);
                     return;
                 }
             }
@@ -99,7 +102,7 @@ public class DialController : MonoBehaviour {
         int[] permutedCopy = new int[upstreamValues.Length];
         for (int i = 0; i < upstreamValues.Length; i++)
         {
-            permutedCopy[i] = upstreamValues[WheelPositions[i] + 1]; // Plus 1 to avoid the 0 index "off material"
+            permutedCopy[i] = upstreamValues[WheelPositions[i]]; //+ 1]; // Plus 1 to avoid the 0 index "off material"
         }
         return permutedCopy;
     }

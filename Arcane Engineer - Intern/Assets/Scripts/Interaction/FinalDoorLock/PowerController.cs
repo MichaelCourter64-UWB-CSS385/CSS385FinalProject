@@ -38,17 +38,19 @@ public class PowerController : MonoBehaviour {
         //earthOn = false;
         //windOn = false;
 
+        // For debugging purposes
         waterOn = true;
         fireOn = true;
         earthOn = true;
         windOn = true;
+        PowerOn();
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (waterOn && fireOn && earthOn && windOn)
-            PowerOn();
-	}
+	//void Update () {
+ //       if (waterOn && fireOn && earthOn && windOn)
+ //           PowerOn();
+	//}
 
     void PowerOn()
     {

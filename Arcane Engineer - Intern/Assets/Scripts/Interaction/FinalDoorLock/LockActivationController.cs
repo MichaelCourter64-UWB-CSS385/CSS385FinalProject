@@ -33,25 +33,26 @@ public class LockActivationController : KeyDownInteractable {
         inTimeout = false;
         isCheckingLock = false;
         isCorrect = false;
+        Debug.Log("In Lock Activation - Start");
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.E) && hasPower && !inTimeout)
-        {
-            Interact();
-        }
-    }
-
     protected override void ForInteract()
     {
-        timeoutTimer = Time.time + timeoutDuration;
-        inTimeout = true;
+        Debug.Log("In Lock Activation - ForInteract");
+        //timeoutTimer = Time.time + timeoutDuration;
+        //inTimeout = true;
         isCheckingLock = !isCheckingLock;
         if (isCheckingLock == true)
+        {
             Activate();
+            Debug.Log("In Lock Activation - interact - activate");
+        }
         else
+        {
             Deactivate();
+            Debug.Log("In Lock Activation - interact - dectivate");
+        }
+            
     }
 
     void Activate()
@@ -60,17 +61,30 @@ public class LockActivationController : KeyDownInteractable {
         {
             // Ugly, but seemingly the only way to get unity to allow this
             if (go.GetComponent<LightPanelController>() != null)
+            {
                 go.GetComponent<LightPanelController>().Activate();
+                Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - LightPanelController");
+            }
             if (go.GetComponent<DialController>() != null)
+            {
                 go.GetComponent<DialController>().Activate();
+                Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - DialController");
+            }
+
         }
         foreach (GameObject go in executionOrder2)
         {
             // Ugly, but seemingly the only way to get unity to allow this
             if (go.GetComponent<LightPanelController>() != null)
+            {
                 go.GetComponent<LightPanelController>().Activate();
+                Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - LightPanelController");
+            }
             if (go.GetComponent<DialController>() != null)
+            {
                 go.GetComponent<DialController>().Activate();
+                Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - DialController");
+            }
         }
         if (validateLockCombo())
         {
@@ -108,9 +122,33 @@ public class LockActivationController : KeyDownInteractable {
             && executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>() != null)
         {
             int[] lefttargetvals = leftTarget.GetComponent<LightPanelController>().PassValues();
+            Debug.Log("In Lock Activation - ValidateLockCombo() - lefttargetvals: ");
+            foreach (int i in lefttargetvals)
+            {
+                Debug.Log(i);
+            }
+
             int[] leftresultvals = executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>().PassValues();
+            Debug.Log("In Lock Activation - ValidateLockCombo() - leftresultvals: ");
+            foreach (int i in leftresultvals)
+            {
+                Debug.Log(i);
+            }
+
             int[] righttargetvals = righttTarget.GetComponent<LightPanelController>().PassValues();
+            Debug.Log("In Lock Activation - ValidateLockCombo() - righttargetvals: ");
+            foreach (int i in righttargetvals)
+            {
+                Debug.Log(i);
+            }
+
             int[] rightresultvals = executionOrder1[executionOrder1.Length - 1].GetComponent<LightPanelController>().PassValues();
+            Debug.Log("In Lock Activation - ValidateLockCombo() - rightresultvals: ");
+            foreach (int i in rightresultvals)
+            {
+                Debug.Log(i);
+            }
+
             for (int i = 0; i < leftresultvals.Length; i++)
             {
                 if (lefttargetvals[i] != leftresultvals[i] || righttargetvals[i] != rightresultvals[i])

@@ -41,9 +41,11 @@ public class LightPanelController : MonoBehaviour {
     {
         int[] copy = new int[settings.Length];
         // ensure deep copy
+        Debug.Log("In LightPanelController - PassValues() - " + this.transform.name);
         for (int i = 0; i < settings.Length; i++)
         {
             copy[i] = settings[i];
+            Debug.Log(copy[i]);
         }
         return copy;
     }

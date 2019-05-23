@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4575309774535484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4123935725050736}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 23647171728232726}
   - component: {fileID: 64380924152747736}
   - component: {fileID: 114061139917791296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4702088062621754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536533858311024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4701014619015908}
   - component: {fileID: 95033833181456010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhiteRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4153650852625362}
   - component: {fileID: 95786063791706318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrownRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4716219617332340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPipe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4951557206316230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPipe4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4424732342768268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4067012654072302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPipe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4655488147597646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4412512371047784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 23493563859201302}
   - component: {fileID: 64053219951568106}
   - component: {fileID: 114812844583289150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ring1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 23781000346269990}
   - component: {fileID: 64647692433140948}
   - component: {fileID: 114151156230273520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ring3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4910364304616232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 23657626542970776}
   - component: {fileID: 64793405529130932}
   - component: {fileID: 114213434182448098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ring4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4880634269477378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pPipe3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4022896324215990}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4220834585733928}
   - component: {fileID: 95247545981044224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BlueRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +377,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4055449567480430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4602288314867182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197881288395334}
   - component: {fileID: 95579034795853686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RedRing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4207228699006520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: transform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,6 +1244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDisableTime: 1
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 2
@@ -1258,6 +1259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDisableTime: 1
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 3
@@ -1272,6 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDisableTime: 1
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 4
@@ -1286,6 +1289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDisableTime: 1
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 1
