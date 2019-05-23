@@ -19,22 +19,19 @@ public class EarthButton : KeyDownInteractable {
 	// Update is called once per frame
 	void Update () {
 		bool canLiftMore = blockToRotate.transform.position.y <= 10.75f;
-		bool canLowerMore =	blockToRotate.transform.position.y >= 1f;
+		bool canLowerMore =	blockToRotate.transform.position.y >= 1.25f;
 		bool usesCorrectRotation = (blockToRotate.transform.eulerAngles == correctRotation);
 
 		if (canLift && canLiftMore && !canLower) {
 			pillarToLift.transform.position += Vector3.up * Time.deltaTime;
 		} else if (!canLiftMore && usesCorrectRotation) {
 			// Unlock wellspring
-			print("wellspring unlocked!");
 			canLift = false;
 			return;
 		} else if (!canLiftMore && !canLower) {
-			print("should start lowering");
 			canLower = true;
 		} else if (canLowerMore && canLower) {
 			// Lower the pillar back to the starting state
-			print("puzzle failed, lowering pillar");
 			pillarToLift.transform.position -= Vector3.up * Time.deltaTime;
 		} else if (!canLowerMore) {
 			canLower = false;
