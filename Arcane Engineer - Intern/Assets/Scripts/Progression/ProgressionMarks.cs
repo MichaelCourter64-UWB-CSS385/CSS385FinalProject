@@ -1,5 +1,7 @@
-﻿public enum ProgressionMarks
+public enum ProgressionMarks
 {
     FountainFixed,
-    FireplaceFixed
+    FireplaceFixed,
+    CubeFixed,
+    WindMachineFixed
 }
