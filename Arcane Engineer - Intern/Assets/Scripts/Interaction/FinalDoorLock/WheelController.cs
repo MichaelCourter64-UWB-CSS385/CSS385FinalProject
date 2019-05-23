@@ -28,40 +28,14 @@ public class WheelController : KeyDownInteractable {
         if (canInteract)
         {
             this.transform.Rotate(0, 90, 0, Space.Self);
-            // inMotion prevents spamming the interaction
-            //inMotion = true;
-            //StartCoroutine(RotateWheel());
-            //inMotion = false;
             // Update the wheel position in the DialController
             currentPosition++;
             currentPosition = currentPosition % 4;
-            Debug.Log("In WheelController - ForInteract() - currentPosition = " + currentPosition);
-            Debug.Log("In WheelController - ForInteract() - parentname = " + this.transform.parent.transform.parent.name);
+            // Debug.Log("In WheelController - ForInteract() - currentPosition = " + currentPosition);
+            // Debug.Log("In WheelController - ForInteract() - parentname = " + this.transform.parent.transform.parent.name);
             this.transform.parent.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber - 1] = currentPosition;
-            //Debug.Log("in interact");
         }
     }
-
-    // Coroutine for moving the wheel
-    //IEnumerator RotateWheel()
-    //{
-        
-        //float targetAngle = currentAngle + rotationModifier;
-        //float currentRotation = 0;
-
-        //while (currentRotation < targetAngle)
-        //{
-        //    if (currentRotation + rotationSpeed < targetAngle)
-        //        currentRotation += rotationSpeed;
-        //    else
-        //        currentRotation = targetAngle;
-        //    //this.gameObject.transform.Rotate(0, currentRotation, 0, Space.Self);
-        //    Debug.Log("in RotateWheel");
-        //    //transform.eulerAngles = new Vector3( transform.eulerAngles.x, currentRotation, transform.eulerAngles.z);
-        //    transform.Rotate(transform.eulerAngles.x, currentRotation, transform.eulerAngles.z, Space.Self);
-        //    yield return new WaitForSeconds(.05f); // Possibly not the way we want this set up.
-        //}
-    //}
 
     public void Activate()
     {
@@ -72,4 +46,26 @@ public class WheelController : KeyDownInteractable {
     {
         canInteract = false;
     }
+
+
+    // Coroutine for animating the wheel
+    //IEnumerator RotateWheel()
+    //{
+
+    //float targetAngle = currentAngle + rotationModifier;
+    //float currentRotation = 0;
+
+    //while (currentRotation < targetAngle)
+    //{
+    //    if (currentRotation + rotationSpeed < targetAngle)
+    //        currentRotation += rotationSpeed;
+    //    else
+    //        currentRotation = targetAngle;
+    //    //this.gameObject.transform.Rotate(0, currentRotation, 0, Space.Self);
+    //    Debug.Log("in RotateWheel");
+    //    //transform.eulerAngles = new Vector3( transform.eulerAngles.x, currentRotation, transform.eulerAngles.z);
+    //    transform.Rotate(transform.eulerAngles.x, currentRotation, transform.eulerAngles.z, Space.Self);
+    //    yield return new WaitForSeconds(.05f); // Possibly not the way we want this set up.
+    //}
+    //}
 }

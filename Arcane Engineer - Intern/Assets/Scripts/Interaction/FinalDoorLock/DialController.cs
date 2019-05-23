@@ -27,18 +27,6 @@ public class DialController : MonoBehaviour {
         errorState = false;
     }
 
-    //void FixedUpdate()      // Possibly the problem?? Needs a firstActivation bool??  Probably just remove or move to activate()...
-    //{
-    //    if (hasPower)
-    //    {
-    //        for (int i = 0; i < this.transform.childCount; i++)
-    //        {
-    //            if (this.transform.GetChild(i).GetComponent<WheelController>() != null)
-    //                this.transform.GetChild(i).GetComponent<WheelController>().Activate();
-    //        }
-    //    }
-    //}
-
     // Validate Wheel Positions
     // Checks whether any wheels are pointed to the same position; if so, returns false. 
     // Else returns true to indicate valide wheel positioning.
@@ -52,8 +40,8 @@ public class DialController : MonoBehaviour {
                 if (WheelPositions[n] == WheelPositions[m])
                 {
                     errorState = true;
-                    Debug.Log("In DialController - Validate Wheel Positions - Invalid Wheel Positions:");
-                    Debug.Log("Wheel " + n + " = " + WheelPositions[n] + "and Wheel " + m + " = " + WheelPositions[m]);
+                    // Debug.Log("In DialController - Validate Wheel Positions - Invalid Wheel Positions:");
+                    // Debug.Log("Wheel " + n + " = " + WheelPositions[n] + "and Wheel " + m + " = " + WheelPositions[m]);
                     return;
                 }
             }

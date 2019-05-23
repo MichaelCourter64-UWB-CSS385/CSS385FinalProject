@@ -33,7 +33,7 @@ public class LockActivationController : KeyDownInteractable {
         inTimeout = false;
         isCheckingLock = false;
         isCorrect = false;
-        Debug.Log("In Lock Activation - Start");
+        // Debug.Log("In Lock Activation - Start");
     }
 	
     protected override void ForInteract()
@@ -45,12 +45,12 @@ public class LockActivationController : KeyDownInteractable {
         if (isCheckingLock == true)
         {
             Activate();
-            Debug.Log("In Lock Activation - interact - activate");
+            // Debug.Log("In Lock Activation - interact - activate");
         }
         else
         {
             Deactivate();
-            Debug.Log("In Lock Activation - interact - dectivate");
+            // Debug.Log("In Lock Activation - interact - dectivate");
         }
             
     }
@@ -63,12 +63,12 @@ public class LockActivationController : KeyDownInteractable {
             if (go.GetComponent<LightPanelController>() != null)
             {
                 go.GetComponent<LightPanelController>().Activate();
-                Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - LightPanelController");
+                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - LightPanelController");
             }
             if (go.GetComponent<DialController>() != null)
             {
                 go.GetComponent<DialController>().Activate();
-                Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - DialController");
+                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - DialController");
             }
 
         }
@@ -78,12 +78,12 @@ public class LockActivationController : KeyDownInteractable {
             if (go.GetComponent<LightPanelController>() != null)
             {
                 go.GetComponent<LightPanelController>().Activate();
-                Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - LightPanelController");
+                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - LightPanelController");
             }
             if (go.GetComponent<DialController>() != null)
             {
                 go.GetComponent<DialController>().Activate();
-                Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - DialController");
+                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - DialController");
             }
         }
         if (validateLockCombo())
@@ -122,31 +122,31 @@ public class LockActivationController : KeyDownInteractable {
             && executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>() != null)
         {
             int[] lefttargetvals = leftTarget.GetComponent<LightPanelController>().PassValues();
-            Debug.Log("In Lock Activation - ValidateLockCombo() - lefttargetvals: ");
+            // Debug.Log("In Lock Activation - ValidateLockCombo() - lefttargetvals: ");
             foreach (int i in lefttargetvals)
             {
-                Debug.Log(i);
+                // Debug.Log(i);
             }
 
             int[] leftresultvals = executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>().PassValues();
-            Debug.Log("In Lock Activation - ValidateLockCombo() - leftresultvals: ");
+            // Debug.Log("In Lock Activation - ValidateLockCombo() - leftresultvals: ");
             foreach (int i in leftresultvals)
             {
-                Debug.Log(i);
+                // Debug.Log(i);
             }
 
             int[] righttargetvals = righttTarget.GetComponent<LightPanelController>().PassValues();
-            Debug.Log("In Lock Activation - ValidateLockCombo() - righttargetvals: ");
+            // Debug.Log("In Lock Activation - ValidateLockCombo() - righttargetvals: ");
             foreach (int i in righttargetvals)
             {
-                Debug.Log(i);
+                // Debug.Log(i);
             }
 
             int[] rightresultvals = executionOrder1[executionOrder1.Length - 1].GetComponent<LightPanelController>().PassValues();
-            Debug.Log("In Lock Activation - ValidateLockCombo() - rightresultvals: ");
+            // Debug.Log("In Lock Activation - ValidateLockCombo() - rightresultvals: ");
             foreach (int i in rightresultvals)
             {
-                Debug.Log(i);
+                // Debug.Log(i);
             }
 
             for (int i = 0; i < leftresultvals.Length; i++)
