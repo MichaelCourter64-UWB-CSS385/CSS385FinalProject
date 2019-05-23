@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockActivationController : Interactable {
+public class LockActivationController : KeyDownInteractable {
     [Header("Activation Settings")]
     [SerializeField] float timeoutDuration;
 
@@ -43,7 +43,7 @@ public class LockActivationController : Interactable {
         }
     }
 
-    public override void Interact()
+    protected override void ForInteract()
     {
         timeoutTimer = Time.time + timeoutDuration;
         inTimeout = true;

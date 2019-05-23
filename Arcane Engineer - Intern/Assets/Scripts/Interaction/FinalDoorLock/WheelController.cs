@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheelController : Interactable {
+public class WheelController : KeyDownInteractable {
     // Used for "animation" of wheel rotation
     [SerializeField] float rotationSpeed;
     // Sets direction and angle of rotation in degrees (90 is standard)
@@ -31,7 +31,7 @@ public class WheelController : Interactable {
     }
 
     // Override method for interacting with this wheel object
-    public override void Interact()
+    protected override void ForInteract()
     {
         if (canInteract)
         {
