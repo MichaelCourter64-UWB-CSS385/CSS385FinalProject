@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class EarthButton : KeyDownInteractable {
 	[SerializeField] GameObject blockToRotate;
+	[SerializeField] GameObject pillarToLift;
 	[SerializeField] int buttonId;
+
+	private bool canLift = false;
+	private bool canLower = false;
+	private Vector3 correctRotation = new Vector3(90, 0, 0);
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +18,28 @@ public class EarthButton : KeyDownInteractable {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		bool canLiftMore = blockToRotate.transform.position.y <= 10.75f;
+		bool canLowerMore =	blockToRotate.transform.position.y >= 1f;
+		bool usesCorrectRotation = (blockToRotate.transform.eulerAngles == correctRotation);
+
+		if (canLift && canLiftMore && !canLower) {
+			pillarToLift.transform.position += Vector3.up * Time.deltaTime;
+		} else if (!canLiftMore && usesCorrectRotation) {
+			// Unlock wellspring
+			print("wellspring unlocked!");
+			canLift = false;
+			return;
+		} else if (!canLiftMore && !canLower) {
+			print("should start lowering");
+			canLower = true;
+		} else if (canLowerMore && canLower) {
+			// Lower the pillar back to the starting state
+			print("puzzle failed, lowering pillar");
+			pillarToLift.transform.position -= Vector3.up * Time.deltaTime;
+		} else if (!canLowerMore) {
+			canLower = false;
+			canLift = false;
+		}
 	}
 
 	protected override void ForInteract() {
@@ -28,7 +54,7 @@ public class EarthButton : KeyDownInteractable {
 			blockToRotate.transform.eulerAngles += new Vector3(0, 0, 90);
 			break;
 		case 3:
-			print("submit");
+			canLift = true;
 			break;
 		default:
 			break;
