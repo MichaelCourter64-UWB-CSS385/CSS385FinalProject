@@ -38,7 +38,7 @@ public class LockActivationController : KeyDownInteractable {
 	
     protected override void ForInteract()
     {
-        Debug.Log("In Lock Activation - ForInteract");
+        //Debug.Log("In Lock Activation - ForInteract");
         //timeoutTimer = Time.time + timeoutDuration;
         //inTimeout = true;
         isCheckingLock = !isCheckingLock;
@@ -95,21 +95,17 @@ public class LockActivationController : KeyDownInteractable {
 
     void Deactivate()
     {
-        foreach (GameObject go in executionOrder1)
+        for (int i = 1; i < executionOrder1.Length; i++)
         {
             // Ugly, but seemingly the only way to get unity to allow this
-            if (go.GetComponent<LightPanelController>() != null)
-                go.GetComponent<LightPanelController>().Deactivate();
-            if (go.GetComponent<DialController>() != null)
-                go.GetComponent<DialController>().Deactivate();
-        }
-        foreach (GameObject go in executionOrder2)
-        {
-            // Ugly, but seemingly the only way to get unity to allow this
-            if (go.GetComponent<LightPanelController>() != null)
-                go.GetComponent<LightPanelController>().Deactivate();
-            if (go.GetComponent<DialController>() != null)
-                go.GetComponent<DialController>().Deactivate();
+            if (executionOrder1[i].GetComponent<LightPanelController>() != null)
+                executionOrder1[i].GetComponent<LightPanelController>().Deactivate();
+            if (executionOrder1[i].GetComponent<DialController>() != null)
+                executionOrder1[i].GetComponent<DialController>().Deactivate();
+            if (executionOrder2[i].GetComponent<LightPanelController>() != null)
+                executionOrder2[i].GetComponent<LightPanelController>().Deactivate();
+            if (executionOrder2[i].GetComponent<DialController>() != null)
+                executionOrder2[i].GetComponent<DialController>().Deactivate();
         }
     }
 

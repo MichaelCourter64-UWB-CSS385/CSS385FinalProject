@@ -18,8 +18,8 @@ public class DialController : MonoBehaviour {
 
     // Array for storing the values from the "upstream" light panels
     // private Color[] lightColors = new Color[4];
-    int[] upstreamValuesLeft;
-    int[] upstreamValuesRight;
+    [SerializeField] int[] upstreamValuesLeft;      // Serialized for debug
+    [SerializeField] int[] upstreamValuesRight;     // Serialized for debug
 
 
     void Start()
@@ -53,23 +53,23 @@ public class DialController : MonoBehaviour {
     //--------------------------------------- NEW VERSION (int) --------------------------------------------
     //
     // Gets values from previous object in "the chain"
-    public void GetUpstreamValues(bool rightStream)
+    public void GetUpstreamValues(bool leftToRight)
     {
         // Retrieve and store a copy of the light values from the appropriate upstream object (light panel)
-        if (rightStream)
-            upstreamValuesRight = upstreamObjectRight.GetComponent<LightPanelController>().PassValues();
-        else
+        if (leftToRight)
             upstreamValuesLeft = upstreamObjectLeft.GetComponent<LightPanelController>().PassValues();
+        else
+            upstreamValuesRight = upstreamObjectRight.GetComponent<LightPanelController>().PassValues();
     }
 
     // Passes values to downstream object 
     // Note: Values are permuted by dial settings since this is the dial's function
-    public int[] PassValues(bool rightStream)
+    public int[] PassValues(bool leftToRight)
     {
         ValidateWheelPositions();
         if (!errorState)
         {
-            if (rightStream)
+            if (leftToRight)
                 return CopyAndPermute(upstreamValuesLeft);
             else
                 return CopyAndPermute(upstreamValuesRight);
@@ -88,9 +88,14 @@ public class DialController : MonoBehaviour {
     private int[] CopyAndPermute(int[] upstreamValues)
     {
         int[] permutedCopy = new int[upstreamValues.Length];
+        //for (int i = 0; i < upstreamValues.Length; i++)
+        //{
+        //    permutedCopy[i] = upstreamValues[WheelPositions[i]]; //+ 1]; // Plus 1 to avoid the 0 index "off material"
+        //}
+        
         for (int i = 0; i < upstreamValues.Length; i++)
         {
-            permutedCopy[i] = upstreamValues[WheelPositions[i]]; //+ 1]; // Plus 1 to avoid the 0 index "off material"
+            permutedCopy[WheelPositions[i]] = upstreamValues[i];
         }
         return permutedCopy;
     }

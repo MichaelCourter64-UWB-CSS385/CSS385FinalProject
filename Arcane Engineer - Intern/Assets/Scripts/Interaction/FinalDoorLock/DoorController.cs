@@ -17,7 +17,8 @@ public class DoorController : MonoBehaviour {
     public void Open()
     {
         unlocked = true;
-        StartCoroutine(swingOpen());
+        this.transform.Rotate(0, 90, 0, Space.Self);
+        //StartCoroutine(swingOpen());
     }
 
     private IEnumerator swingOpen()

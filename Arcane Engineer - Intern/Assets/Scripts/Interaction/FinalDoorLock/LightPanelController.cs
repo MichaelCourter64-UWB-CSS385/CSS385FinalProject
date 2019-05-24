@@ -7,12 +7,13 @@ public class LightPanelController : MonoBehaviour {
     [SerializeField] bool isOn;
     [SerializeField] bool isStartpoint;
     [SerializeField] bool isEndpoint;
-    [SerializeField] bool rightStream;                         // Tracks direction of power flow for this panel 
+    [SerializeField] bool leftToRightStream;                         // Tracks direction of power flow for this panel 
     [SerializeField] GameObject upstreamObject;                // Previous object in the "chain" that feeds into this panel
     [SerializeField] GameObject[] lights = new GameObject[4];  // Connected to child light objects' renderers to avoid 
     [SerializeField] Material[] mats = new Material[6];        // Array of possible materials to use
 
-    private int[] settings;                                    // Array storing the indicator light current settings (color arrangegment)
+    //private int[] settings;                                    // Array storing the indicator light current settings (color arrangegment)
+    [SerializeField] private int[] settings;                     // Serialized for debugging
 
     //// Old Version
     //private Color[] lightColors;                             // Array containing color values of lights
@@ -20,16 +21,16 @@ public class LightPanelController : MonoBehaviour {
 
     void Start()
     {
-        isOn = false;
-        isStartpoint = false;
-        isEndpoint = false;
+        //isOn = false;
+        //isStartpoint = false;
+        //isEndpoint = false;
         settings = new int[lights.Length];
     }
 
     public void GetUpstreamValues()
     {
         if (upstreamObject.GetComponent<DialController>() != null)
-            settings = upstreamObject.GetComponent<DialController>().PassValues(rightStream);
+            settings = upstreamObject.GetComponent<DialController>().PassValues(leftToRightStream);
         if (upstreamObject.GetComponent<LightPanelController>() != null)
             settings = upstreamObject.GetComponent<LightPanelController>().PassValues();
         if (upstreamObject.GetComponent<PowerboxOutput>() != null)
@@ -57,7 +58,7 @@ public class LightPanelController : MonoBehaviour {
         isOn = true;
         for (int i = 0; i < lights.Length; i++)
         {
-            lights[i].GetComponent<Renderer>().material = mats[settings[i]];
+            lights[i].GetComponent<Renderer>().material = mats[settings[i]]; 
         }
     }
 
