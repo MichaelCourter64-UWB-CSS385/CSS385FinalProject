@@ -276,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0821de696e93ea4eb77719b4f12d235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionDisableTime: 1
   leverRotationPoint: {fileID: 1018759847103104}
   onAngleDifference: 30
   rotationSpeed: 1

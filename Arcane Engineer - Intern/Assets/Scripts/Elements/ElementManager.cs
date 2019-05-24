@@ -41,8 +41,6 @@ public class ElementManager : MonoBehaviour {
 			Debug.Log("Error: The ElementId of " + elementId + " is not a valid elementId");
 			return;
 		}
-
-		Debug.Log("You've successfully selected: " + selectedElement);
 	}
 
 	// MARK: Public
