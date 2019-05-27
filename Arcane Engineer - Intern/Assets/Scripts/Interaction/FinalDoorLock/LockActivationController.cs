@@ -18,7 +18,18 @@ public class LockActivationController : KeyDownInteractable {
     [SerializeField] GameObject leftTarget;
     [Tooltip("WARNING: Altering these object references is highly likely to break lock functionality!")]
     [SerializeField] GameObject righttTarget;
+    [Tooltip("WARNING: Altering these object references is highly likely to break lock functionality!")]
     [SerializeField] GameObject door;
+
+    // From Interactable Lever Script
+    // Moved here because having two interactable abstract instances on the same object breaks functionality.
+    [SerializeField] GameObject leverRotationPoint;
+    [SerializeField] float onAngleDifference;
+    [SerializeField] float rotationSpeed;
+
+    float offAngle;
+    float onAngle;
+    bool isOn = false;
 
     public bool hasPower;
     bool inTimeout;
@@ -33,7 +44,10 @@ public class LockActivationController : KeyDownInteractable {
         inTimeout = false;
         isCheckingLock = false;
         isCorrect = false;
-        // Debug.Log("In Lock Activation - Start");
+        // From Interactable Lever Script
+        // Assumes that the lever rotates on the x-axis when being turned on/off
+        offAngle = leverRotationPoint.transform.eulerAngles.x;
+        onAngle = offAngle - onAngleDifference;
     }
 	
     protected override void ForInteract()
@@ -45,11 +59,15 @@ public class LockActivationController : KeyDownInteractable {
         if (isCheckingLock == true)
         {
             Activate();
+            StartCoroutine(ShiftLever(!isOn));
+            isOn = !isOn;
             // Debug.Log("In Lock Activation - interact - activate");
         }
         else
         {
             Deactivate();
+            StartCoroutine(ShiftLever(!isOn));
+            isOn = !isOn;
             // Debug.Log("In Lock Activation - interact - dectivate");
         }
             
@@ -95,6 +113,7 @@ public class LockActivationController : KeyDownInteractable {
 
     void Deactivate()
     {
+        door.GetComponent<DoorController>().Close();
         for (int i = 1; i < executionOrder1.Length; i++)
         {
             // Ugly, but seemingly the only way to get unity to allow this
@@ -118,33 +137,9 @@ public class LockActivationController : KeyDownInteractable {
             && executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>() != null)
         {
             int[] lefttargetvals = leftTarget.GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - lefttargetvals: ");
-            foreach (int i in lefttargetvals)
-            {
-                // Debug.Log(i);
-            }
-
             int[] leftresultvals = executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - leftresultvals: ");
-            foreach (int i in leftresultvals)
-            {
-                // Debug.Log(i);
-            }
-
             int[] righttargetvals = righttTarget.GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - righttargetvals: ");
-            foreach (int i in righttargetvals)
-            {
-                // Debug.Log(i);
-            }
-
             int[] rightresultvals = executionOrder1[executionOrder1.Length - 1].GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - rightresultvals: ");
-            foreach (int i in rightresultvals)
-            {
-                // Debug.Log(i);
-            }
-
             for (int i = 0; i < leftresultvals.Length; i++)
             {
                 if (lefttargetvals[i] != leftresultvals[i] || righttargetvals[i] != rightresultvals[i])
@@ -155,5 +150,20 @@ public class LockActivationController : KeyDownInteractable {
             return true;
         }
         return false;
+    }
+
+    IEnumerator ShiftLever(bool toOn)
+    {
+        float angleToReach = Mathf.Abs(onAngle - offAngle);
+        float currentRotated = 0;
+        int directionModifier = toOn ? -1 : 1;
+
+        while (currentRotated < angleToReach)
+        {
+            yield return new WaitForFixedUpdate();
+
+            leverRotationPoint.transform.eulerAngles += new Vector3(rotationSpeed * directionModifier, 0, 0);
+            currentRotated += rotationSpeed;
+        }
     }
 }
