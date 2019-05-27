@@ -32,6 +32,7 @@ public class PlayerControl : MonoBehaviour
 
 	// Element casting.
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
+    [SerializeField] GameObject elementManagerHolder;
     [SerializeField] GameObject waterStream;
     [SerializeField] GameObject earthStream;
     [SerializeField] GameObject fireStream;
@@ -55,7 +56,7 @@ public class PlayerControl : MonoBehaviour
         playersRigidBody = GetComponent<Rigidbody>();
         interactionIndicatorUI = interactionIndicatorUIHolder.GetComponent<Image>();
         interactionIndicatorToolTip = interactionIndicatorToolTipHolder.GetComponent<Text>();
-		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
+		elementManager = elementManagerHolder.GetComponent<ElementManager>();
 	}
 	
 	// Update is called once per frame
