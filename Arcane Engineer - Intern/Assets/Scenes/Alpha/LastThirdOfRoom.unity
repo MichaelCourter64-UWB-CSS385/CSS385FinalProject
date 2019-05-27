@@ -966,6 +966,11 @@ Prefab:
       propertyPath: isEndpoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114237899819699796, guid: 6e91771edabc47c489e222f864e35fe7,
+        type: 2}
+      propertyPath: leftToRightStream
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e91771edabc47c489e222f864e35fe7, type: 2}
   m_IsPrefabParent: 0
@@ -1033,12 +1038,12 @@ Prefab:
         type: 2}
       propertyPath: upstreamObjectLeft
       value: 
-      objectReference: {fileID: 860229267}
+      objectReference: {fileID: 1213301080}
     - target: {fileID: 114914283420678826, guid: 2a5ce0bd2e32eeb4b9e5497cb31c3c4b,
         type: 2}
       propertyPath: upstreamObjectRight
       value: 
-      objectReference: {fileID: 1213301080}
+      objectReference: {fileID: 860229267}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a5ce0bd2e32eeb4b9e5497cb31c3c4b, type: 2}
   m_IsPrefabParent: 0
@@ -1256,6 +1261,11 @@ Prefab:
     - target: {fileID: 114237899819699796, guid: 6e91771edabc47c489e222f864e35fe7,
         type: 2}
       propertyPath: rightStream
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114237899819699796, guid: 6e91771edabc47c489e222f864e35fe7,
+        type: 2}
+      propertyPath: leftToRightStream
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1516,6 +1526,11 @@ Prefab:
       propertyPath: wheelNumber
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114812844583289150, guid: 2a5ce0bd2e32eeb4b9e5497cb31c3c4b,
+        type: 2}
+      propertyPath: wheelNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a5ce0bd2e32eeb4b9e5497cb31c3c4b, type: 2}
   m_IsPrefabParent: 0
@@ -1737,6 +1752,11 @@ Prefab:
       propertyPath: isStartpoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114237899819699796, guid: 6e91771edabc47c489e222f864e35fe7,
+        type: 2}
+      propertyPath: leftToRightStream
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6e91771edabc47c489e222f864e35fe7, type: 2}
   m_IsPrefabParent: 0
@@ -1890,7 +1910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452dafe7a329b7d46939ccb1defcaa6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialValues: 01000000030000000400000002000000
+  InitialValues: 01000000030000000200000004000000
   connection: {fileID: 1941855435}
 --- !u!23 &1699587182
 MeshRenderer:
