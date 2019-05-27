@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 1
   elementToRestore: 2
   meterManagerHolder: {fileID: 1228630556}
@@ -461,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 0
   elementToRestore: 0
   meterManagerHolder: {fileID: 1228630556}
@@ -601,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Somewhat Increase Pressure
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.1
   isRotatingRight: 1
@@ -1001,6 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Barely Decrease Pressure
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.02
   isRotatingRight: 0
@@ -1361,6 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Barely Increase Pressure
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.02
   isRotatingRight: 1
@@ -1783,6 +1788,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -1896,6 +1906,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -2113,6 +2128,31 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224297085125198874, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224722706053522682, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224439186621529142, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114776433138822432, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: interactionIndicatorToolTipHolder
+      value: 
+      objectReference: {fileID: 1696689905}
+    - target: {fileID: 20700719657923198, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: near clip plane
+      value: 0.21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80553864f298b304aa696b731d0911b8, type: 2}
   m_IsPrefabParent: 0
@@ -2240,6 +2280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Somewhat Decrease Pressure
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.1
   isRotatingRight: 0
@@ -2375,6 +2416,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -2845,6 +2891,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -3683,6 +3734,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -4124,6 +4180,80 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fda033edef7d26746b0f02e8c1022d3f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1696689905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1696689906}
+  - component: {fileID: 1696689908}
+  - component: {fileID: 1696689907}
+  m_Layer: 0
+  m_Name: InteractionToolTipText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1696689906
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696689905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1978566058}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.39, y: -43.5}
+  m_SizeDelta: {x: 138.18, y: 61.75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1696689907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696689905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 3
+    m_MaxSize: 25
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: <inital text>
+--- !u!222 &1696689908
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696689905}
 --- !u!4 &1720610809 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1,
@@ -4680,6 +4810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Greatly Increase Pressure
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.33
   isRotatingRight: 1
@@ -4783,6 +4914,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -5006,6 +5142,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1977464841}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!224 &1978566058 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224297085125198874, guid: 80553864f298b304aa696b731d0911b8,
+    type: 2}
+  m_PrefabInternal: {fileID: 900488374}
 --- !u!4 &1990275041 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1,
@@ -5093,6 +5234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39696c95cd6dc14f8e503546ab784fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 1
   firePlacePanelControllerHolder: {fileID: 0}
   patternNumber: 0
@@ -5229,6 +5371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Greatly Decrease Pressure
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.33
   isRotatingRight: 0
@@ -5363,6 +5506,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
@@ -5559,6 +5707,11 @@ Prefab:
       propertyPath: firePlacePanelControllerHolder
       value: 
       objectReference: {fileID: 1942882524}
+    - target: {fileID: 114186868389494534, guid: ef133901aec4374498204200d2f2fb5c,
+        type: 2}
+      propertyPath: interactionToolTip
+      value: Button 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0

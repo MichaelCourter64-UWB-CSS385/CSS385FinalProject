@@ -27,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float interactionBoxTravelDistance;
     [SerializeField] LayerMask interactionlayer;
     [SerializeField] GameObject interactionIndicatorUIHolder;
+    [SerializeField] GameObject interactionIndicatorToolTipHolder;
 
 	// Element casting.
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
@@ -40,6 +41,7 @@ public class PlayerControl : MonoBehaviour
     Rigidbody playersRigidBody;
 
     Image interactionIndicatorUI;
+    Text interactionIndicatorToolTip;
 
     float xDirection = 0;
 
@@ -51,6 +53,7 @@ public class PlayerControl : MonoBehaviour
     void Start () {
         playersRigidBody = GetComponent<Rigidbody>();
         interactionIndicatorUI = interactionIndicatorUIHolder.GetComponent<Image>();
+        interactionIndicatorToolTip = interactionIndicatorToolTipHolder.GetComponent<Text>();
 		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	
@@ -144,11 +147,12 @@ public class PlayerControl : MonoBehaviour
         if(foundInteractable.transform != null)
         {
             //Debug.Log(foundInteractable.transform.name);
-            interactionIndicatorUI.enabled = true;
+            interactionIndicatorToolTip.text = foundInteractable.transform.GetComponent<Interactable>().InteractionToolTip;
+            interactionIndicatorUIHolder.SetActive(true);
         }
         else
         {
-            interactionIndicatorUI.enabled = false;
+            interactionIndicatorUIHolder.SetActive(false);
         }
 
         if (Input.GetKey(interactKey))
