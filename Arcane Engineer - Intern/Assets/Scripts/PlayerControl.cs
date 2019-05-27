@@ -23,11 +23,12 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float lowerVerticalAngleLimit = -0.15f;
 
     [SerializeField] KeyCode interactKey = KeyCode.E;
-    [SerializeField] Vector3 interactionBoxHalfs;
     [SerializeField] float interactionBoxTravelDistance;
     [SerializeField] LayerMask interactionlayer;
     [SerializeField] GameObject interactionIndicatorUIHolder;
     [SerializeField] GameObject interactionIndicatorToolTipHolder;
+    [SerializeField] float indicatorBaseSize;
+    [SerializeField] float indicatorFoundInteractSize;
 
 	// Element casting.
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
@@ -142,17 +143,19 @@ public class PlayerControl : MonoBehaviour
     void CheckForInteraction()
     {
         RaycastHit foundInteractable;
-        Physics.BoxCast(cameraHolder.transform.position, interactionBoxHalfs, cameraHolder.transform.TransformDirection(Vector3.forward), out foundInteractable, Quaternion.Euler(Vector3.forward), interactionBoxTravelDistance, interactionlayer.value);
+        Physics.Raycast(cameraHolder.transform.position, cameraHolder.transform.TransformDirection(Vector3.forward), out foundInteractable, interactionBoxTravelDistance, interactionlayer.value);
 
         if(foundInteractable.transform != null)
         {
             //Debug.Log(foundInteractable.transform.name);
+            interactionIndicatorUIHolder.GetComponent<RectTransform>().sizeDelta = new Vector2(indicatorFoundInteractSize, indicatorFoundInteractSize);
             interactionIndicatorToolTip.text = foundInteractable.transform.GetComponent<Interactable>().InteractionToolTip;
-            interactionIndicatorUIHolder.SetActive(true);
+            interactionIndicatorToolTipHolder.SetActive(true);
         }
         else
         {
-            interactionIndicatorUIHolder.SetActive(false);
+            interactionIndicatorUIHolder.GetComponent<RectTransform>().sizeDelta = new Vector2(indicatorBaseSize, indicatorBaseSize);
+            interactionIndicatorToolTipHolder.SetActive(false);
         }
 
         if (Input.GetKey(interactKey))
