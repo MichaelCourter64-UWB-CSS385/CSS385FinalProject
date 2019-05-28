@@ -52,7 +52,7 @@ public class PlayerControl : MonoBehaviour
     Elements currentElement;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         playersRigidBody = GetComponent<Rigidbody>();
         interactionIndicatorUI = interactionIndicatorUIHolder.GetComponent<Image>();
         interactionIndicatorToolTip = interactionIndicatorToolTipHolder.GetComponent<Text>();

@@ -9,7 +9,7 @@ public class InteractableWellspring : Interactable, ProgressionSubscribed {
 
     MeterManager meterManager;
 
-    void Start()
+    void Awake()
     {
         meterManager = meterManagerHolder.GetComponent<MeterManager>();
     }

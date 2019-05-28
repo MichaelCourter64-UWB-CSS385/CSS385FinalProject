@@ -13,7 +13,7 @@ public class InteractableLever : KeyDownInteractable
     bool isOn = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         // Assumes that the lever rotates on the x-axis when being turned on/off
         offAngle = leverRotationPoint.transform.eulerAngles.x;
         onAngle = offAngle - onAngleDifference;

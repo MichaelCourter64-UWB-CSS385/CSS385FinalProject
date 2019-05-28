@@ -14,7 +14,7 @@ public class OnHighlight : MonoBehaviour, IPointerEnterHandler {
 	ElementManager elementManager;
 
 	// MARK: Life Cycle
-	void Start () {
+	void Awake () {
 		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	

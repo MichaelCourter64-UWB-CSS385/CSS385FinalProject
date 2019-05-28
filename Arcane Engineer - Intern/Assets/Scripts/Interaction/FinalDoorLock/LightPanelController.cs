@@ -19,7 +19,7 @@ public class LightPanelController : MonoBehaviour {
     //private Color[] lightColors;                             // Array containing color values of lights
 
 
-    void Start()
+    void Awake()
     {
         //isOn = false;
         //isStartpoint = false;

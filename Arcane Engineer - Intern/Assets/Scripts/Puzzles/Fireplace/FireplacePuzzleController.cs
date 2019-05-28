@@ -27,7 +27,7 @@ public class FireplacePuzzleController : MonoBehaviour
     int completionCounter = 0;
     ProgressionSystem progressionSystem;
 
-    void Start()
+    void Awake()
     {
         lights = new Light[lightHolders.Length];
         lightRends = new MeshRenderer[lightHolders.Length];

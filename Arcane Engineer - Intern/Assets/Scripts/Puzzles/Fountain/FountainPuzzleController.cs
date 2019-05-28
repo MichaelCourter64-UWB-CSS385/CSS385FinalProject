@@ -18,7 +18,7 @@ public class FountainPuzzleController : MonoBehaviour {
     ProgressionSystem progressionSystem;
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
     {
         indicatorAnimator = waterLevelIndicator.transform.parent.GetComponent<Animator>();
         indicatorStartingPoint = waterLevelIndicator.transform.position.y;

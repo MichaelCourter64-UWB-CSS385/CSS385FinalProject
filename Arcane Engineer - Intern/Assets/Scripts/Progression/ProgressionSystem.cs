@@ -18,7 +18,7 @@ public class ProgressionSystem : MonoBehaviour {
     // Parameters:
     //      string[] toCopy = the names to use as keys for progress checks
     //
-    void Start()
+    void Awake()
     {
         string[] enumsAsStrings = System.Enum.GetNames(typeof(ProgressionMarks));
 

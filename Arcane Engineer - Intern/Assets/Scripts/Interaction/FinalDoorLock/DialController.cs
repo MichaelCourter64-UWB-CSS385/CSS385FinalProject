@@ -22,7 +22,7 @@ public class DialController : MonoBehaviour {
     [SerializeField] int[] upstreamValuesRight;     // Serialized for debug
 
 
-    void Start()
+    void Awake()
     {
         errorState = false;
     }

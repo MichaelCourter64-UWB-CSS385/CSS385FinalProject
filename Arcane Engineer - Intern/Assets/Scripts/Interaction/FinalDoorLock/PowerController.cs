@@ -32,7 +32,7 @@ public class PowerController : MonoBehaviour {
     private int[] rightTargetVals = new int[4] { 1, 3, 2, 4 };
 
     // Initialization
-    void Start () {
+    void Awake () {
         //waterOn = false;
         //fireOn = false;
         //earthOn = false;

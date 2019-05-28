@@ -9,7 +9,7 @@ public class LayoutController : MonoBehaviour {
 	Image backgroundImage;
 
 	// MARK: Life Cycle
-	void Start () {
+	void Awake () {
 		backgroundImage = GameObject.FindGameObjectWithTag("BackgroundPanel").GetComponent<Image>();
 
 		Color color = backgroundImage.color;

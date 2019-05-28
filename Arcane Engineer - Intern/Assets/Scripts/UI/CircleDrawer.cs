@@ -5,7 +5,7 @@ using UnityEngine;
 public class CircleDrawer : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 	}
 	

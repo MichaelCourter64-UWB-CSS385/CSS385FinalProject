@@ -11,7 +11,7 @@ public class InteractableFireplaceButton : KeyDownInteractable
     FireplacePuzzleController panelController;
     Animator buttonAnimator;
 
-    void Start()
+    void Awake()
     {
         panelController = firePlacePanelControllerHolder.GetComponent<FireplacePuzzleController>();
         buttonAnimator = GetComponent<Animator>();
