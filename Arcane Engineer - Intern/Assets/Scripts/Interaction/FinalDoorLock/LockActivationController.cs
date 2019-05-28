@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LockActivationController : KeyDownInteractable {
+
+    // ----- Added From Interactable Lever -----
+    // Had to includes the interactable lever code in this file because
+    // there can only be one script on any given game object that extends
+    // the interactable abstract class.
+    [SerializeField] GameObject leverRotationPoint;
+    [SerializeField] float onAngleDifference;
+    [SerializeField] float rotationSpeed;
+
+    float offAngle;
+    float onAngle;
+    bool isOn = false;
+
+    // ----- Variables for Lock Activation Controller -----
     [Header("Activation Settings")]
     [SerializeField] float timeoutDuration;
 
@@ -18,13 +32,13 @@ public class LockActivationController : KeyDownInteractable {
     [SerializeField] GameObject leftTarget;
     [Tooltip("WARNING: Altering these object references is highly likely to break lock functionality!")]
     [SerializeField] GameObject righttTarget;
+    [Tooltip("WARNING: Altering these object references is highly likely to break lock functionality!")]
     [SerializeField] GameObject door;
 
     public bool hasPower;
     bool inTimeout;
     bool isCheckingLock;
     bool isCorrect;
-
     float timeoutTimer;
 
     // Use this for initialization
@@ -33,7 +47,9 @@ public class LockActivationController : KeyDownInteractable {
         inTimeout = false;
         isCheckingLock = false;
         isCorrect = false;
-        // Debug.Log("In Lock Activation - Start");
+        // ----- From Interactable Lever -----
+        offAngle = leverRotationPoint.transform.eulerAngles.x;
+        onAngle = offAngle - onAngleDifference;
     }
 	
     protected override void ForInteract()
@@ -57,7 +73,12 @@ public class LockActivationController : KeyDownInteractable {
 
     void Activate()
     {
-        foreach(GameObject go in executionOrder1)
+        // ----- From Interactable Lever -----
+        StartCoroutine(ShiftLever(!isOn));
+        isOn = !isOn;
+        // ----- End Interactable Lever -----
+
+        foreach (GameObject go in executionOrder1)
         {
             // Ugly, but seemingly the only way to get unity to allow this
             if (go.GetComponent<LightPanelController>() != null)
@@ -95,6 +116,16 @@ public class LockActivationController : KeyDownInteractable {
 
     void Deactivate()
     {
+        // ----- From Interactable Lever -----
+        StartCoroutine(ShiftLever(!isOn));
+        isOn = !isOn;
+        // ----- End Interactable Lever -----
+
+        // If door is already open, shut it
+        if (door.GetComponent<DoorController>().isOpen == true)
+            door.GetComponent<DoorController>().Close();
+
+        // Deactivate light panels
         for (int i = 1; i < executionOrder1.Length; i++)
         {
             // Ugly, but seemingly the only way to get unity to allow this
@@ -118,32 +149,9 @@ public class LockActivationController : KeyDownInteractable {
             && executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>() != null)
         {
             int[] lefttargetvals = leftTarget.GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - lefttargetvals: ");
-            foreach (int i in lefttargetvals)
-            {
-                // Debug.Log(i);
-            }
-
             int[] leftresultvals = executionOrder2[executionOrder2.Length - 1].GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - leftresultvals: ");
-            foreach (int i in leftresultvals)
-            {
-                // Debug.Log(i);
-            }
-
             int[] righttargetvals = righttTarget.GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - righttargetvals: ");
-            foreach (int i in righttargetvals)
-            {
-                // Debug.Log(i);
-            }
-
             int[] rightresultvals = executionOrder1[executionOrder1.Length - 1].GetComponent<LightPanelController>().PassValues();
-            // Debug.Log("In Lock Activation - ValidateLockCombo() - rightresultvals: ");
-            foreach (int i in rightresultvals)
-            {
-                // Debug.Log(i);
-            }
 
             for (int i = 0; i < leftresultvals.Length; i++)
             {
@@ -156,4 +164,21 @@ public class LockActivationController : KeyDownInteractable {
         }
         return false;
     }
+
+    // ----- From Interactable Lever -----
+    IEnumerator ShiftLever(bool toOn)
+    {
+        float angleToReach = Mathf.Abs(onAngle - offAngle);
+        float currentRotated = 0;
+        int directionModifier = toOn ? -1 : 1;
+
+        while (currentRotated < angleToReach)
+        {
+            yield return new WaitForFixedUpdate();
+
+            leverRotationPoint.transform.eulerAngles += new Vector3(rotationSpeed * directionModifier, 0, 0);
+            currentRotated += rotationSpeed;
+        }
+    }
+    // ----- End Interactable Lever -----
 }

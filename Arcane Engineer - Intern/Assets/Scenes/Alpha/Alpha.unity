@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1352,13 +1352,13 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 120106879}
-  - {fileID: 1603050427}
   - {fileID: 1032268229}
   - {fileID: 261889765}
-  - {fileID: 1427021878}
   - {fileID: 544234128}
   - {fileID: 1241525204}
+  - {fileID: 1603050427}
+  - {fileID: 1427021878}
+  - {fileID: 120106879}
   - {fileID: 583087666}
   m_Father: {fileID: 384322343}
   m_RootOrder: 1
@@ -2688,7 +2688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452dafe7a329b7d46939ccb1defcaa6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitialValues: 01000000030000000400000002000000
+  InitialValues: 01000000030000000200000004000000
   connection: {fileID: 1915184675}
 --- !u!23 &435385384
 MeshRenderer:
@@ -4100,6 +4100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.05
   rotationRange: 90
+  isOpen: 0
 --- !u!64 &740239609
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4217,6 +4218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 0
   elementToRestore: 0
   meterManagerHolder: {fileID: 1247612195}
@@ -4330,6 +4332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.02
   isRotatingRight: 0
@@ -4606,6 +4609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 884248799}
   pillarToLift: {fileID: 1461385555}
@@ -4976,6 +4980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 1
   elementToRestore: 2
   meterManagerHolder: {fileID: 1247612195}
@@ -5604,6 +5609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 884248799}
   pillarToLift: {fileID: 1461385555}
@@ -6579,6 +6585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.33
   isRotatingRight: 1
@@ -6942,6 +6949,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef133901aec4374498204200d2f2fb5c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1185878645 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1018759847103104, guid: 857397fecedbcbe4a828b67e5d87f996,
+    type: 2}
+  m_PrefabInternal: {fileID: 1850470673}
 --- !u!1 &1194476336
 GameObject:
   m_ObjectHideFlags: 0
@@ -8155,6 +8167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.1
   isRotatingRight: 1
@@ -8228,6 +8241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.1
   isRotatingRight: 0
@@ -8919,6 +8933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 2
   elementToRestore: 1
   meterManagerHolder: {fileID: 1247612195}
@@ -9535,6 +9550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 884248799}
   pillarToLift: {fileID: 1461385555}
@@ -9711,6 +9727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 2
   elementToRestore: 1
   meterManagerHolder: {fileID: 1247612195}
@@ -10484,12 +10501,12 @@ Prefab:
         type: 2}
       propertyPath: upstreamObjectLeft
       value: 
-      objectReference: {fileID: 1598584986}
+      objectReference: {fileID: 1888108034}
     - target: {fileID: 114914283420678826, guid: 2a5ce0bd2e32eeb4b9e5497cb31c3c4b,
         type: 2}
       propertyPath: upstreamObjectRight
       value: 
-      objectReference: {fileID: 1888108034}
+      objectReference: {fileID: 1598584986}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2a5ce0bd2e32eeb4b9e5497cb31c3c4b, type: 2}
   m_IsPrefabParent: 0
@@ -10604,6 +10621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.02
   isRotatingRight: 1
@@ -10745,7 +10763,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11444d74b479f9d409d185177f6c6443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 1
+  leverRotationPoint: {fileID: 1185878645}
+  onAngleDifference: 30
+  rotationSpeed: 1
   timeoutDuration: 5
   executionOrder1:
   - {fileID: 961890688}
@@ -12097,6 +12119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 884248799}
   pillarToLift: {fileID: 1461385555}
@@ -12465,6 +12488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.1
   waterAmountToChangeBy: 0.33
   isRotatingRight: 0
