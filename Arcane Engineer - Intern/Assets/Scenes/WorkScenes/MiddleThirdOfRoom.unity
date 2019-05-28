@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -750,6 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 1788526269}
   pillarToLift: {fileID: 111140349}
@@ -909,6 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 1788526269}
   pillarToLift: {fileID: 111140349}
@@ -1186,8 +1188,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30.311028, y: 1, z: 30.1132}
-  m_Center: {x: 0.37229538, y: 0, z: 0.050013542}
+  m_Size: {x: 30, y: 0.15, z: 30}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &432198001
 Prefab:
   m_ObjectHideFlags: 0
@@ -2067,6 +2069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 1788526269}
   pillarToLift: {fileID: 111140349}
@@ -2598,6 +2601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 2
   elementToRestore: 0
   meterManagerHolder: {fileID: 1730057343}
@@ -2837,6 +2841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   markToLookAt: 2
   elementToRestore: 0
   meterManagerHolder: {fileID: 1730057343}
@@ -4644,6 +4649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: 
   interactionDisableTime: 0.2
   blockToRotate: {fileID: 1788526269}
   pillarToLift: {fileID: 111140349}
