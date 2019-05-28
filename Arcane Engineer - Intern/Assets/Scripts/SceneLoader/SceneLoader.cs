@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour {
     
 
 	// MARK: Life Cycle
-	void Start () {
+	void Awake () {
 		
 	}
 

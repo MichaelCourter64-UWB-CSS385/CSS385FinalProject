@@ -9,7 +9,7 @@ public class Soot : ElementAffected {
     SpriteRenderer sootRenderer;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         sootRenderer = GetComponent<SpriteRenderer>();
 	}
 	

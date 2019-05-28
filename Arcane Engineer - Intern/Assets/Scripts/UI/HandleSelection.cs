@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandleSelection : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 	}
 	

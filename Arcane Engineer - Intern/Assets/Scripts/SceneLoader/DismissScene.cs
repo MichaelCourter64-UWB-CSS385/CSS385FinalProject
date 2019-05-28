@@ -8,7 +8,7 @@ public class DismissScene : MonoBehaviour {
     [SerializeField] ScenesList sceneToGoBackTo;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 	}
 	

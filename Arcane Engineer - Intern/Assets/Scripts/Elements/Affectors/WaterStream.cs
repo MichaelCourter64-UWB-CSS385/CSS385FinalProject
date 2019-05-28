@@ -7,7 +7,7 @@ public class WaterStream : MonoBehaviour {
     [SerializeField] string affectedTag;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 	}
 	

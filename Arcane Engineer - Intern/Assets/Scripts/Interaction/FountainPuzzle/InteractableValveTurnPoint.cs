@@ -10,7 +10,7 @@ public class InteractableValveTurnPoint : KeyDownInteractable {
     FountainPuzzleController fountainPuzzleController;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         fountainPuzzleController = fountainPuzzleControllerHolder.GetComponent<FountainPuzzleController>();
 	}
 	

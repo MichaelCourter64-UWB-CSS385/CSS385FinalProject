@@ -16,7 +16,7 @@ public class WheelController : KeyDownInteractable {
     private bool canInteract;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		currentAngle = this.transform.eulerAngles.y;   // Axis may need to be readjusted on asset reimport
         inMotion = false;
         canInteract = true;

@@ -11,7 +11,7 @@ public class RightClickListener : MonoBehaviour {
 	public bool isRightClicking = false;
 
 	// MARK: Life Cycle
-	void Start () {
+	void Awake () {
 
 	}
 

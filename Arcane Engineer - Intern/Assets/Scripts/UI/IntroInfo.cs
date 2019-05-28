@@ -7,7 +7,7 @@ public class IntroInfo : MonoBehaviour {
     [SerializeField] GameObject[] objectsToTurnOn;
     
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		
 	}
 	

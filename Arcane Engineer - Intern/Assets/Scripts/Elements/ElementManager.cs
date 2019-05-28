@@ -9,7 +9,7 @@ public class ElementManager : MonoBehaviour {
 	Elements selectedElement;
 
 	// MARK: Life Cycle
-	void Start () {
+	void Awake () {
 		
 	}
 	

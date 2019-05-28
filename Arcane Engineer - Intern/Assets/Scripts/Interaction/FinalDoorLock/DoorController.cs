@@ -9,7 +9,7 @@ public class DoorController : MonoBehaviour {
     public bool isOpen = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         //unlocked = false;
         //rotationRange = 90.0f;
 	}
