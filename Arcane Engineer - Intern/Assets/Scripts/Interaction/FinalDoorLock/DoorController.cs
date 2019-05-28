@@ -6,26 +6,39 @@ public class DoorController : MonoBehaviour {
     [SerializeField] float rotationSpeed;
     [SerializeField] float rotationRange;
 
-    private bool unlocked;
+    public bool isOpen = false;
 
 	// Use this for initialization
 	void Awake () {
-        unlocked = false;
-        rotationRange = 90.0f;
+        //unlocked = false;
+        //rotationRange = 90.0f;
 	}
 	
     public void Open()
     {
-        unlocked = true;
-        this.transform.Rotate(0, 90, 0, Space.Self);
-        //StartCoroutine(swingOpen());
+        isOpen = true;
+        //this.transform.Rotate(0, 90, 0, Space.Self);
+        StartCoroutine(SwingOpen(false));
     }
 
-    private IEnumerator swingOpen()
+    public void Close()
     {
-        Quaternion current = this.transform.rotation;
-        current.y += rotationSpeed;
-        this.transform.rotation = current;
-        yield return new WaitForEndOfFrame();
+        isOpen = false;
+        //this.transform.Rotate(0, -90, 0, Space.Self);
+        StartCoroutine(SwingOpen(false));
+    }
+
+    IEnumerator SwingOpen(bool toOpen)
+    {
+        float currentRotated = 0;
+        int directionModifier = toOpen ? -1 : 1;
+
+        while (currentRotated < rotationRange)
+        {
+            yield return new WaitForFixedUpdate();
+
+            this.transform.eulerAngles += new Vector3(0, rotationSpeed * directionModifier, 0);
+            currentRotated += rotationSpeed;
+        }
     }
 }

@@ -56,8 +56,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4069053694583212}
   - component: {fileID: 33323662789786358}
-  - component: {fileID: 65393006392639152}
   - component: {fileID: 23273247497218632}
+  - component: {fileID: 65393006392639152}
   m_Layer: 0
   m_Name: EndWall30x5
   m_TagString: Untagged
