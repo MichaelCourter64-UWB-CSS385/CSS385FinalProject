@@ -5,15 +5,28 @@ using UnityEngine;
 public abstract class KeyDownInteractable : Interactable
 {
     [SerializeField] float interactionDisableTime = 1;
+    [SerializeField] GameObject objectToAnimate;
+    [SerializeField] protected string animationStateName;
+    [SerializeField] string neutralStateName;
 
     bool isInteractable = true;
+    protected Animator animator;
+
+    void Awake()
+    {
+        animator = objectToAnimate.GetComponent<Animator>();
+
+        ForAwake();
+    }
+
+    protected abstract void ForAwake();
 
     public override void Interact()
     {
-        //Debug.Log("interactble: " + isInteractable);
+        Debug.Log("interactble: " + isInteractable);
         if (isInteractable)
         {
-            //Debug.Log("button pressed at " + Time.time);
+            Debug.Log("button pressed at " + Time.time);
             isInteractable = false;
             ForInteract();
 
@@ -33,11 +46,24 @@ public abstract class KeyDownInteractable : Interactable
 
     protected abstract void ForInteract();
 
-    protected IEnumerator WaitToAllowInteraction()
+    IEnumerator WaitToAllowInteraction()
     {
         //Debug.Log("start of wait:" + Time.time + ", speed:" + buttonAnimator.GetNextAnimatorStateInfo(0).speed);
-        yield return new WaitForSeconds(interactionDisableTime);
+        //yield return new WaitForSeconds(interactionDisableTime);
         //Debug.Log("end of wait:" + Time.time);
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName(animationStateName))
+        {
+            Debug.Log("waiting for anim");
+            yield return new WaitForFixedUpdate();
+        }
+
+        while (!animator.GetCurrentAnimatorStateInfo(0).IsName(neutralStateName))
+        {
+            Debug.Log("waiting for return to neutral");
+            yield return new WaitForFixedUpdate();
+        }
+
         isInteractable = true;
     }
 }
