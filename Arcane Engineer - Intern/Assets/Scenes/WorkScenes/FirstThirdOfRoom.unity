@@ -660,11 +660,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: Somewhat Increase Pressure
   interactionDisableTime: 0.5
+  objectToAnimate: {fileID: 457851001}
+  animationStateName: TurnClockwise
+  neutralStateName: Neutral
   waterAmountToChangeBy: 0.1
   isRotatingRight: 1
   fountainPuzzleControllerHolder: {fileID: 216385186}
-  wheelToTurn: {fileID: 457851001}
-  wheelTurnAnimationTriggerName: isTurningClockwise
+  animationTriggerName: isTurningClockwise
 --- !u!4 &185329689 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4004793098870856, guid: fda033edef7d26746b0f02e8c1022d3f,
@@ -1133,11 +1135,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: Barely Decrease Pressure
   interactionDisableTime: 0.5
+  objectToAnimate: {fileID: 2014254337}
+  animationStateName: TurnCounterClockwise
+  neutralStateName: Neutral
   waterAmountToChangeBy: 0.02
   isRotatingRight: 0
   fountainPuzzleControllerHolder: {fileID: 216385186}
-  wheelToTurn: {fileID: 2014254337}
-  wheelTurnAnimationTriggerName: isTurningCounterClockwise
+  animationTriggerName: isTurningCounterClockwise
 --- !u!4 &346139995 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 77387436193f3f6479f1fef30cea3e1e, type: 3}
@@ -1608,11 +1612,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: Barely Increase Pressure
   interactionDisableTime: 0.5
+  objectToAnimate: {fileID: 2014254337}
+  animationStateName: TurnClockwise
+  neutralStateName: Neutral
   waterAmountToChangeBy: 0.02
   isRotatingRight: 1
   fountainPuzzleControllerHolder: {fileID: 216385186}
-  wheelToTurn: {fileID: 2014254337}
-  wheelTurnAnimationTriggerName: isTurningClockwise
+  animationTriggerName: isTurningClockwise
 --- !u!1001 &647846603
 Prefab:
   m_ObjectHideFlags: 0
@@ -2566,11 +2572,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: Somewhat Decrease Pressure
   interactionDisableTime: 0.5
+  objectToAnimate: {fileID: 457851001}
+  animationStateName: TurnCounterClockwise
+  neutralStateName: Neutral
   waterAmountToChangeBy: 0.1
   isRotatingRight: 0
   fountainPuzzleControllerHolder: {fileID: 216385186}
-  wheelToTurn: {fileID: 457851001}
-  wheelTurnAnimationTriggerName: isTurningCounterClockwise
+  animationTriggerName: isTurningCounterClockwise
 --- !u!1001 &946370780
 Prefab:
   m_ObjectHideFlags: 0
@@ -5928,11 +5936,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: Greatly Increase Pressure
   interactionDisableTime: 0.5
+  objectToAnimate: {fileID: 1851892813}
+  animationStateName: TurnClockwise
+  neutralStateName: Neutral
   waterAmountToChangeBy: 0.33
   isRotatingRight: 1
   fountainPuzzleControllerHolder: {fileID: 216385186}
-  wheelToTurn: {fileID: 1851892813}
-  wheelTurnAnimationTriggerName: isTurningClockwise
+  animationTriggerName: isTurningClockwise
 --- !u!1001 &1931526026
 Prefab:
   m_ObjectHideFlags: 0
@@ -6458,6 +6468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: 
   interactionDisableTime: 1
+  objectToAnimate: {fileID: 0}
+  animationStateName: 
+  neutralStateName: 
   firePlacePanelControllerHolder: {fileID: 0}
   patternNumber: 0
   buttonAnimationTriggerName: 
@@ -6605,11 +6618,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: Greatly Decrease Pressure
   interactionDisableTime: 0.5
+  objectToAnimate: {fileID: 1851892813}
+  animationStateName: TurnCounterClockwise
+  neutralStateName: Neutral
   waterAmountToChangeBy: 0.33
   isRotatingRight: 0
   fountainPuzzleControllerHolder: {fileID: 216385186}
-  wheelToTurn: {fileID: 1851892813}
-  wheelTurnAnimationTriggerName: isTurningCounterClockwise
+  animationTriggerName: isTurningCounterClockwise
 --- !u!1 &2084292229
 GameObject:
   m_ObjectHideFlags: 0

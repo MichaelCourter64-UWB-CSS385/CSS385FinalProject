@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnClockwise: 1
-  amountToRotate: 45
-  speed: 10
+  amountToRotate: 30
+  speed: 180
   wheelTurnAnimationTriggerName: isTurningClockwise
 --- !u!114 &114687136445758370
 MonoBehaviour:
@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnClockwise: 0
-  amountToRotate: 45
-  speed: 10
+  amountToRotate: 30
+  speed: 180
   wheelTurnAnimationTriggerName: isTurningCounterClockwise
 --- !u!1101 &1101209286371090478
 AnimatorStateTransition:
