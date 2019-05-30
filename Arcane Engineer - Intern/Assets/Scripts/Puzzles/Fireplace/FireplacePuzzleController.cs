@@ -11,7 +11,7 @@ public class FireplacePuzzleController : MonoBehaviour
     [SerializeField] Material offMat;
     [SerializeField] Material correctMat;
     [SerializeField] Material incrorrectMat;
-    [SerializeField] GameObject progressionSystemHolder;
+    [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] int incorrectAnimationFlashCycles;
     [SerializeField] float incorrectAnimationFlashDelay;
     [SerializeField] int solvedAnimationFlashCycles;
@@ -25,21 +25,25 @@ public class FireplacePuzzleController : MonoBehaviour
     bool isInteractable = true;
     int previousButtonIndex = NEUTRAL_VALUE;
     int completionCounter = 0;
-    ProgressionSystem progressionSystem;
+    DontDestroyReferenceHolder dontDestroyRefs;
 
     void Awake()
     {
         lights = new Light[lightHolders.Length];
         lightRends = new MeshRenderer[lightHolders.Length];
-        progressionSystem = progressionSystemHolder.GetComponent<ProgressionSystem>();
 
-        for(int i = 0; i < lightHolders.Length; i++)
+        for (int i = 0; i < lightHolders.Length; i++)
         {
             lights[i] = lightHolders[i].GetComponent<Light>();
             lightRends[i] = lightHolders[i].GetComponent<MeshRenderer>();
         }
 
         SetAllLights(offLight, offMat);
+    }
+
+    void Start()
+    {
+        dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
     }
 
     public void ReceiveButtonPress(int buttonNumber)
@@ -93,7 +97,7 @@ public class FireplacePuzzleController : MonoBehaviour
     {
         if(completionCounter == lights.Length - 1)
         {
-            progressionSystem.Completed(ProgressionMarks.FireplaceFixed.ToString());
+            dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FireplaceFixed.ToString());
 
             StartCoroutine(PlaySolvedAnimtation());
         }

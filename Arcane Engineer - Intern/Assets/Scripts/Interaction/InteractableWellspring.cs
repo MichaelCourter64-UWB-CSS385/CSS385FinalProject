@@ -2,24 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableWellspring : Interactable, ProgressionSubscribed {
+public class InteractableWellspring : Interactable
+{
+    [SerializeField] GameObject wellToTurnOn;
+    [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks markToLookAt;
     [SerializeField] Elements elementToRestore;
     [SerializeField] GameObject meterManagerHolder;
 
     MeterManager meterManager;
 
+    DontDestroyReferenceHolder dontDestroyRefs;
+
     void Awake()
     {
+        ProgressionSystem.ProgressionMarkMarked.AddListener(ReceiveProgressionUpdate);
+
         meterManager = meterManagerHolder.GetComponent<MeterManager>();
     }
 
-    public void ReceiveProgressionUpdate(ProgressionSystem theProgressionSystem)
+    void Start()
+    {
+        dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
+    }
+
+    void OnDestroy()
+    {
+        ProgressionSystem.ProgressionMarkMarked.RemoveListener(ReceiveProgressionUpdate);
+    }
+
+    public void ReceiveProgressionUpdate()
     {
         // If the given progression mark is marked as completed, then:
-        if (theProgressionSystem.IsCompleted(markToLookAt.ToString()))
+        if (dontDestroyRefs.ProgressionSystemInstance.IsCompleted(markToLookAt.ToString()))
         {
-            gameObject.SetActive(true);
+            wellToTurnOn.gameObject.SetActive(true);
         }
     }
 

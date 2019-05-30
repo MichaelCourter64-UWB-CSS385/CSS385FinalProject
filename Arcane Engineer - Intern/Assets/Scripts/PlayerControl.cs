@@ -186,7 +186,7 @@ public class PlayerControl : MonoBehaviour
         {
             //Debug.Log(foundInteractable.transform.name);
             interactionIndicatorUIHolder.GetComponent<RectTransform>().sizeDelta = new Vector2(indicatorFoundInteractSize, indicatorFoundInteractSize);
-            interactionIndicatorToolTip.text = foundInteractable.transform.GetComponent<Interactable>().InteractionToolTip;
+            interactionIndicatorToolTip.text = foundInteractable.transform.GetComponentInParent<Interactable>().InteractionToolTip;
             interactionIndicatorToolTipHolder.SetActive(true);
         }
         else
@@ -200,7 +200,7 @@ public class PlayerControl : MonoBehaviour
             
             if (foundInteractable.transform != null)
             {
-                foundInteractable.transform.GetComponent<Interactable>().Interact();
+                foundInteractable.transform.GetComponentInParent<Interactable>().Interact();
             }
         }
     }

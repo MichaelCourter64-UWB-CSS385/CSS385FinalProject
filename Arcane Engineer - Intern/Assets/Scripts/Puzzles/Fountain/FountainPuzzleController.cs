@@ -6,7 +6,7 @@ public class FountainPuzzleController : MonoBehaviour {
     [SerializeField] GameObject waterLevelIndicator;
     [SerializeField] float waterLevelToReachDeadZoneHalf;
     [SerializeField] float waterLevelToReach;
-    [SerializeField] GameObject progressionSystemHolder;
+    [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks progressMarkToCheckOff;
     [SerializeField] string overpressureParamName;
     [SerializeField] float waterLevelIndicatorRange;
@@ -15,7 +15,7 @@ public class FountainPuzzleController : MonoBehaviour {
     float waterLevel = 0;
     float indicatorStartingPoint;
     float indicatorEndPoint;
-    ProgressionSystem progressionSystem;
+    DontDestroyReferenceHolder dontDestroyRefs;
 
 	// Use this for initialization
 	void Awake ()
@@ -23,12 +23,15 @@ public class FountainPuzzleController : MonoBehaviour {
         indicatorAnimator = waterLevelIndicator.transform.parent.GetComponent<Animator>();
         indicatorStartingPoint = waterLevelIndicator.transform.position.y;
         indicatorEndPoint = indicatorStartingPoint + waterLevelIndicatorRange;
-
-        progressionSystem = progressionSystemHolder.GetComponent<ProgressionSystem>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Start()
+    {
+        dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -43,7 +46,7 @@ public class FountainPuzzleController : MonoBehaviour {
         // If the water level is close enough to the amount to reach, then:
         if (waterLevel <= waterLevelToReach && waterLevel > waterLevelToReach - waterLevelToReachDeadZoneHalf)
         {
-            progressionSystem.Completed(progressMarkToCheckOff.ToString());
+            dontDestroyRefs.ProgressionSystemInstance.Completed(progressMarkToCheckOff.ToString());
         }
 
         if (waterLevel > waterLevelToReach)

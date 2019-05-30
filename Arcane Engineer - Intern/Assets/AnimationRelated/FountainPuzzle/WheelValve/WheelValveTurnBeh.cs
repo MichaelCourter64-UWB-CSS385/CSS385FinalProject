@@ -27,13 +27,13 @@ public class WheelValveTurnBeh : StateMachineBehaviour
             animator.transform.rotation *= Quaternion.Euler(speed * direction * Time.deltaTime, 0, 0);
 
             totalRotation += speed * Time.deltaTime;
-            Debug.Log("total rot. " + totalRotation);
+            //Debug.Log("total rot. " + totalRotation);
             //Debug.Log("amount added " + speed * direction * Time.deltaTime);
             //Debug.Log("new transform rotation " + animator.transform.eulerAngles);
         }
         else
         {
-            Debug.Log("STOP at " + Time.time);
+            //Debug.Log("STOP at " + Time.time);
             animator.SetBool(wheelTurnAnimationTriggerName, false);
         }
     }
