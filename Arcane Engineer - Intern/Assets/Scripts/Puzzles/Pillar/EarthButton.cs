@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthButton : KeyDownInteractable {
+public class EarthButton : PauseForInteractable {
 	[SerializeField] GameObject blockToRotate;
 	[SerializeField] GameObject pillarToLift;
 	[SerializeField] int buttonId;
@@ -11,11 +11,6 @@ public class EarthButton : KeyDownInteractable {
 	private bool canLower = false;
 	private Vector3 correctRotation = new Vector3(90, 0, 0);
 
-	// Use this for initialization
-	protected override void ForAwake () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
 		bool canLiftMore = blockToRotate.transform.position.y <= 10.75f;
