@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class ProgressionSystem : MonoBehaviour {
-    [SerializeField] GameObject[] subscribedGameObjects;
+public class ProgressionSystem : MonoBehaviour
+{
+    static public UnityEvent ProgressionMarkMarked = new UnityEvent();
 
     // The progress checks of a scene and whether they are completed or not.
     Dictionary<string, bool> progressCheck = new Dictionary<string, bool>();
     // The number progress checks completed.
     int numberCompleted = 0;
     // Indicates whether every progress check is completed or not.
-    bool isComplete = false;
-    public bool IsComplete { get { return isComplete; } }
+    bool everythingIsComplete = false;
+    public bool EverythingIsComplete { get { return everythingIsComplete; } }
     ProgressionSubscribed[] subscribed;
 
     // Class Constructor: adds a progress check for each name passed.
@@ -25,13 +27,6 @@ public class ProgressionSystem : MonoBehaviour {
         for (int i = 0; i < enumsAsStrings.Length; i++)
         {
             progressCheck.Add(enumsAsStrings[i], false);
-        }
-
-        subscribed = new ProgressionSubscribed[subscribedGameObjects.Length];
-
-        for (int i = 0; i < subscribedGameObjects.Length; i++)
-        {
-            subscribed[i] = subscribedGameObjects[i].GetComponent<ProgressionSubscribed>();
         }
     }
 
@@ -53,13 +48,15 @@ public class ProgressionSystem : MonoBehaviour {
             if (numberCompleted >= progressCheck.Count)
             {
                 // Mark the scene as completed.
-                isComplete = true;
+                everythingIsComplete = true;
             }
 
-            foreach(ProgressionSubscribed subscriber in subscribed)
+            ProgressionMarkMarked.Invoke();
+
+            /*foreach(ProgressionSubscribed subscriber in subscribed)
             {
                 subscriber.ReceiveProgressionUpdate(this);
-            }
+            }*/
         }
     }
 

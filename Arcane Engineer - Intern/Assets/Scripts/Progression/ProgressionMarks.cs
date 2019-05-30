@@ -3,5 +3,10 @@ public enum ProgressionMarks
     FountainFixed,
     FireplaceFixed,
     CubeFixed,
-    WindMachineFixed
+    WindMachineFixed,
+    FirstWalkingAround,
+    FirstCrouch,
+    FirstUnCrouch,
+    FirstLookAround,
+    MovementTutorial
 }

@@ -1,8 +1,5 @@
 ﻿public enum ScenesList
 {
-    SceneLoader,
-    MetersUIDemo,
-    InteractionPrototype,
-    ElementPrototype,
-    SelectionWheelUIDemo
+    MovementTutorial,
+    InteractionTutorial
 }

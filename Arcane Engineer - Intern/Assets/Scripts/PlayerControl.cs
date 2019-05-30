@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
+    [Header("Progression/Tutorial Related")]
+    [SerializeField] GameObject linkToDontDestroyHolder;
+
+    [Header("Camera Related")]
     [SerializeField] GameObject cameraHolder;
     [SerializeField] float cameraCrouchOffset;
     [SerializeField] Vector3 cameraOffset = new Vector3(0, 0.5f, 0);
     [SerializeField] string horizontalName;
     [SerializeField] string verticalName;
 
+    [Header("Movement/Rotation Related")]
     [SerializeField] KeyCode crouchKey;
     [SerializeField] float speed;
     [SerializeField] string mouseXName;
@@ -22,6 +27,7 @@ public class PlayerControl : MonoBehaviour
     // Lower vertical angle limit.
     [SerializeField] float lowerVerticalAngleLimit = -0.15f;
 
+    [Header("Interaction Related")]
     [SerializeField] KeyCode interactKey = KeyCode.E;
     [SerializeField] float interactionBoxTravelDistance;
     [SerializeField] LayerMask interactionlayer;
@@ -30,13 +36,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float indicatorBaseSize;
     [SerializeField] float indicatorFoundInteractSize;
 
-	// Element casting.
+    [Header("Element Related")]
     [SerializeField] KeyCode elementUseKey = KeyCode.Mouse0;
     [SerializeField] GameObject elementManagerHolder;
     [SerializeField] GameObject waterStream;
     [SerializeField] GameObject earthStream;
     [SerializeField] GameObject fireStream;
     [SerializeField] GameObject airStream;
+
+    DontDestroyReferenceHolder dontDestroyRefs;
 
     bool isCrouching = false;
 
@@ -52,22 +60,22 @@ public class PlayerControl : MonoBehaviour
     Elements currentElement;
 
     // Use this for initialization
-    void Awake () {
+    void Awake ()
+    {
         playersRigidBody = GetComponent<Rigidbody>();
         interactionIndicatorUI = interactionIndicatorUIHolder.GetComponent<Image>();
         interactionIndicatorToolTip = interactionIndicatorToolTipHolder.GetComponent<Text>();
 		elementManager = elementManagerHolder.GetComponent<ElementManager>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		// Check if we're selecting an element
-		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
-		if (rightClickListener.isRightClicking) {
-			return;
-		}
 
+    void Start()
+    {
+        dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
         UpdateMovement();
         UpdateGameObjectRotation();
         CheckForInteraction();
@@ -98,11 +106,28 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(crouchKey))
         {
             isCrouching = !isCrouching;
+
+            // If this is the first time crouching, then:
+            if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstCrouch.ToString()) && isCrouching)
+            {
+                dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstCrouch.ToString());
+            }
+            // If this is the first time uncrouching, then:
+            else if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstUnCrouch.ToString()) && !isCrouching)
+            {
+                dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstUnCrouch.ToString());
+            }
         }
 
         if (horizontalValue != 0 || verticalValue != 0)
         {
             playersRigidBody.AddForce(transform.TransformDirection(new Vector3(horizontalValue * speed * Time.deltaTime, 0, verticalValue * speed * Time.deltaTime)));
+
+            // If this is the first time moving, then:
+            if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstWalkingAround.ToString()))
+            {
+                dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstWalkingAround.ToString());
+            }
         }
     }
 
@@ -116,6 +141,8 @@ public class PlayerControl : MonoBehaviour
 
     void UpdateCameraRotation()
     {
+        float mouseVerticalValue = Input.GetAxis(mouseYName);
+
 		// Check if we're selecting an element
 		RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
 
@@ -125,20 +152,29 @@ public class PlayerControl : MonoBehaviour
 
         const short ANALOG_TO_DEGREES = 360;
 
-        // Adds the look input to the rotation of the camera.
-        xDirection += -Input.GetAxis(mouseYName) * verticalSensitivity * Time.deltaTime;
-
-        // If the absolute value of the x-axis rotation is greater than or equal to 1
-        if (Mathf.Abs(xDirection) >= 1)
+        if(mouseVerticalValue != 0)
         {
-            // Set the ones place value of the value to 0 to loop the rotation.
-            xDirection = xDirection % 1;
-        }
+            // Adds the look input to the rotation of the camera.
+            xDirection += -mouseVerticalValue * verticalSensitivity * Time.deltaTime;
 
-        // Limits the rotation in the x-axis to the given lower and upper limits.
-        xDirection = Mathf.Clamp(xDirection, lowerVerticalAngleLimit, upperVerticalAngleLimit);
+            // If the absolute value of the x-axis rotation is greater than or equal to 1
+            if (Mathf.Abs(xDirection) >= 1)
+            {
+                // Set the ones place value of the value to 0 to loop the rotation.
+                xDirection = xDirection % 1;
+            }
+
+            // Limits the rotation in the x-axis to the given lower and upper limits.
+            xDirection = Mathf.Clamp(xDirection, lowerVerticalAngleLimit, upperVerticalAngleLimit);
 		
-        cameraHolder.transform.eulerAngles = new Vector3(xDirection * ANALOG_TO_DEGREES, transform.eulerAngles.y, transform.eulerAngles.z);
+            cameraHolder.transform.eulerAngles = new Vector3(xDirection * ANALOG_TO_DEGREES, transform.eulerAngles.y, transform.eulerAngles.z);
+
+            // If this is the first time looking around, then:
+            if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstLookAround.ToString()))
+            {
+                dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstLookAround.ToString());
+            }
+        }
     }
 
     void CheckForInteraction()
@@ -171,6 +207,13 @@ public class PlayerControl : MonoBehaviour
 
     void CheckForElementUse()
     {
+        // Check if we're selecting an element
+        RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
+        if (rightClickListener.isRightClicking)
+        {
+            return;
+        }
+
         if (Input.GetKey(elementUseKey))
         {
         	currentElement = elementManager.getSelectedElement();

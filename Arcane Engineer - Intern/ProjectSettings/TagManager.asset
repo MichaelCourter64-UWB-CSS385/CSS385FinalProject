@@ -14,6 +14,7 @@ TagManager:
   - SelectionWheel
   - RightClickListener
   - ElementManager
+  - NotDestroyedHolder
   layers:
   - Default
   - TransparentFX
