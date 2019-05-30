@@ -121,7 +121,9 @@ ModelImporter:
     400114: //RootNode
     2100000: lambert1
     2300000: pCube81
+    2300002: //RootNode
     3300000: pCube81
+    3300002: //RootNode
     4300000: pCube81
   externalObjects: {}
   materials:
