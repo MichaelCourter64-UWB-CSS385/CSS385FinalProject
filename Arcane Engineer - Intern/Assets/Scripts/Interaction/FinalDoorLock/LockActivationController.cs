@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockActivationController : KeyDownInteractable {
+public class LockActivationController : PauseForInteractable
+{
 
     // ----- Added From Interactable Lever -----
     // Had to includes the interactable lever code in this file because
@@ -42,7 +43,7 @@ public class LockActivationController : KeyDownInteractable {
     float timeoutTimer;
 
     // Use this for initialization
-    protected override void ForAwake() {
+    void Awake() {
         hasPower = false;
         inTimeout = false;
         isCheckingLock = false;
