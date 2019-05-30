@@ -219,41 +219,47 @@ public class PlayerControl : MonoBehaviour
         	currentElement = elementManager.getSelectedElement();
 			MeterManager meterManager = GameObject.FindGameObjectWithTag("MeterManager").GetComponent<MeterManager>();
 
-            if (currentElement == Elements.Water)
-            {
-                waterStream.SetActive(true);
-
-                // Decrease water resource
-                meterManager.waterMeter.value -= 0.001f;
-            }
-            else if (currentElement == Elements.Earth)
-            {
-				earthStream.SetActive(true);
-
-                // Decrease earth resource
-                meterManager.earthMeter.value -= 0.001f;
+			switch(currentElement) {
+				case Elements.Water:
+					if (meterManager.waterValue > 0) {
+						waterStream.SetActive(true);
+                		meterManager.expendElement(currentElement);
+					} else {
+						waterStream.SetActive(false);
+					}
+					break;
+				case Elements.Earth:
+					if (meterManager.earthValue > 0) {
+						earthStream.SetActive(true);
+                		meterManager.expendElement(currentElement);
+					} else {
+						earthStream.SetActive(false);
+					}
+					break;
+				case Elements.Fire:
+					if (meterManager.fireValue > 0) {
+						fireStream.SetActive(true);
+                		meterManager.expendElement(currentElement);
+					} else {
+						fireStream.SetActive(false);
+					}
+					break;
+				case Elements.Air:
+					if (meterManager.airValue > 0) {
+						airStream.SetActive(true);
+                		meterManager.expendElement(currentElement);
+					} else {
+						airStream.SetActive(false);
+					}
+					break;
+				default:
+					break;
 			}
-			else if (currentElement == Elements.Fire)
-            {
-				fireStream.SetActive(true);
-
-                // Decrease fire resource
-                meterManager.fireMeter.value -= 0.001f;
-			}
-			else if (currentElement == Elements.Air)
-            {
-				airStream.SetActive(true);
-
-                // Decrease air resource
-                meterManager.airMeter.value -= 0.001f;
-			}
-        }
-        else
-        {
+		} else {
             waterStream.SetActive(false);
             earthStream.SetActive(false);
             fireStream.SetActive(false);
             airStream.SetActive(false);
         }
-    }
+	}
 }

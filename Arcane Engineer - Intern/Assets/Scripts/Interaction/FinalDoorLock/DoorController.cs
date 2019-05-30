@@ -18,7 +18,7 @@ public class DoorController : MonoBehaviour {
     {
         isOpen = true;
         //this.transform.Rotate(0, 90, 0, Space.Self);
-        StartCoroutine(SwingOpen(false));
+        StartCoroutine(SwingOpen(true));
     }
 
     public void Close()
@@ -31,7 +31,7 @@ public class DoorController : MonoBehaviour {
     IEnumerator SwingOpen(bool toOpen)
     {
         float currentRotated = 0;
-        int directionModifier = toOpen ? -1 : 1;
+        int directionModifier = toOpen ? 1 : -1;
 
         while (currentRotated < rotationRange)
         {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WheelController : KeyDownInteractable {
+public class WheelController : PauseForInteractable {
     // Used for "animation" of wheel rotation
     [SerializeField] float rotationSpeed;
     // Sets direction and angle of rotation in degrees (90 is standard)
@@ -16,7 +16,7 @@ public class WheelController : KeyDownInteractable {
     private bool canInteract;
 
 	// Use this for initialization
-	protected override void ForAwake () {
+	void Awake () {
 		currentAngle = this.transform.eulerAngles.y;   // Axis may need to be readjusted on asset reimport
         inMotion = false;
         canInteract = true;

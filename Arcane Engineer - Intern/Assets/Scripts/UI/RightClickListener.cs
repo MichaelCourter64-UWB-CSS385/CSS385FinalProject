@@ -11,10 +11,6 @@ public class RightClickListener : MonoBehaviour {
 	public bool isRightClicking = false;
 
 	// MARK: Life Cycle
-	void Awake () {
-
-	}
-
 	void Update () {
    		if(Input.GetMouseButtonDown(1)) isRightClicking = true;
    		if(Input.GetMouseButtonUp(1)) isRightClicking = false;
@@ -22,9 +18,11 @@ public class RightClickListener : MonoBehaviour {
    		if (isRightClicking) {
 			// Show selection wheel
         	selectionWheel.SetActive(true);
+        	Cursor.visible = true;
 		} else {
 			// Hide selection wheel
         	selectionWheel.SetActive(false);
+        	Cursor.visible = false;
 		}
 	}
 }
