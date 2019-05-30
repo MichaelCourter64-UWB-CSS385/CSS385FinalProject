@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableLever : KeyDownInteractable
+public class InteractableLever : PauseForInteractable
 {
     [SerializeField] GameObject leverRotationPoint;
     [SerializeField] float onAngleDifference;
@@ -13,7 +13,7 @@ public class InteractableLever : KeyDownInteractable
     bool isOn = false;
 
 	// Use this for initialization
-	protected override void ForAwake () {
+	void Awake () {
         // Assumes that the lever rotates on the x-axis when being turned on/off
         offAngle = leverRotationPoint.transform.eulerAngles.x;
         onAngle = offAngle - onAngleDifference;

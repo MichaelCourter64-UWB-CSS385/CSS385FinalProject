@@ -478,9 +478,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1564003100757546}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -44.978, y: 1.5, z: -3.508}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: -0.24999955, y: 0.5, z: 4.4480023}
+  m_LocalScale: {x: 0.0100000035, y: 0.010000002, z: 0.010000001}
   m_Children:
   - {fileID: 4197881288395334}
   - {fileID: 4701014619015908}
@@ -1244,7 +1244,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Wheel 2
   interactionDisableTime: 1
+  objectToAnimate: {fileID: 0}
+  animationStateName: 
+  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 2
@@ -1259,7 +1263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Wheel 3
   interactionDisableTime: 1
+  objectToAnimate: {fileID: 0}
+  animationStateName: 
+  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 3
@@ -1274,7 +1282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Wheel 4
   interactionDisableTime: 1
+  objectToAnimate: {fileID: 0}
+  animationStateName: 
+  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 4
@@ -1289,7 +1301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6444f86fcfe80504a874019609c1dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionToolTip: Wheel 1
   interactionDisableTime: 1
+  objectToAnimate: {fileID: 0}
+  animationStateName: 
+  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 1
@@ -1308,3 +1324,5 @@ MonoBehaviour:
   upstreamObjectRight: {fileID: 0}
   WheelPositions: 00000000000000000000000000000000
   errorState: 0
+  upstreamValuesLeft: 
+  upstreamValuesRight: 
