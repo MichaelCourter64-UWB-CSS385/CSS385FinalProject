@@ -160,6 +160,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionToolTip: 'Button '
   interactionDisableTime: 1
+  objectToAnimate: {fileID: 1184731219170398}
+  animationStateName: PushIn
+  neutralStateName: Neutral
   firePlacePanelControllerHolder: {fileID: 0}
   patternNumber: 0
   buttonAnimationTriggerName: isBeingPressed

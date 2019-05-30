@@ -12,7 +12,7 @@ public class EarthButton : KeyDownInteractable {
 	private Vector3 correctRotation = new Vector3(90, 0, 0);
 
 	// Use this for initialization
-	void Awake () {
+	protected override void ForAwake () {
 		
 	}
 	

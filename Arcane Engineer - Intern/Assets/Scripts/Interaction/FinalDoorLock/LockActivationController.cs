@@ -42,7 +42,7 @@ public class LockActivationController : KeyDownInteractable {
     float timeoutTimer;
 
     // Use this for initialization
-    void Awake() {
+    protected override void ForAwake() {
         hasPower = false;
         inTimeout = false;
         isCheckingLock = false;
