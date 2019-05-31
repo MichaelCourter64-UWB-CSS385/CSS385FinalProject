@@ -3,5 +3,6 @@
     MovementTutorial,
     InteractionTutorial,
     ElementTutorial,
+    ElementSelectionTutorial,
     Beta
 }

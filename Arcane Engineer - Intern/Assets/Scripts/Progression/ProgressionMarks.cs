@@ -9,5 +9,7 @@ public enum ProgressionMarks
     FirstUnCrouch,
     FirstLookAround,
     MovementTutorial,
-    BasicButtons
+    BasicButtons,
+    FirstWellSpringFill,
+    CleanedDoorSoot
 }

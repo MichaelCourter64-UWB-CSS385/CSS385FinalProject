@@ -4,13 +4,15 @@ using UnityEngine;
 
 // MARK: - Class
 public class ElementManager : MonoBehaviour {
-	// MARK: Properties
+    [SerializeField] Elements defaultElement;
+    
+    // MARK: Properties
 
 	Elements selectedElement;
 
 	// MARK: Life Cycle
 	void Awake () {
-		
+        selectedElement = defaultElement;
 	}
 	
 	// Update is called once per frame

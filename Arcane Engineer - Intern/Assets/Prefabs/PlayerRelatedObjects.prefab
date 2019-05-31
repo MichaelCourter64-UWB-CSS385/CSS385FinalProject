@@ -1371,8 +1371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bfe8a13cc5a49f489f884c9a7fddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restorationRate: 0
-  exhaustRate: 0
+  restorationRate: 0.1
+  exhaustRate: 0.05
   waterMeter: {fileID: 114948928910545978}
   earthMeter: {fileID: 114179902226725216}
   fireMeter: {fileID: 114382862340833290}

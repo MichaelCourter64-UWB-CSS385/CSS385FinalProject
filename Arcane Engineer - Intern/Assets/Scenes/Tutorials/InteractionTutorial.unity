@@ -1117,6 +1117,7 @@ MonoBehaviour:
   earthValue: 0
   fireValue: 0
   airValue: 0
+  maxValue: 1
 --- !u!114 &380195897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3406,7 +3407,7 @@ Prefab:
     - target: {fileID: 114332894997201042, guid: 4f7ef077021c3c340b2fe5a29cb66e64,
         type: 2}
       propertyPath: m_Text
-      value: Press any of the buttons on the panel three times
+      value: Press any of the buttons on the panel three times with "e"
       objectReference: {fileID: 0}
     - target: {fileID: 224742252063541144, guid: 4f7ef077021c3c340b2fe5a29cb66e64,
         type: 2}
@@ -4078,7 +4079,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectsToTurnOn:
   - {fileID: 1653580696}
-  - {fileID: 57969394}
   - {fileID: 380195895}
   - {fileID: 1113323779}
   - {fileID: 1909614704}

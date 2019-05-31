@@ -1044,6 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Somewhat Increase Pressure
+  interactLayerColliderHolder: {fileID: 175313743}
   objectToAnimate: {fileID: 457851001}
   animationStateName: TurnClockwise
   neutralStateName: Neutral
@@ -1752,6 +1753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Barely Decrease Pressure
+  interactLayerColliderHolder: {fileID: 314834533}
   objectToAnimate: {fileID: 2014254337}
   animationStateName: TurnCounterClockwise
   neutralStateName: Neutral
@@ -2825,6 +2827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Barely Increase Pressure
+  interactLayerColliderHolder: {fileID: 628984678}
   objectToAnimate: {fileID: 2014254337}
   animationStateName: TurnClockwise
   neutralStateName: Neutral
@@ -3986,6 +3989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Somewhat Decrease Pressure
+  interactLayerColliderHolder: {fileID: 945885141}
   objectToAnimate: {fileID: 457851001}
   animationStateName: TurnCounterClockwise
   neutralStateName: Neutral
@@ -4174,6 +4178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Replenish Water
+  interactLayerColliderHolder: {fileID: 171126943}
   wellToTurnOn: {fileID: 171126943}
   linkToDontDestroyHolder: {fileID: 918873979}
   markToLookAt: 0
@@ -9129,6 +9134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Greatly Increase Pressure
+  interactLayerColliderHolder: {fileID: 1905169668}
   objectToAnimate: {fileID: 1851892813}
   animationStateName: TurnClockwise
   neutralStateName: Neutral
@@ -10099,6 +10105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Replenish Fire
+  interactLayerColliderHolder: {fileID: 0}
   wellToTurnOn: {fileID: 160008209}
   linkToDontDestroyHolder: {fileID: 918873979}
   markToLookAt: 1
@@ -10192,6 +10199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: 
+  interactLayerColliderHolder: {fileID: 0}
   objectToAnimate: {fileID: 0}
   animationStateName: 
   neutralStateName: 
@@ -10341,6 +10349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Greatly Decrease Pressure
+  interactLayerColliderHolder: {fileID: 2083745158}
   objectToAnimate: {fileID: 1851892813}
   animationStateName: TurnCounterClockwise
   neutralStateName: Neutral

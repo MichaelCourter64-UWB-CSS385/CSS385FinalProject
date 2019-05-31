@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: 'Button '
-  interactionDisableTime: 1
+  interactLayerColliderHolder: {fileID: 1184731219170398}
   objectToAnimate: {fileID: 1184731219170398}
   animationStateName: PushIn
   neutralStateName: Neutral

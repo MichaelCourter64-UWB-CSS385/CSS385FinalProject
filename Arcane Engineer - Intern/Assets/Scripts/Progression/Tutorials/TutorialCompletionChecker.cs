@@ -2,35 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialCompletionChecker : MonoBehaviour, ProgressionUser
+public class TutorialCompletionChecker : ProgressChecker, ProgressionUser
 {
-    [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks[] marksToMeet;
-    [SerializeField] ProgressionMarks markToMarkWhenPreReqsMet;
+    [SerializeField] protected ProgressionMarks markToMarkWhenPreReqsMet;
 
-    DontDestroyReferenceHolder dontDestroyRefs;
-
-    // Use this for initialization
-    void Awake () {
-        ProgressionSystem.ProgressionMarkMarked.AddListener(CheckCompletion);
-	}
-
-    void Start()
-    {
-        dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
-    }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
-    void OnDestroy()
-    {
-        ProgressionSystem.ProgressionMarkMarked.RemoveListener(CheckCompletion);
-    }
-
-    void CheckCompletion()
+    protected override void ReceiveProgressionUpdate()
     {
         int markedCount = 0;
 
@@ -52,7 +29,7 @@ public class TutorialCompletionChecker : MonoBehaviour, ProgressionUser
         {
             dontDestroyRefs.ProgressionSystemInstance.Completed(markToMarkWhenPreReqsMet.ToString());
 
-            ProgressionSystem.ProgressionMarkMarked.RemoveListener(CheckCompletion);
+            ProgressionSystem.ProgressionMarkMarked.RemoveListener(ReceiveProgressionUpdate);
         }
     }
 }
