@@ -1,5 +1,6 @@
 ﻿public enum ScenesList
 {
     MovementTutorial,
-    InteractionTutorial
+    InteractionTutorial,
+    Beta
 }
