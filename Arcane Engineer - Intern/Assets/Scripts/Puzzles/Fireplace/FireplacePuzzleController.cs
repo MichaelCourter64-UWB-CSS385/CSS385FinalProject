@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireplacePuzzleController : MonoBehaviour
+public class FireplacePuzzleController : MonoBehaviour, ProgressionUser
 {
     [SerializeField] GameObject[] lightHolders;
     [SerializeField] Color offLight;

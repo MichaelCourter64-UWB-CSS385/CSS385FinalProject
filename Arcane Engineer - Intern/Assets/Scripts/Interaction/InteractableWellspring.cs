@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableWellspring : Interactable
+public class InteractableWellspring : Interactable, ProgressionUser
 {
     [SerializeField] GameObject wellToTurnOn;
     [SerializeField] GameObject linkToDontDestroyHolder;
@@ -40,7 +40,7 @@ public class InteractableWellspring : Interactable
         }
     }
 
-    public override void Interact()
+    protected override void ForInteract()
     {
         meterManager.RestoreElement(elementToRestore);
         // Do something like partical effects.

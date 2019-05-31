@@ -53,7 +53,7 @@ public class LockActivationController : PauseForInteractable
         onAngle = offAngle - onAngleDifference;
     }
 	
-    protected override void ForInteract()
+    protected override void ForPauseInteract()
     {
         //Debug.Log("In Lock Activation - ForInteract");
         //timeoutTimer = Time.time + timeoutDuration;

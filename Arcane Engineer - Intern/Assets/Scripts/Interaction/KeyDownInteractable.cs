@@ -11,27 +11,27 @@ public abstract class KeyDownInteractable : Interactable
     bool isInteractable = true;
     protected Animator animator;
 
-    void Awake()
+    protected override void ForAwake()
     {
         animator = objectToAnimate.GetComponent<Animator>();
 
-        ForAwake();
+        ForKeyDownAwake();
     }
 
-    protected abstract void ForAwake();
+    protected virtual void ForKeyDownAwake() { }
 
-    public override void Interact()
+    protected override void ForInteract()
     {
         if (isInteractable)
         {
             isInteractable = false;
-            ForInteract();
+            ForKeyDownInteract();
 
             StartCoroutine(WaitToAllowInteraction());
         }
     }
 
-    protected abstract void ForInteract();
+    protected abstract void ForKeyDownInteract();
 
     IEnumerator WaitToAllowInteraction()
     {

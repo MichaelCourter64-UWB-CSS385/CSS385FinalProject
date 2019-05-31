@@ -1,0 +1,8 @@
+FireplacePuzzleController
+InteractableWellspring
+PlayerControl
+FountainPuzzleController
+TutorialProgressChecker
+TutorialCompletionChecker
+ProgressBasedNextSceneCollider
+BasicButtonsController

@@ -8,5 +8,6 @@ public enum ProgressionMarks
     FirstCrouch,
     FirstUnCrouch,
     FirstLookAround,
-    MovementTutorial
+    MovementTutorial,
+    BasicButtons
 }

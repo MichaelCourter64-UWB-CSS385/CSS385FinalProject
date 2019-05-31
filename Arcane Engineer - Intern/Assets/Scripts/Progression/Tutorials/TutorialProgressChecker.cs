@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialProgressChecker : MonoBehaviour
+public class TutorialProgressChecker : MonoBehaviour, ProgressionUser
 {
     [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks markToBaseCompletionOn;

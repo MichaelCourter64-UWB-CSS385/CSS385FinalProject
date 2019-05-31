@@ -12,5 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorials/InteractionTutorial.unity
     guid: 23b998ae11dd2274f903955119063faf
   - enabled: 1
+    path: Assets/Scenes/Tutorials/ElementTutorial.unity
+    guid: 8b246b7f2b41e06468946b53f57e4877
+  - enabled: 1
     path: Assets/Scenes/Beta/Beta.unity
     guid: f9ba46a8c84c0974fae1ef2b7b427e42

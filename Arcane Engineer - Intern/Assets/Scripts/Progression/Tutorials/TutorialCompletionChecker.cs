@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialCompletionChecker : MonoBehaviour
+public class TutorialCompletionChecker : MonoBehaviour, ProgressionUser
 {
     [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks[] marksToMeet;

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ProgressBasedNextSceneCollider : MonoBehaviour {
+public class ProgressBasedNextSceneCollider : MonoBehaviour, ProgressionUser
+{
     [SerializeField] string tagOfPlayer;
     [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks[] marksToMeet;
@@ -15,11 +16,6 @@ public class ProgressBasedNextSceneCollider : MonoBehaviour {
     {
         dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     void OnTriggerStay(Collider other)
     {

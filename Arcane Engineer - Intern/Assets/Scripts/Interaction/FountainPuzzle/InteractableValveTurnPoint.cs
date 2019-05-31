@@ -12,7 +12,7 @@ public class InteractableValveTurnPoint : KeyDownInteractable
     FountainPuzzleController fountainPuzzleController;
 
     // Use this for initialization
-    protected override void ForAwake () {
+    protected override void ForKeyDownAwake () {
         fountainPuzzleController = fountainPuzzleControllerHolder.GetComponent<FountainPuzzleController>();
 	}
 	
@@ -21,7 +21,7 @@ public class InteractableValveTurnPoint : KeyDownInteractable
 		
 	}
 
-    protected override void ForInteract()
+    protected override void ForKeyDownInteract()
     {
         fountainPuzzleController.ChangeWaterLevel(waterAmountToChangeBy * (isRotatingRight ? 1 : -1));
 

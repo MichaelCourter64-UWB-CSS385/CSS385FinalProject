@@ -23,7 +23,7 @@ public class WheelController : PauseForInteractable {
     }
 	
     // Override method for interacting with this wheel object
-    protected override void ForInteract()
+    protected override void ForPauseInteract()
     {
         if (canInteract)
         {

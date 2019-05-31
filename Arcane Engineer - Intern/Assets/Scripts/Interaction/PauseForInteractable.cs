@@ -8,18 +8,18 @@ public abstract class PauseForInteractable : Interactable
 
     bool isInteractable = true;
 
-    public override void Interact()
+    protected override void ForInteract()
     {
         if (isInteractable)
         {
             isInteractable = false;
-            ForInteract();
+            ForPauseInteract();
 
             StartCoroutine(WaitToAllowInteraction());
         }
     }
 
-    protected abstract void ForInteract();
+    protected abstract void ForPauseInteract();
 
     protected IEnumerator WaitToAllowInteraction()
     {

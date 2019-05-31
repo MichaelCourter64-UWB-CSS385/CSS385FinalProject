@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 114776433138822432}
   m_Layer: 0
   m_Name: PlayerBody
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1371,11 +1371,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bfe8a13cc5a49f489f884c9a7fddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountToRestore: 0.1
+  restorationRate: 0
+  exhaustRate: 0
   waterMeter: {fileID: 114948928910545978}
   earthMeter: {fileID: 114179902226725216}
   fireMeter: {fileID: 114382862340833290}
   airMeter: {fileID: 114963187581836828}
+  waterValue: 0
+  earthValue: 0
+  fireValue: 0
+  airValue: 0
 --- !u!114 &114128298065897468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2139,6 +2144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcd801ef9e76bd448b0558e906d9794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 0}
   cameraHolder: {fileID: 1463247464290294}
   cameraCrouchOffset: -0.5
   cameraOffset: {x: 0, y: 0.5, z: 0}
@@ -2153,7 +2159,7 @@ MonoBehaviour:
   upperVerticalAngleLimit: 0.15
   lowerVerticalAngleLimit: -0.15
   interactKey: 101
-  interactionBoxTravelDistance: 1
+  interactionBoxTravelDistance: 1.25
   interactionlayer:
     serializedVersion: 2
     m_Bits: 256

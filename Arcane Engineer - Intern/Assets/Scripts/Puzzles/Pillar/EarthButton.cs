@@ -34,7 +34,7 @@ public class EarthButton : PauseForInteractable {
 		}
 	}
 
-	protected override void ForInteract() {
+	protected override void ForPauseInteract() {
 		switch (buttonId) {
 		case 0:
 			blockToRotate.transform.eulerAngles += new Vector3(0, 90, 0);

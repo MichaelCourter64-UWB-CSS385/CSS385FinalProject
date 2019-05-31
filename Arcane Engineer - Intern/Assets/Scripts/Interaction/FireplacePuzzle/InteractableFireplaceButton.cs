@@ -11,13 +11,13 @@ public class InteractableFireplaceButton : KeyDownInteractable
     FireplacePuzzleController panelController;
     Animator buttonAnimator;
 
-    protected override void ForAwake()
+    protected override void ForKeyDownAwake()
     {
         panelController = firePlacePanelControllerHolder.GetComponent<FireplacePuzzleController>();
         buttonAnimator = GetComponent<Animator>();
     }
 
-    protected override void ForInteract()
+    protected override void ForKeyDownInteract()
     {
         panelController.ReceiveButtonPress(patternNumber);
 

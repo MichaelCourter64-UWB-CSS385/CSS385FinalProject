@@ -2,5 +2,6 @@
 {
     MovementTutorial,
     InteractionTutorial,
+    ElementTutorial,
     Beta
 }

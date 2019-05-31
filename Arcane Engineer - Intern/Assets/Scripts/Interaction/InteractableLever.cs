@@ -27,7 +27,7 @@ public class InteractableLever : PauseForInteractable
  //       }
 	//}
 
-    protected override void ForInteract()
+    protected override void ForPauseInteract()
     {
         StartCoroutine(ShiftLever(!isOn));
         isOn = !isOn;

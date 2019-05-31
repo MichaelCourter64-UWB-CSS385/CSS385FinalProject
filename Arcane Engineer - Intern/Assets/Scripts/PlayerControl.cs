@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour, ProgressionUser
 {
     [Header("Progression/Tutorial Related")]
     [SerializeField] GameObject linkToDontDestroyHolder;

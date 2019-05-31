@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FountainPuzzleController : MonoBehaviour {
+public class FountainPuzzleController : MonoBehaviour, ProgressionUser
+{
     [SerializeField] GameObject waterLevelIndicator;
     [SerializeField] float waterLevelToReachDeadZoneHalf;
     [SerializeField] float waterLevelToReach;
