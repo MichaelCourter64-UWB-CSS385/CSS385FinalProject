@@ -142,6 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ebef80ac4c14ba98cd5739e9bbb71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 0}
+  defaultElement: 0
 --- !u!224 &57969396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1562,6 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 980180369}
   elementId: 3
   backgroundImage: {fileID: 1956768397}
 --- !u!114 &584995594
@@ -1895,46 +1898,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 120, y: 109.53734, z: 74.28203}
   m_Center: {x: 0, y: 54.76866, z: 0}
---- !u!1 &753190166
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 753190168}
-  - component: {fileID: 753190167}
-  m_Layer: 0
-  m_Name: ProgressionSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &753190167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 753190166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a9bf3cc39dbfe469e993933c5dd2a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &753190168
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 753190166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1715940345}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &754557277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,6 +2469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 980180369}
   elementId: 0
   backgroundImage: {fileID: 1956768397}
 --- !u!114 &909725400
@@ -3550,6 +3514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 980180369}
   elementId: 2
   backgroundImage: {fileID: 1956768397}
 --- !u!114 &1487897315
@@ -4117,60 +4082,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1709169744}
---- !u!1 &1715940342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1715940345}
-  - component: {fileID: 1715940344}
-  - component: {fileID: 1715940343}
-  m_Layer: 0
-  m_Name: DontDestroyOnLoad
-  m_TagString: NotDestroyedHolder
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1715940343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1715940342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dbfbd1d23ad8d54189b840f90bded3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressionHolder: {fileID: 753190166}
---- !u!114 &1715940344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1715940342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e905e8d40cb7c47ab58940ca9808b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1715940345
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1715940342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 753190168}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775551367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,7 +4299,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75af81957903f4e7d942b8fb22b40616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1137233507}
   selectionWheel: {fileID: 57969394}
+  elementButtonHolders:
+  - {fileID: 909725397}
+  - {fileID: 1941426817}
+  - {fileID: 1487897312}
+  - {fileID: 584995591}
   isRightClicking: 0
 --- !u!4 &1884785874
 Transform:
@@ -4846,6 +4763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 980180369}
   elementId: 1
   backgroundImage: {fileID: 1956768397}
 --- !u!114 &1941426820

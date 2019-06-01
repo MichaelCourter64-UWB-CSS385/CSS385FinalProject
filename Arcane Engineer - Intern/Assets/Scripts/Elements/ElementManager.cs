@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // MARK: - Class
-public class ElementManager : MonoBehaviour {
+public class ElementManager : ProgressAffector
+{
     [SerializeField] Elements defaultElement;
     
     // MARK: Properties
@@ -25,7 +26,13 @@ public class ElementManager : MonoBehaviour {
 
 	// MARK: Public Control Handlers
 	// Determine the element and store
-	public void PickElement(int elementId) {
+	public void PickElement(int elementId)
+    {
+        if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstWheelHover.ToString()))
+        {
+            dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstWheelHover.ToString());
+        }
+
 		switch (elementId) {
 		case 0:
 			selectedElement = Elements.Water;

@@ -11,5 +11,9 @@ public enum ProgressionMarks
     MovementTutorial,
     BasicButtons,
     FirstWellSpringFill,
-    CleanedDoorSoot
+    CleanedDoorSoot,
+    FirstOpenSelectionWheel,
+    FirstWheelHover,
+    FirstElementSelection,
+    ClearedDoorDebris
 }

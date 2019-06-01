@@ -1661,6 +1661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ebef80ac4c14ba98cd5739e9bbb71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 918873979}
+  defaultElement: 0
 --- !u!224 &307010986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2273,6 +2275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 195969587}
   elementId: 1
   backgroundImage: {fileID: 1162395225}
 --- !u!114 &502045325
@@ -4324,6 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 195969587}
   elementId: 2
   backgroundImage: {fileID: 1162395225}
 --- !u!114 &992858523
@@ -5147,6 +5151,7 @@ MonoBehaviour:
   earthValue: 0
   fireValue: 0
   airValue: 0
+  maxValue: 1
 --- !u!114 &1228630558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7209,6 +7214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 195969587}
   elementId: 0
   backgroundImage: {fileID: 1162395225}
 --- !u!114 &1572763198
@@ -8015,6 +8021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 195969587}
   elementId: 3
   backgroundImage: {fileID: 1162395225}
 --- !u!114 &1663614655
@@ -8639,7 +8646,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75af81957903f4e7d942b8fb22b40616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 918873979}
   selectionWheel: {fileID: 307010984}
+  elementButtonHolders:
+  - {fileID: 1572763195}
+  - {fileID: 502045322}
+  - {fileID: 992858520}
+  - {fileID: 1663614652}
   isRightClicking: 0
 --- !u!1001 &1822571474
 Prefab:

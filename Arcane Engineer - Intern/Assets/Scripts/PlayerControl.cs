@@ -76,6 +76,13 @@ public class PlayerControl : MonoBehaviour, ProgressionUser
     // Update is called once per frame
     void Update ()
     {
+        // Check if we're selecting an element
+        RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
+        if (rightClickListener.isRightClicking)
+        {
+            return;
+        }
+
         UpdateMovement();
         UpdateGameObjectRotation();
         CheckForInteraction();
@@ -207,13 +214,6 @@ public class PlayerControl : MonoBehaviour, ProgressionUser
 
     void CheckForElementUse()
     {
-        // Check if we're selecting an element
-        RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
-        if (rightClickListener.isRightClicking)
-        {
-            return;
-        }
-
         if (Input.GetKey(elementUseKey))
         {
         	currentElement = elementManager.getSelectedElement();

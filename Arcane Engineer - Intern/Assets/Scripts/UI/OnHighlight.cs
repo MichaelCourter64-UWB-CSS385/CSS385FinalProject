@@ -6,22 +6,53 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 // MARK: - Class
-public class OnHighlight : MonoBehaviour, IPointerEnterHandler {
-	// MARK: Properties
+public class OnHighlight : MonoBehaviour
+{
+    // MARK: Properties
+    [SerializeField] GameObject canvasHolder;
 	[SerializeField] int elementId;
 	[SerializeField] GameObject backgroundImage;
 
-	ElementManager elementManager;
+    GraphicRaycaster graphicRayCaster;
+    EventSystem eventSystem;
+
+    ElementManager elementManager;
 
 	// MARK: Life Cycle
 	void Awake () {
-		elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
+        //Fetch the Raycaster from the GameObject (the Canvas)
+        graphicRayCaster = canvasHolder.GetComponent<GraphicRaycaster>();
+        //Fetch the Event System from the Scene
+        eventSystem = canvasHolder.GetComponent<EventSystem>();
+
+        elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void CheckElementSelection ()
+    {
+        //Set up the new Pointer Event
+        PointerEventData m_PointerEventData = new PointerEventData(eventSystem);
+        //Set the Pointer Event Position to that of the mouse position
+        m_PointerEventData.position = Input.mousePosition;
+
+        //Create a list of Raycast Results
+        List<RaycastResult> results = new List<RaycastResult>();
+
+        //Raycast using the Graphics Raycaster and mouse click position
+        graphicRayCaster.Raycast(m_PointerEventData, results);
+
+        //For every result returned, output the name of the GameObject on the Canvas hit by the Ray
+        foreach (RaycastResult result in results)
+        {
+            OnHighlight possibleElementButton = result.gameObject.GetComponent<OnHighlight>();
+
+            if (result.gameObject == gameObject)
+            {
+                elementManager.PickElement(elementId);
+            }
+        }
+    }
 
 	// MARK: Private
 	private Color pickColor() {
@@ -60,14 +91,5 @@ public class OnHighlight : MonoBehaviour, IPointerEnterHandler {
 		}
 
 		return bgColor;
-	}
-
-	public void OnPointerEnter(PointerEventData eventData) {
-		elementManager.PickElement(elementId);
-
-		// Set the color on the Panel
-		//Color bgColor = pickColor();
-
-		//backgroundImage.GetComponent<Image>().color = bgColor;
 	}
 }

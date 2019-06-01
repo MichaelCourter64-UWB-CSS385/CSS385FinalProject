@@ -1249,7 +1249,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75af81957903f4e7d942b8fb22b40616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 0}
   selectionWheel: {fileID: 1276738925785764}
+  elementButtonHolders:
+  - {fileID: 1499147394170000}
+  - {fileID: 1079029002011510}
+  - {fileID: 1741114530654866}
+  - {fileID: 1899546419336758}
   isRightClicking: 0
 --- !u!114 &114086426445601852
 MonoBehaviour:
@@ -1381,6 +1387,7 @@ MonoBehaviour:
   earthValue: 0
   fireValue: 0
   airValue: 0
+  maxValue: 1
 --- !u!114 &114128298065897468
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,6 +1426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 1499335494783066}
   elementId: 0
   backgroundImage: {fileID: 1775903685981816}
 --- !u!114 &114151400234408384
@@ -1471,6 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 1499335494783066}
   elementId: 1
   backgroundImage: {fileID: 1775903685981816}
 --- !u!114 &114179902226725216
@@ -2014,6 +2023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ebef80ac4c14ba98cd5739e9bbb71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 0}
+  defaultElement: 0
 --- !u!114 &114663700742068760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2211,6 +2222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 1499335494783066}
   elementId: 3
   backgroundImage: {fileID: 1775903685981816}
 --- !u!114 &114804455292809440
@@ -2346,6 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasHolder: {fileID: 1499335494783066}
   elementId: 2
   backgroundImage: {fileID: 1775903685981816}
 --- !u!114 &114948591648222928

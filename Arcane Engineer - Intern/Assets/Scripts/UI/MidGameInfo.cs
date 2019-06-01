@@ -7,14 +7,14 @@ public class MidGameInfo : ProgressAffector, ProgressionUser
 {
     [SerializeField] GameObject infoUIToOpen;
     [SerializeField] GameObject[] objectsToTurnOffThenOn;
-    [SerializeField] ProgressionMarks markToLookAt;
+    [SerializeField] ProgressionMarks[] marksToLookAt;
 
     bool wasTriggered = false;
 
 	// Update is called once per frame
 	void Update () {
-        // If this wasn't triggered AND the mark to look at is marked, then:
-        if (!wasTriggered && dontDestroyRefs.ProgressionSystemInstance.IsCompleted(markToLookAt.ToString()))
+        // If this wasn't triggered AND the marks to look at are marked, then:
+        if (!wasTriggered && CheckTheMarks())
         {
             infoUIToOpen.SetActive(true);
 
@@ -37,5 +37,21 @@ public class MidGameInfo : ProgressAffector, ProgressionUser
 
             enabled = false;
         }
+    }
+
+    bool CheckTheMarks()
+    {
+        bool areAllMarked = true;
+
+        for (int i = 0; i < marksToLookAt.Length; i++)
+        {
+            if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(marksToLookAt[i].ToString()))
+            {
+                areAllMarked = false;
+                break;
+            }
+        }
+
+        return areAllMarked;
     }
 }
