@@ -12,6 +12,7 @@ public class FireplacePuzzleController : MonoBehaviour, ProgressionUser
     [SerializeField] Material correctMat;
     [SerializeField] Material incrorrectMat;
     [SerializeField] GameObject linkToDontDestroyHolder;
+    [SerializeField] GameObject[] buttons;
     [SerializeField] int incorrectAnimationFlashCycles;
     [SerializeField] float incorrectAnimationFlashDelay;
     [SerializeField] int solvedAnimationFlashCycles;
@@ -98,6 +99,11 @@ public class FireplacePuzzleController : MonoBehaviour, ProgressionUser
         if(completionCounter == lights.Length - 1)
         {
             dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FireplaceFixed.ToString());
+
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttons[i].GetComponent<Interactable>().DisableInteraction();
+            }
 
             StartCoroutine(PlaySolvedAnimtation());
         }

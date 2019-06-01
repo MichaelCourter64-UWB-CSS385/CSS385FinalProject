@@ -7,6 +7,7 @@ public class FountainPuzzleController : MonoBehaviour, ProgressionUser
     [SerializeField] GameObject waterLevelIndicator;
     [SerializeField] float waterLevelToReachDeadZoneHalf;
     [SerializeField] float waterLevelToReach;
+    [SerializeField] GameObject[] valves;
     [SerializeField] GameObject linkToDontDestroyHolder;
     [SerializeField] ProgressionMarks progressMarkToCheckOff;
     [SerializeField] string overpressureParamName;
@@ -48,6 +49,11 @@ public class FountainPuzzleController : MonoBehaviour, ProgressionUser
         if (waterLevel <= waterLevelToReach && waterLevel > waterLevelToReach - waterLevelToReachDeadZoneHalf)
         {
             dontDestroyRefs.ProgressionSystemInstance.Completed(progressMarkToCheckOff.ToString());
+
+            for (int i = 0; i < valves.Length; i++)
+            {
+                valves[i].GetComponent<Interactable>().DisableInteraction();
+            }
         }
 
         if (waterLevel > waterLevelToReach)
