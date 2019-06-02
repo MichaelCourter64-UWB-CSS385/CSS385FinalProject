@@ -309,8 +309,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.00872093, y: 0.5935653}
   m_AnchorMax: {x: 0.9927326, y: 0.9652565}
-  m_AnchoredPosition: {x: -0.5, y: -0.16999817}
-  m_SizeDelta: {x: 1, y: 0.34000015}
+  m_AnchoredPosition: {x: -0.5, y: -43.02}
+  m_SizeDelta: {x: 1, y: 86.041}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &13369053
 MonoBehaviour:
@@ -345,7 +345,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Get this place working and cleaned up.\n ~Your Boss"
+  m_Text: "The owner of this mansion wants us to do the whole nine yards; fixing and
+    cleaning up the place. He said to try getting the fountain working first to get
+    your Water mana.\n\n ~Your Boss"
 --- !u!222 &13369054
 CanvasRenderer:
   m_ObjectHideFlags: 0
