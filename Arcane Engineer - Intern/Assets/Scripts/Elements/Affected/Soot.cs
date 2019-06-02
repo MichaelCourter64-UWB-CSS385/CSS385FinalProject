@@ -13,14 +13,6 @@ public class Soot : ElementAffected {
         sootRenderer = GetComponent<SpriteRenderer>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKey(KeyCode.M))
-        {
-            Affect(Elements.Water);
-        }
-    }
-
     public override void Affect(Elements affectingElement)
     {
         if (affectingElement == Elements.Water)
