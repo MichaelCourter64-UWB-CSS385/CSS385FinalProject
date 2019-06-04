@@ -12,7 +12,9 @@ public class PressurePlateSensor : MonoBehaviour {
 	[SerializeField] GameObject earthWellspring;
 	[SerializeField] Material pressedMaterial;
 	[SerializeField] Material liftedMaterial;
+	[SerializeField] GameObject linkToDontDestroyHolder;
 
+	DontDestroyReferenceHolder dontDestroyRefs;
 	bool shouldSlideTogether = false;
 	bool canMove = false;
 
@@ -23,6 +25,8 @@ public class PressurePlateSensor : MonoBehaviour {
 
 	// MARK: Life Cycle
 	void Start () {
+		dontDestroyRefs = linkToDontDestroyHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
+
 		eastStartingPosition = eastPillar.transform.position;
 		westStartingPosition = westPillar.transform.position;
 	}
@@ -79,6 +83,8 @@ public class PressurePlateSensor : MonoBehaviour {
 
 			// Check if rotation is correct
 			if (actualEastRotation == expectedEastRotation) {
+				dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.CubeFixed.ToString());
+
 				canMove = false;
 				earthWellspring.SetActive(true);
 			}
