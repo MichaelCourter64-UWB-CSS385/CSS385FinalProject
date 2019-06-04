@@ -2911,7 +2911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c026f0267282d403aa6bd53c1063afbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: 
+  interactionToolTip: Rotate Piece
   interactLayerColliderHolder: {fileID: 600917802}
   interactionDisableTime: 1
   blockToRotate: {fileID: 2028316607}
@@ -6002,7 +6002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a56b49a10b45b04d85c4d2c80902d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: 
+  interactionToolTip: Replenish Earth
   interactLayerColliderHolder: {fileID: 0}
   wellToTurnOn: {fileID: 1004529111}
   linkToDontDestroyHolder: {fileID: 1167130620}
