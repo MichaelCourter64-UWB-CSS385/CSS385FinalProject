@@ -1143,8 +1143,8 @@ Rigidbody:
   m_GameObject: {fileID: 1442614923124742}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 20
+  m_Drag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2162,7 +2162,7 @@ MonoBehaviour:
   horizontalName: Horizontal
   verticalName: Vertical
   crouchKey: 99
-  speed: 5000
+  speed: 5
   mouseXName: Mouse X
   horizontalSensitivity: 50
   mouseYName: Mouse Y

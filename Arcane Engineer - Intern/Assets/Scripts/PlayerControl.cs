@@ -109,6 +109,7 @@ public class PlayerControl : MonoBehaviour, ProgressionUser
     {
         float horizontalValue = Input.GetAxis(horizontalName);
         float verticalValue = Input.GetAxis(verticalName);
+        Vector3 newPosition;
 
         if (Input.GetKeyDown(crouchKey))
         {
@@ -128,7 +129,9 @@ public class PlayerControl : MonoBehaviour, ProgressionUser
 
         if (horizontalValue != 0 || verticalValue != 0)
         {
-            playersRigidBody.AddForce(transform.TransformDirection(new Vector3(horizontalValue * speed * Time.deltaTime, 0, verticalValue * speed * Time.deltaTime)));
+            newPosition = transform.position + transform.TransformDirection(new Vector3(horizontalValue * speed * Time.deltaTime, 0, verticalValue * speed * Time.deltaTime));
+
+            playersRigidBody.MovePosition(newPosition);
 
             // If this is the first time moving, then:
             if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstWalkingAround.ToString()))

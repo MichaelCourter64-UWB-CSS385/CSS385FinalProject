@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: Somewhat Increase Pressure
+  interactionToolTip: Pressure Up ^^
   interactLayerColliderHolder: {fileID: 175313743}
   objectToAnimate: {fileID: 457851001}
   animationStateName: TurnClockwise
@@ -1454,6 +1454,69 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &249562890
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1597761077}
+    m_Modifications:
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.336
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491366078767352, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_Name
+      value: Soot (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &249562891 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1,
+    type: 2}
+  m_PrefabInternal: {fileID: 249562890}
 --- !u!1 &251854757 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1430140385337752, guid: 9bc94e6d31e2a3e49a99043234e4a55d,
@@ -1530,7 +1593,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aae4eadd27172ff408958f885fe1e42e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1891,7 +1954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: Barely Decrease Pressure
+  interactionToolTip: Pressure Down v
   interactLayerColliderHolder: {fileID: 314834533}
   objectToAnimate: {fileID: 2014254337}
   animationStateName: TurnCounterClockwise
@@ -2959,6 +3022,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 101.6
       objectReference: {fileID: 0}
+    - target: {fileID: 23243825885019854, guid: 5b0a008332418a34e8c3bea2811c6f21,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a86c118c8a1d634428a20d54efe34b84, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0a008332418a34e8c3bea2811c6f21, type: 2}
   m_IsPrefabParent: 0
@@ -3182,7 +3250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: Barely Increase Pressure
+  interactionToolTip: Pressure Up ^
   interactLayerColliderHolder: {fileID: 628984678}
   objectToAnimate: {fileID: 2014254337}
   animationStateName: TurnClockwise
@@ -3956,7 +4024,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100002, guid: f0f406f8ffd14f34bb71ae2db73e6daf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4338,7 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: Somewhat Decrease Pressure
+  interactionToolTip: Pressure Down vv
   interactLayerColliderHolder: {fileID: 945885141}
   objectToAnimate: {fileID: 457851001}
   animationStateName: TurnCounterClockwise
@@ -4440,7 +4508,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100004, guid: 56626a7006fbb5a42ac42849784ca983, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4538,6 +4606,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 124.3
       objectReference: {fileID: 0}
+    - target: {fileID: 23243825885019854, guid: 5b0a008332418a34e8c3bea2811c6f21,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a86c118c8a1d634428a20d54efe34b84, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0a008332418a34e8c3bea2811c6f21, type: 2}
   m_IsPrefabParent: 0
@@ -5617,7 +5690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bfe8a13cc5a49f489f884c9a7fddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restorationRate: 0.1
+  restorationRate: 0.25
   exhaustRate: 0.05
   waterMeter: {fileID: 1528671101}
   earthMeter: {fileID: 84401120}
@@ -5857,7 +5930,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100002, guid: f0f406f8ffd14f34bb71ae2db73e6daf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5960,7 +6033,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aae4eadd27172ff408958f885fe1e42e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6044,7 +6117,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aae4eadd27172ff408958f885fe1e42e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6284,7 +6357,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100004, guid: 56626a7006fbb5a42ac42849784ca983, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6459,7 +6532,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aae4eadd27172ff408958f885fe1e42e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6543,7 +6616,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aae4eadd27172ff408958f885fe1e42e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6630,7 +6703,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: aae4eadd27172ff408958f885fe1e42e, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7151,9 +7224,77 @@ Prefab:
       propertyPath: m_Name
       value: WoodDebrisMedium (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 23243825885019854, guid: 5b0a008332418a34e8c3bea2811c6f21,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a86c118c8a1d634428a20d54efe34b84, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0a008332418a34e8c3bea2811c6f21, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1457138195
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1597761077}
+    m_Modifications:
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.346
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491366078767352, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_Name
+      value: Soot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ad3d0cfefaf711c4eb59430f557e3df1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1457138196 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4116996225734344, guid: ad3d0cfefaf711c4eb59430f557e3df1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1457138195}
 --- !u!1001 &1481903220
 Prefab:
   m_ObjectHideFlags: 0
@@ -7213,6 +7354,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -15.2
       objectReference: {fileID: 0}
+    - target: {fileID: 23243825885019854, guid: 5b0a008332418a34e8c3bea2811c6f21,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a86c118c8a1d634428a20d54efe34b84, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0a008332418a34e8c3bea2811c6f21, type: 2}
   m_IsPrefabParent: 0
@@ -7509,6 +7655,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 18.9
       objectReference: {fileID: 0}
+    - target: {fileID: 23243825885019854, guid: 5b0a008332418a34e8c3bea2811c6f21,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a86c118c8a1d634428a20d54efe34b84, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b0a008332418a34e8c3bea2811c6f21, type: 2}
   m_IsPrefabParent: 0
@@ -8271,6 +8422,8 @@ Transform:
   - {fileID: 49434590}
   - {fileID: 1956569858}
   - {fileID: 285600358}
+  - {fileID: 249562891}
+  - {fileID: 1457138196}
   m_Father: {fileID: 1725194853}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8321,6 +8474,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 23871374676508786, guid: d73925a6b8d99ff4e892761cccf3171b,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49e4a680adbe1af40a2f810a55f72a72, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d73925a6b8d99ff4e892761cccf3171b, type: 2}
   m_IsPrefabParent: 0
@@ -9405,7 +9563,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100002, guid: f0f406f8ffd14f34bb71ae2db73e6daf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10030,7 +10188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: Greatly Increase Pressure
+  interactionToolTip: Pressure Up ^^^
   interactLayerColliderHolder: {fileID: 1905169668}
   objectToAnimate: {fileID: 1851892813}
   animationStateName: TurnClockwise
@@ -10182,7 +10340,7 @@ MonoBehaviour:
   horizontalName: Horizontal
   verticalName: Vertical
   crouchKey: 99
-  speed: 5000
+  speed: 5
   mouseXName: Mouse X
   horizontalSensitivity: 50
   mouseYName: Mouse Y
@@ -10213,8 +10371,8 @@ Rigidbody:
   m_GameObject: {fileID: 1936964321}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 20
+  m_Drag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -10626,7 +10784,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100002, guid: f0f406f8ffd14f34bb71ae2db73e6daf, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11258,7 +11416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773135725415cf43b7cbd0dc4135f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionToolTip: Greatly Decrease Pressure
+  interactionToolTip: Pressure Down vvv
   interactLayerColliderHolder: {fileID: 2083745158}
   objectToAnimate: {fileID: 1851892813}
   animationStateName: TurnCounterClockwise
