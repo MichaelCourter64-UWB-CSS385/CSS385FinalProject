@@ -28,11 +28,6 @@ public class ElementManager : ProgressAffector
 	// Determine the element and store
 	public void PickElement(int elementId)
     {
-        if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstWheelHover.ToString()))
-        {
-            dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstWheelHover.ToString());
-        }
-
 		switch (elementId) {
 		case 0:
 			selectedElement = Elements.Water;

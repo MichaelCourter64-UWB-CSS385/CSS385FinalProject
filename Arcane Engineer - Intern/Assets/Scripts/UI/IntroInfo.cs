@@ -17,6 +17,8 @@ public class IntroInfo : MonoBehaviour {
             {
                 thing.SetActive(true);
             }
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 	}
 }
