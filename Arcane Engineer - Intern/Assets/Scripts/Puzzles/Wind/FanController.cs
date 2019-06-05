@@ -10,14 +10,22 @@ public class FanController : WindMachine {
 
     [SerializeField] bool isActivated = false;
     [SerializeField] bool hasPower = false;
+
     [SerializeField] GameObject windBeam;
     [SerializeField] GameObject fanSupportChassis;
 
     [SerializeField] float rotationSpeed;
-    [SerializeField] float rotationRange;
+    [SerializeField] float rotationMin;
+    [SerializeField] float rotationMax;
+
     [SerializeField] float heightAdjustSpeed;
+    [SerializeField] float heightMin;
+    [SerializeField] float heightMax;
 
     Animator fanAnimator;
+
+    //Old Version
+    float rotationRange = 30;
 
     void Awake()
     {
@@ -104,10 +112,39 @@ public class FanController : WindMachine {
     // Rotate()
     // Public method used by the control panel to change the direction of the fan.
     // bool clockwise is true for clockwise, false for counterclockwise.
+    public void newRotate(bool clockwise)
+    {
+        float currentRotated = fanSupportChassis.transform.eulerAngles.y;
+        int directionModifier = clockwise ? 1 : -1;
+        float adjust = rotationSpeed * directionModifier;
+        if ((currentRotated + adjust) <= rotationMax && (currentRotated + adjust) >= rotationMin)
+        {
+            fanSupportChassis.transform.eulerAngles += new Vector3(0, adjust, 0);
+        }
+    }
+
+    public void MoveVertical(bool up)
+    {
+        float currentHeight = fanSupportChassis.transform.position.y;
+        int directionModifier = up ? 1 : -1;
+        float adjust = heightAdjustSpeed * directionModifier;
+        if ((currentHeight + adjust) <= heightMax && (currentHeight + adjust) >= heightMin)
+        {
+            fanSupportChassis.transform.position += new Vector3(0, adjust, 0);
+        }
+
+        // Old Version
+        //StartCoroutine(RotateFan(clockwise));
+    }
+
+
+    // Old Versions
+
     public void Rotate(bool clockwise)
     {
         StartCoroutine(RotateFan(clockwise));
     }
+
 
     public void SetFanHeight(float newHeight)
     {
@@ -115,7 +152,7 @@ public class FanController : WindMachine {
         StartCoroutine(AdjustFanHeight(newHeight));
     }
 
-    IEnumerator RotateFan(bool direction)
+   IEnumerator RotateFan(bool direction)
     {
         float currentRotated = 0;
         int directionModifier = direction ? 1 : -1;

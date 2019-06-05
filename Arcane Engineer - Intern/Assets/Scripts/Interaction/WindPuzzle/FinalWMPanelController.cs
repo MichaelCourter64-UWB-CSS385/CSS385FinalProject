@@ -57,7 +57,9 @@ public class FinalWMPanelController : WindMachine
 
     public override void Activate()
     {
-        if (turbine1_IsOn && turbine2_IsOn && turbine3_IsOn)
+        if (turbine1.GetComponent<TurbineController>().CheckIfRunning()
+            && turbine1.GetComponent<TurbineController>().CheckIfRunning()
+            && turbine1.GetComponent<TurbineController>().CheckIfRunning())
         {
             hasPower = true;
             isActivated = true;
@@ -78,17 +80,17 @@ public class FinalWMPanelController : WindMachine
         hasPower = false;
     }
 
-    public void Fan1Power(bool isOn)
+    public void Turbine1Power(bool isOn)
     {
         turbine1_IsOn = isOn;
     }
 
-    public void Fan2Power(bool isOn)
+    public void Turbine2Power(bool isOn)
     {
         turbine2_IsOn = isOn;
     }
 
-    public void Fan3Power(bool isOn)
+    public void Turbine3Power(bool isOn)
     {
         turbine3_IsOn = isOn;
     }

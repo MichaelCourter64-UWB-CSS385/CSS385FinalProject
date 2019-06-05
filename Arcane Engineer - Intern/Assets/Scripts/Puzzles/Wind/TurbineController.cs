@@ -6,7 +6,10 @@ public class TurbineController : WindMachine {
 
     [SerializeField] GameObject controlPanel;
     [SerializeField] GameObject parent;
+
     [SerializeField] float heightAdjustSpeed;
+    [SerializeField] float heightMin;
+    [SerializeField] float heightMax;
 
     Animator turbineAnimator;
     bool isActivated = false;
@@ -17,30 +20,38 @@ public class TurbineController : WindMachine {
         turbineAnimator = this.transform.GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     // Used for raycast hit to turn on the turbine when a fan successfully
     // directs its flow of air at the turbine.
     public override void Activate()
     {
         isActivated = true;
-        controlPanel.GetComponent<WindMachinePanelController>().Activate();
+        //controlPanel.GetComponent<WMPanelController>().Activate();
+        controlPanel.GetComponent<WindMachine>().Activate();
         turbineAnimator.SetBool("isOn", true);
     }
 
     public override void Deactivate()
     {
         isActivated = false;
-        controlPanel.GetComponent<WindMachinePanelController>().Deactivate();
+        //controlPanel.GetComponent<WMPanelController>().Deactivate();
+        controlPanel.GetComponent<WindMachine>().Deactivate();
         turbineAnimator.SetBool("isOn", false);
     }
 
     public bool CheckIfRunning()
     {
         return isActivated;
+    }
+
+    public void MoveVertical(bool up)
+    {
+        float currentHeight = parent.transform.position.y;
+        int directionModifier = up ? 1 : -1;
+        float adjust = heightAdjustSpeed * directionModifier;
+        if ((currentHeight + adjust) <= heightMax && (currentHeight + adjust) >= heightMin)
+        {
+            parent.transform.position += new Vector3(0, adjust, 0);
+        }
     }
 
     public void SetTurbineHeight(float newHeight)
