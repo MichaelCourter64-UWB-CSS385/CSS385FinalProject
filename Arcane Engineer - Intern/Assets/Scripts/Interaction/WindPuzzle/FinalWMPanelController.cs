@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinalWMPanelController : WindMachine
+public class FinalWMPanelController : WindMachine, ProgressionUser
 {
     [SerializeField] GameObject fan1;
     [SerializeField] GameObject fan2;
@@ -12,6 +12,9 @@ public class FinalWMPanelController : WindMachine
     [SerializeField] GameObject panelPowerLight;
     [SerializeField] GameObject fan1ActiveLight;
     [SerializeField] GameObject fan2ActiveLight;
+
+    [SerializeField] GameObject DontDestroyRefHolder;
+
     [SerializeField] Material activeLightMaterial;
     [SerializeField] Material inactiveLightMaterial;
 
@@ -21,6 +24,12 @@ public class FinalWMPanelController : WindMachine
     bool hasPower = false;
     bool isActivated = false;
 
+    DontDestroyReferenceHolder ddrh;
+
+    void Start()
+    {
+        ddrh = DontDestroyRefHolder.GetComponent<LinkToDontDestroy>().DontDestroyReferences;
+    }
 
     public void ReceiveButtonPress(string buttonPurpose)
     {
@@ -66,6 +75,7 @@ public class FinalWMPanelController : WindMachine
             fan1.GetComponent<FanController>().SetPowerState(true);
             fan2.GetComponent<FanController>().SetPowerState(true);
             panelPowerLight.GetComponent<Renderer>().material = activeLightMaterial;
+            ddrh.ProgressionSystemInstance.Completed("WindMachineFixed");
         }
     }
 

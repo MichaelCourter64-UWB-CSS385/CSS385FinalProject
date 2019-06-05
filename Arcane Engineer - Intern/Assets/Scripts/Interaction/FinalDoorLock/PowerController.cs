@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerController : MonoBehaviour {
-    // References to the objects which receive initial power
+public class PowerController : ProgressChecker, ProgressionUser
+{
+    // References to the objects in the final puzzle that get inital power
     [SerializeField] GameObject leftStart;
     [SerializeField] GameObject leftTarget;
     [SerializeField] GameObject rightStart;
@@ -12,18 +13,11 @@ public class PowerController : MonoBehaviour {
     [SerializeField] GameObject dial1;
     [SerializeField] GameObject dial2;
 
-    //// For final usage
-    //private bool waterOn;
-    //private bool fireOn;
-    //private bool earthOn;
-    //private bool windOn;
-
-    // For debug usage
-    [SerializeField] bool waterOn;
-    [SerializeField] bool fireOn;
-    [SerializeField] bool earthOn;
-    [SerializeField] bool windOn;
-
+    // References to the progression system trackers for element puzzle completion
+    [SerializeField] ProgressionMarks waterComplete;
+    [SerializeField] ProgressionMarks fireComplete;
+    [SerializeField] ProgressionMarks earthComplete;
+    [SerializeField] ProgressionMarks windComplete;
 
     // Move these to the PowerboxOutput.cs files for their respective output objects
     private int[] leftStartVals = new int[4] { 1, 2, 3, 4 };
@@ -31,26 +25,33 @@ public class PowerController : MonoBehaviour {
     private int[] rightStartVals = new int[4] { 4, 3, 2, 1 };
     private int[] rightTargetVals = new int[4] { 1, 3, 2, 4 };
 
+    // For debug usage
+    //[SerializeField] bool waterOn;
+    //[SerializeField] bool fireOn;
+    //[SerializeField] bool earthOn;
+    //[SerializeField] bool windOn;
+
     // Initialization
     void Awake () {
-        //waterOn = false;
-        //fireOn = false;
-        //earthOn = false;
-        //windOn = false;
-
         // For debugging purposes
-        waterOn = true;
-        fireOn = true;
-        earthOn = true;
-        windOn = true;
-        PowerOn();
+        //waterOn = true;
+        //fireOn = true;
+        //earthOn = true;
+        //windOn = true;
+        //PowerOn();
     }
-	
-	// Update is called once per frame
-	//void Update () {
- //       if (waterOn && fireOn && earthOn && windOn)
- //           PowerOn();
-	//}
+
+    protected override void ReceiveProgressionUpdate()
+    {
+        // If all previous element puzzles are complete, power on the final puzzle;
+        if (dontDestroyRefs.ProgressionSystemInstance.IsCompleted(waterComplete.ToString())
+            && dontDestroyRefs.ProgressionSystemInstance.IsCompleted(fireComplete.ToString())
+            && dontDestroyRefs.ProgressionSystemInstance.IsCompleted(earthComplete.ToString())
+            && dontDestroyRefs.ProgressionSystemInstance.IsCompleted(windComplete.ToString()))
+        {
+            PowerOn();
+        }
+    }
 
     void PowerOn()
     {
@@ -62,5 +63,4 @@ public class PowerController : MonoBehaviour {
         leftTarget.GetComponent<LightPanelController>().Activate();
         rightTarget.GetComponent<LightPanelController>().Activate();
     }
-
 }

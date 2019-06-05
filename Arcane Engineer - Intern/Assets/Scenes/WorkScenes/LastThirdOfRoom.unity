@@ -2222,6 +2222,7 @@ MonoBehaviour:
   panelPowerLight: {fileID: 1461677298}
   fan1ActiveLight: {fileID: 564971865}
   fan2ActiveLight: {fileID: 768761643}
+  DontDestroyRefHolder: {fileID: 1707635686}
   activeLightMaterial: {fileID: 2100000, guid: 4d75942981716784eb50aa00483ea4ad, type: 2}
   inactiveLightMaterial: {fileID: 2100000, guid: 9d2e38bcbb25ce845832b27bd6608819,
     type: 2}
@@ -6561,7 +6562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1909644358
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6658,6 +6659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf100c5cd552fa54aa0c7956b6af233f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 0}
   leftStart: {fileID: 1570751346}
   leftTarget: {fileID: 1605770047}
   rightStart: {fileID: 860229267}
@@ -6665,10 +6667,10 @@ MonoBehaviour:
   lockActivator: {fileID: 1459093596}
   dial1: {fileID: 1802917736}
   dial2: {fileID: 856149564}
-  waterOn: 1
-  fireOn: 1
-  earthOn: 1
-  windOn: 1
+  waterComplete: 0
+  fireComplete: 1
+  earthComplete: 2
+  windComplete: 3
 --- !u!23 &1917203667
 MeshRenderer:
   m_ObjectHideFlags: 0
