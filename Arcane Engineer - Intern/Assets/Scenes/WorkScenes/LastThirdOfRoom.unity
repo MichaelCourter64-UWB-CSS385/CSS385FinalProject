@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2881,7 +2881,7 @@ Prefab:
     - target: {fileID: 224764132255251716, guid: 80553864f298b304aa696b731d0911b8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 8.28997
+      value: 8.290054
       objectReference: {fileID: 0}
     - target: {fileID: 114037005112102018, guid: 80553864f298b304aa696b731d0911b8,
         type: 2}
@@ -2918,6 +2918,26 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -0.14398193
       objectReference: {fileID: 0}
+    - target: {fileID: 224439186621529142, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224128744193281490, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.08502197
+      objectReference: {fileID: 0}
+    - target: {fileID: 224190153049073112, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.33496094
+      objectReference: {fileID: 0}
+    - target: {fileID: 114649083769105260, guid: 80553864f298b304aa696b731d0911b8,
+        type: 2}
+      propertyPath: linkToDontDestroyHolder
+      value: 
+      objectReference: {fileID: 1707635686}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 80553864f298b304aa696b731d0911b8, type: 2}
   m_IsPrefabParent: 0
@@ -6659,7 +6679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf100c5cd552fa54aa0c7956b6af233f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkToDontDestroyHolder: {fileID: 0}
+  linkToDontDestroyHolder: {fileID: 1707635686}
   leftStart: {fileID: 1570751346}
   leftTarget: {fileID: 1605770047}
   rightStart: {fileID: 860229267}

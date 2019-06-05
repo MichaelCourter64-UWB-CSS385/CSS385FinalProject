@@ -102,8 +102,9 @@ public class MeterManager : MonoBehaviour {
             case Elements.Air:
                 return airValue;
                 break;
+			default:
+				Debug.Log("Error: Could not determine elementToRetrieve from Elements enum");
+				return -1;
         }
-
-        return -1;
     }
 }

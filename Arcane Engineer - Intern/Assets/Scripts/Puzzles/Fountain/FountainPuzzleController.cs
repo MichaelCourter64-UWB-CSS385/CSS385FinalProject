@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -65,8 +65,8 @@ public class FountainPuzzleController : MonoBehaviour, ProgressionUser
             indicatorAnimator.SetBool(overpressureParamName, false);
         }
 
-        Debug.Log("new water level: " + waterLevel);
-        Debug.Log("is shaking: " + (waterLevel > waterLevelToReach));
+        //Debug.Log("new water level: " + waterLevel);
+        //Debug.Log("is shaking: " + (waterLevel > waterLevelToReach));
         //Debug.Log("level / toReach: " + waterLevel / waterLevelToReach);
         waterFloatPercentage = Mathf.Clamp(waterLevel / waterLevelToReach, 0, 1);
         //Debug.Log("waterFloatPercentage: " + waterFloatPercentage);
