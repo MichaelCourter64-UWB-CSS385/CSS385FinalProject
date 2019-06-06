@@ -1245,10 +1245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Wheel 2
+  interactLayerColliderHolder: {fileID: 0}
   interactionDisableTime: 1
-  objectToAnimate: {fileID: 0}
-  animationStateName: 
-  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 2
@@ -1264,10 +1262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Wheel 3
+  interactLayerColliderHolder: {fileID: 0}
   interactionDisableTime: 1
-  objectToAnimate: {fileID: 0}
-  animationStateName: 
-  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 3
@@ -1283,10 +1279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Wheel 4
+  interactLayerColliderHolder: {fileID: 0}
   interactionDisableTime: 1
-  objectToAnimate: {fileID: 0}
-  animationStateName: 
-  neutralStateName: 
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 4
@@ -1302,10 +1296,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionToolTip: Wheel 1
-  interactionDisableTime: 1
-  objectToAnimate: {fileID: 0}
-  animationStateName: 
-  neutralStateName: 
+  interactLayerColliderHolder: {fileID: 0}
+  interactionDisableTime: 0.5
   rotationSpeed: 1
   rotationModifier: 0
   wheelNumber: 1

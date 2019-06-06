@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ebef80ac4c14ba98cd5739e9bbb71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkToDontDestroyHolder: {fileID: 0}
+  linkToDontDestroyHolder: {fileID: 1137233507}
   defaultElement: 0
 --- !u!224 &57969396
 RectTransform:

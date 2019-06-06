@@ -12,12 +12,6 @@ public class InteractableWMFinalPanelButton : KeyDownInteractable
     FinalWMPanelController panelController;
     Animator buttonAnimator;
 
-    private void Awake()
-    {
-        panelController = FinalWMPanelControllerHolder.GetComponent<FinalWMPanelController>();
-        buttonAnimator = this.transform.GetComponent<Animator>();
-    }
-
     // Use this for initialization
     protected override void ForKeyDownAwake()
     {

@@ -32,11 +32,13 @@ public class RightClickListener : ProgressAffector
             }
 
             isRightClicking = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
    		if (isRightClicking)
         {
-            if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstOpenSelectionWheel.ToString()))
+            if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstOpenSelectionWheel.ToString()) &&
+                dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.CleanedDoorSoot.ToString()))
             {
                 dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstOpenSelectionWheel.ToString());
             }

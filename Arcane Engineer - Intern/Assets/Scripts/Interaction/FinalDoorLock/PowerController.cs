@@ -32,14 +32,14 @@ public class PowerController : ProgressChecker, ProgressionUser
     //bool windOn;
 
     // Initialization
-    void Awake () {
+    //void Awake () {
         // For debugging purposes
         //waterOn = true;
         //fireOn = true;
         //earthOn = true;
         //windOn = true;
         //PowerOn();
-    }
+    //}
 
     protected override void ReceiveProgressionUpdate()
     {

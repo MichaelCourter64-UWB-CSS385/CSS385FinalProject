@@ -76,6 +76,11 @@ public class PlayerControl : MonoBehaviour, ProgressionUser
     // Update is called once per frame
     void Update ()
     {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         // Check if we're selecting an element
         RightClickListener rightClickListener = GameObject.FindGameObjectWithTag("RightClickListener").GetComponent<RightClickListener>();
         if (rightClickListener.isRightClicking)
