@@ -291,8 +291,11 @@ MonoBehaviour:
   windBeam: {fileID: 1050073735133330}
   fanSupportChassis: {fileID: 1267556660972288}
   rotationSpeed: 1
-  rotationRange: 0
+  rotationMin: 0
+  rotationMax: 0
   heightAdjustSpeed: 0
+  heightMin: 0
+  heightMax: 0
 --- !u!135 &135089475093654536
 SphereCollider:
   m_ObjectHideFlags: 1

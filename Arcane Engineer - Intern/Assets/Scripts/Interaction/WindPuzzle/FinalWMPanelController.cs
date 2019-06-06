@@ -10,8 +10,7 @@ public class FinalWMPanelController : WindMachine, ProgressionUser
     [SerializeField] GameObject turbine2;
     [SerializeField] GameObject turbine3;
     [SerializeField] GameObject panelPowerLight;
-    [SerializeField] GameObject fan1ActiveLight;
-    [SerializeField] GameObject fan2ActiveLight;
+    [SerializeField] GameObject WellspringActiveLight;
 
     [SerializeField] GameObject DontDestroyRefHolder;
 
@@ -35,30 +34,17 @@ public class FinalWMPanelController : WindMachine, ProgressionUser
     {
         if (hasPower)
         {
-            if (buttonPurpose == "Fan1Activate")
+            if (buttonPurpose == "ActivateWellspring")
             {
-                if (fan1.GetComponent<FanController>().GetActivatedState() == false)
+                if (!isActivated)
                 {
+                    fan1.GetComponent<FanController>().SetPowerState(true);
                     fan1.GetComponent<FanController>().Activate();
-                    fan1ActiveLight.GetComponent<Renderer>().material = activeLightMaterial;
-                }
-                else
-                {
-                    fan1.GetComponent<FanController>().Deactivate();
-                    fan1ActiveLight.GetComponent<Renderer>().material = inactiveLightMaterial;
-                }
-            }
-            else if (buttonPurpose == "Fan2Activate")
-            {
-                if (fan2.GetComponent<FanController>().GetActivatedState() == false)
-                {
+                    fan2.GetComponent<FanController>().SetPowerState(true);
                     fan2.GetComponent<FanController>().Activate();
-                    fan2ActiveLight.GetComponent<Renderer>().material = activeLightMaterial;
-                }
-                else
-                {
-                    fan2.GetComponent<FanController>().Deactivate();
-                    fan2ActiveLight.GetComponent<Renderer>().material = inactiveLightMaterial;
+                    WellspringActiveLight.GetComponent<Renderer>().material = activeLightMaterial;
+                    ddrh.ProgressionSystemInstance.Completed("WindMachineFixed");
+                    isActivated = !isActivated;
                 }
             }
         }
@@ -71,11 +57,7 @@ public class FinalWMPanelController : WindMachine, ProgressionUser
             && turbine1.GetComponent<TurbineController>().CheckIfRunning())
         {
             hasPower = true;
-            isActivated = true;
-            fan1.GetComponent<FanController>().SetPowerState(true);
-            fan2.GetComponent<FanController>().SetPowerState(true);
             panelPowerLight.GetComponent<Renderer>().material = activeLightMaterial;
-            ddrh.ProgressionSystemInstance.Completed("WindMachineFixed");
         }
     }
 
@@ -86,7 +68,6 @@ public class FinalWMPanelController : WindMachine, ProgressionUser
         fan2.GetComponent<FanController>().Deactivate();
         fan2.GetComponent<FanController>().SetPowerState(false);
         panelPowerLight.GetComponent<Renderer>().material = inactiveLightMaterial;
-        isActivated = false;
         hasPower = false;
     }
 

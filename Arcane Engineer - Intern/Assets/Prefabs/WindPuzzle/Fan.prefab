@@ -54,7 +54,9 @@ GameObject:
   - component: {fileID: 33589998692774484}
   - component: {fileID: 23818490041045144}
   - component: {fileID: 114843041161668506}
+  - component: {fileID: 114624414863834792}
   - component: {fileID: 135746077254639328}
+  - component: {fileID: 95264283737187676}
   m_Layer: 0
   m_Name: Fan
   m_TagString: Untagged
@@ -68,8 +70,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511535385978928}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -44.5, y: 10, z: 7.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -69.66373, y: -2.286148, z: 7.5384817}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4180506970020310}
@@ -185,6 +187,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511535385978928}
   m_Mesh: {fileID: 4300000, guid: 110f129b9cada9e4581933be71443dbb, type: 3}
+--- !u!95 &95264283737187676
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511535385978928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 912cc1edbdb5b8e46b897e253fa55f8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114624414863834792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511535385978928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eff24204e6047fe4c83963be84bb0bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 0}
+  markToLookAt: 3
 --- !u!114 &114843041161668506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -196,9 +228,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34461853e95e10b4dbaa97ed9d820158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivated: 1
-  hasPower: 1
+  isActivated: 0
+  hasPower: 0
   windBeam: {fileID: 1291824109274336}
+  fanSupportChassis: {fileID: 0}
+  rotationSpeed: 0
+  rotationMin: 0
+  rotationMax: 0
+  heightAdjustSpeed: 0
+  heightMin: 0
+  heightMax: 0
 --- !u!135 &135746077254639328
 SphereCollider:
   m_ObjectHideFlags: 1

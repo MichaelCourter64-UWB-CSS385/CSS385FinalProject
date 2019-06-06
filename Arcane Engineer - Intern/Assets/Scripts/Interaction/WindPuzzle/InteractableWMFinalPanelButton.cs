@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableWindMachineButton : KeyDownInteractable
+public class InteractableWMFinalPanelButton : KeyDownInteractable
 {
-    [SerializeField] GameObject windMachinePanelControllerHolder;
+
+    [SerializeField] GameObject FinalWMPanelControllerHolder;
     [SerializeField] string buttonPurpose;
     [SerializeField] string buttonAnimationTriggerName;
 
-    WindMachinePanelController panelController;
+    FinalWMPanelController panelController;
     Animator buttonAnimator;
 
     private void Awake()
     {
-        panelController = windMachinePanelControllerHolder.GetComponent<WindMachinePanelController>();
+        panelController = FinalWMPanelControllerHolder.GetComponent<FinalWMPanelController>();
         buttonAnimator = this.transform.GetComponent<Animator>();
     }
 
     // Use this for initialization
     protected override void ForKeyDownAwake()
     {
-        panelController = windMachinePanelControllerHolder.GetComponent<WindMachinePanelController>();
+        panelController = FinalWMPanelControllerHolder.GetComponent<FinalWMPanelController>();
         buttonAnimator = this.transform.GetComponent<Animator>();
     }
 

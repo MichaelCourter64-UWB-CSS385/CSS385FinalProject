@@ -26,10 +26,10 @@ public class PowerController : ProgressChecker, ProgressionUser
     private int[] rightTargetVals = new int[4] { 1, 3, 2, 4 };
 
     // For debug usage
-    //[SerializeField] bool waterOn;
-    //[SerializeField] bool fireOn;
-    //[SerializeField] bool earthOn;
-    //[SerializeField] bool windOn;
+    //bool waterOn;
+    //bool fireOn;
+    //bool earthOn;
+    //bool windOn;
 
     // Initialization
     void Awake () {
