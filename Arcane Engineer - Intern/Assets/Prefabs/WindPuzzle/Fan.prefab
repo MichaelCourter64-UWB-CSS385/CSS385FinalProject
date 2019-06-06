@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 33589998692774484}
   - component: {fileID: 23818490041045144}
   - component: {fileID: 114843041161668506}
-  - component: {fileID: 114624414863834792}
   - component: {fileID: 135746077254639328}
   - component: {fileID: 95264283737187676}
   m_Layer: 0
@@ -71,8 +70,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511535385978928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -69.66373, y: -2.286148, z: 7.5384817}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: -45, y: 10, z: 7.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4180506970020310}
   m_Father: {fileID: 0}
@@ -99,7 +98,7 @@ Transform:
   m_GameObject: {fileID: 1258990837783794}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100.00005, y: 100.00005, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4162803584145494}
   m_Father: {fileID: 4022395619641256}
@@ -119,7 +118,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b45f8a4e54bbe47fda25860edc5bc631, type: 2}
+  - {fileID: 2100000, guid: 3667641d1bbd1c343a67d21a3008ddbc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,7 +185,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1511535385978928}
-  m_Mesh: {fileID: 4300000, guid: 110f129b9cada9e4581933be71443dbb, type: 3}
+  m_Mesh: {fileID: 4300002, guid: cc12ee411fe98284db4a5cf1dba882a0, type: 3}
 --- !u!95 &95264283737187676
 Animator:
   serializedVersion: 3
@@ -204,19 +203,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114624414863834792
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1511535385978928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eff24204e6047fe4c83963be84bb0bcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  linkToDontDestroyHolder: {fileID: 0}
-  markToLookAt: 3
 --- !u!114 &114843041161668506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,5 +234,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 143.1395
+  m_Radius: 1.43
   m_Center: {x: 0, y: 0, z: 0}

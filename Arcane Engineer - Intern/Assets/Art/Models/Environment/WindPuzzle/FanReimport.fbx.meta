@@ -7,20 +7,25 @@ ModelImporter:
     100002: //RootNode
     100004: OuterRing
     100006: pPipe1
+    100008: pPipe2
+    100010: transform13
+    100012: transform14
+    100014: transform15
     400000: BladeRing
     400002: //RootNode
     400004: OuterRing
     400006: pPipe1
+    400008: pPipe2
+    400010: transform13
+    400012: transform14
+    400014: transform15
     2100000: lambert1
-    2300000: BladeRing
-    2300002: OuterRing
-    2300004: pPipe1
-    3300000: BladeRing
-    3300002: OuterRing
-    3300004: pPipe1
-    4300000: OuterRing
-    4300002: BladeRing
-    4300004: pPipe1
+    2300000: pPipe2
+    2300002: //RootNode
+    3300000: pPipe2
+    3300002: //RootNode
+    4300000: pPipe2
+    4300002: Fan
   externalObjects: {}
   materials:
     importMaterials: 1

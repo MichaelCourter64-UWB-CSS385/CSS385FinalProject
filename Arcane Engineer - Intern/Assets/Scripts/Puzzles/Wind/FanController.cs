@@ -44,7 +44,7 @@ public class FanController : WindMachine {
                 Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * hit.distance, Color.yellow);
                 currentHit = hit.collider.gameObject;
                 if (hit.distance != 0 && hit.distance != Mathf.Infinity)
-                    windBeam.transform.localScale = new Vector3(1, hit.distance, 1); 
+                    windBeam.transform.localScale = new Vector3(1, hit.distance * 100, 1); 
 
                 // Check to see if fan is currently hitting a turbine, and if so, 
                 // check if the turbine is running, and if it is not, activate it.
