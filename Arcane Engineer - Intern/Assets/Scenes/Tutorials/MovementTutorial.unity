@@ -4846,7 +4846,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "These first few rooms are tutorials for playing the game. \n\nLook in the
     top right after this to see what you need to do. This first room will teach you
-    how to look and move around."
+    how to look and move around.\n\nIMPORTANT: If you're playing this on a browser
+    you can press \"L\" to relock your cursor to the game."
 --- !u!222 &1897037606
 CanvasRenderer:
   m_ObjectHideFlags: 0
