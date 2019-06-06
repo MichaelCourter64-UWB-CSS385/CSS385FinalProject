@@ -684,6 +684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1429634118}
   canvasHolder: {fileID: 655221213}
   elementId: 3
   backgroundImage: {fileID: 682146755}
@@ -1516,7 +1517,7 @@ MonoBehaviour:
   - {fileID: 1917384586}
   - {fileID: 398593048}
   - {fileID: 1009414764}
-  marksToLookAt: 0c0000000d000000
+  marksToLookAt: 0c0000000d0000000e000000
 --- !u!114 &639697629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3111,6 +3112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1429634118}
   canvasHolder: {fileID: 655221213}
   elementId: 0
   backgroundImage: {fileID: 682146755}
@@ -3434,60 +3436,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224647962513686764, guid: 4f7ef077021c3c340b2fe5a29cb66e64,
     type: 2}
   m_PrefabInternal: {fileID: 1242669752}
---- !u!1 &1252843860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1252843863}
-  - component: {fileID: 1252843862}
-  - component: {fileID: 1252843861}
-  m_Layer: 0
-  m_Name: DontDestroyOnLoad
-  m_TagString: NotDestroyedHolder
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1252843861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1252843860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dbfbd1d23ad8d54189b840f90bded3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  progressionHolder: {fileID: 1498904522}
---- !u!114 &1252843862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1252843860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23e905e8d40cb7c47ab58940ca9808b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1252843863
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1252843860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1498904524}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257269033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3637,6 +3585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1429634118}
   canvasHolder: {fileID: 655221213}
   elementId: 2
   backgroundImage: {fileID: 682146755}
@@ -3861,46 +3810,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1456556129}
---- !u!1 &1498904522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1498904524}
-  - component: {fileID: 1498904523}
-  m_Layer: 0
-  m_Name: ProgressionSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1498904523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1498904522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76a9bf3cc39dbfe469e993933c5dd2a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1498904524
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1498904522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1252843863}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525900351
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1429634118}
   canvasHolder: {fileID: 655221213}
   elementId: 1
   backgroundImage: {fileID: 682146755}
@@ -5178,7 +5088,7 @@ MonoBehaviour:
   horizontalName: Horizontal
   verticalName: Vertical
   crouchKey: 99
-  speed: 5000
+  speed: 5
   mouseXName: Mouse X
   horizontalSensitivity: 50
   mouseYName: Mouse Y
@@ -5209,8 +5119,8 @@ Rigidbody:
   m_GameObject: {fileID: 2010623542}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 20
+  m_Drag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

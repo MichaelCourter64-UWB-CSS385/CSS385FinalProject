@@ -4,5 +4,5 @@
     InteractionTutorial,
     ElementTutorial,
     ElementSelectionTutorial,
-    Beta
+    Playtest
 }

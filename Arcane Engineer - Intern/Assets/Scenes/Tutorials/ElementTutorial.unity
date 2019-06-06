@@ -1232,6 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 354306978}
   canvasHolder: {fileID: 474670359}
   elementId: 0
   backgroundImage: {fileID: 479915538}
@@ -1411,6 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 354306978}
   canvasHolder: {fileID: 474670359}
   elementId: 1
   backgroundImage: {fileID: 479915538}
@@ -2479,6 +2481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 354306978}
   canvasHolder: {fileID: 474670359}
   elementId: 2
   backgroundImage: {fileID: 479915538}
@@ -3065,6 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 354306978}
   canvasHolder: {fileID: 474670359}
   elementId: 3
   backgroundImage: {fileID: 479915538}
@@ -3941,7 +3945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bfe8a13cc5a49f489f884c9a7fddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restorationRate: 0.1
+  restorationRate: 0.25
   exhaustRate: 0.05
   waterMeter: {fileID: 1511932140}
   earthMeter: {fileID: 1813951131}
@@ -4292,7 +4296,7 @@ MonoBehaviour:
   horizontalName: Horizontal
   verticalName: Vertical
   crouchKey: 99
-  speed: 5000
+  speed: 5
   mouseXName: Mouse X
   horizontalSensitivity: 50
   mouseYName: Mouse Y
@@ -4323,8 +4327,8 @@ Rigidbody:
   m_GameObject: {fileID: 1551701988}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 20
+  m_Drag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4807,7 +4811,7 @@ MonoBehaviour:
   - {fileID: 1462650182}
   - {fileID: 4874855}
   - {fileID: 570898370}
-  markToLookAt: 10
+  marksToLookAt: 0a000000
 --- !u!114 &1702600497
 MonoBehaviour:
   m_ObjectHideFlags: 0

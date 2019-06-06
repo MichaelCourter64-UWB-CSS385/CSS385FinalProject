@@ -1109,8 +1109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bfe8a13cc5a49f489f884c9a7fddf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restorationRate: 0
-  exhaustRate: 0
+  restorationRate: 0.25
+  exhaustRate: 0.05
   waterMeter: {fileID: 2012173474}
   earthMeter: {fileID: 771383199}
   fireMeter: {fileID: 568710067}
@@ -1564,6 +1564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1137233507}
   canvasHolder: {fileID: 980180369}
   elementId: 3
   backgroundImage: {fileID: 1956768397}
@@ -1896,8 +1897,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 120, y: 109.53734, z: 74.28203}
-  m_Center: {x: 0, y: 54.76866, z: 0}
+  m_Size: {x: 1.19, y: 1.23, z: 0.85}
+  m_Center: {x: 0, y: 0.51, z: 0}
 --- !u!1 &754557277
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1137233507}
   canvasHolder: {fileID: 980180369}
   elementId: 0
   backgroundImage: {fileID: 1956768397}
@@ -3514,6 +3516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1137233507}
   canvasHolder: {fileID: 980180369}
   elementId: 2
   backgroundImage: {fileID: 1956768397}
@@ -3881,7 +3884,7 @@ MonoBehaviour:
   horizontalName: Horizontal
   verticalName: Vertical
   crouchKey: 99
-  speed: 5000
+  speed: 5
   mouseXName: Mouse X
   horizontalSensitivity: 50
   mouseYName: Mouse Y
@@ -3912,8 +3915,8 @@ Rigidbody:
   m_GameObject: {fileID: 1653580696}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 20
+  m_Drag: 1
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4315,7 +4318,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1884785872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1653580702}
@@ -4763,6 +4766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b636516d8e1be4c809824c6cb863264f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  linkToDontDestroyHolder: {fileID: 1137233507}
   canvasHolder: {fileID: 980180369}
   elementId: 1
   backgroundImage: {fileID: 1956768397}

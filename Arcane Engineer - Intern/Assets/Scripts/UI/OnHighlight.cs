@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 // MARK: - Class
-public class OnHighlight : MonoBehaviour
+public class OnHighlight : ProgressAffector, IPointerEnterHandler
 {
     // MARK: Properties
     [SerializeField] GameObject canvasHolder;
@@ -27,9 +27,17 @@ public class OnHighlight : MonoBehaviour
 
         elementManager = GameObject.FindGameObjectWithTag("ElementManager").GetComponent<ElementManager>();
 	}
-	
-	// Update is called once per frame
-	public void CheckElementSelection ()
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!dontDestroyRefs.ProgressionSystemInstance.IsCompleted(ProgressionMarks.FirstWheelHover.ToString()))
+        {
+            dontDestroyRefs.ProgressionSystemInstance.Completed(ProgressionMarks.FirstWheelHover.ToString());
+        }
+    }
+
+    // Update is called once per frame
+    public void CheckElementSelection ()
     {
         //Set up the new Pointer Event
         PointerEventData m_PointerEventData = new PointerEventData(eventSystem);
