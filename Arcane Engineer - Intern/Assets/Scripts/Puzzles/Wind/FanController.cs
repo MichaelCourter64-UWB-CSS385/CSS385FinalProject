@@ -112,15 +112,16 @@ public class FanController : WindMachine {
     // Rotate()
     // Public method used by the control panel to change the direction of the fan.
     // bool clockwise is true for clockwise, false for counterclockwise.
-    public void newRotate(bool clockwise)
+    public void NewRotate(bool clockwise)
     {
         float currentRotated = fanSupportChassis.transform.eulerAngles.y;
         int directionModifier = clockwise ? 1 : -1;
         float adjust = rotationSpeed * directionModifier;
-        if ((currentRotated + adjust) <= rotationMax && (currentRotated + adjust) >= rotationMin)
-        {
-            fanSupportChassis.transform.eulerAngles += new Vector3(0, adjust, 0);
-        }
+        //if ((currentRotated + adjust) <= rotationMax && (currentRotated + adjust) >= rotationMin)
+        //{
+        //    fanSupportChassis.transform.eulerAngles += new Vector3(0, adjust, 0);
+        //}
+        fanSupportChassis.transform.eulerAngles += new Vector3(0, adjust, 0);
     }
 
     public void MoveVertical(bool up)

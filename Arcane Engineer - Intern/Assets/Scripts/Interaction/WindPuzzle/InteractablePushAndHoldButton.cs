@@ -22,11 +22,16 @@ public class InteractablePushAndHoldButton : Interactable
     void Awake()
     {
         //buttonAnimator = this.transform.GetComponent<Animator>();
-        if (controlledObject.GetComponent<FanController>() != null)
-            fc = controlledObject.GetComponent<FanController>();
-        if (controlledObject.GetComponent<TurbineController>() != null)
-            tc = controlledObject.GetComponent<TurbineController>();
+        fc = controlledObject.GetComponent<FanController>();
         //this.DisableInteraction();
+    }
+
+    protected override void ForAwake()
+    {
+        //if (controlledObject.GetComponent<FanController>() != null)
+            //fc = controlledObject.GetComponent<FanController>();
+        //if (controlledObject.GetComponent<TurbineController>() != null)
+            //tc = controlledObject.GetComponent<TurbineController>();
     }
 
     protected override void ForInteract()
@@ -35,18 +40,18 @@ public class InteractablePushAndHoldButton : Interactable
         {
             if (buttonUsedFor == "fanRotation")
             {
-                //Debug.Log("In InteractablePushAndHoldButton - fanRotation");
-                fc.newRotate(direction);
+                Debug.Log("In InteractablePushAndHoldButton - fanRotation");
+                fc.NewRotate(direction);
             }
             if (buttonUsedFor == "fanHeight")
             {
-                Debug.Log("In InteractablePushAndHoldButton - fanRotation");
+                Debug.Log("In InteractablePushAndHoldButton - fanHeight");
                 fc.MoveVertical(direction);
             }
             if (buttonUsedFor == "turbineheight")
             {
-                Debug.Log("In InteractablePushAndHoldButton - fanRotation");
-                fc.MoveVertical(direction);
+                Debug.Log("In InteractablePushAndHoldButton - turbineHeight");
+                tc.MoveVertical(direction);
             }
         }
     }

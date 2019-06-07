@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinalTurbineController : TurbineController {
+public class WMFinalTurbineController : WindMachine {
 
-    [SerializeField] GameObject controlPanel;
+    [SerializeField] GameObject finalControlPanel;
 
     [SerializeField] int turbineNumber;
 
@@ -23,12 +23,12 @@ public class FinalTurbineController : TurbineController {
     {
         isActivated = true;
         if (turbineNumber == 1)
-            controlPanel.GetComponent<FinalWMPanelController>().Turbine1Power(true);
+            finalControlPanel.GetComponent<FinalWMPanelController>().Turbine1Power(true);
         if (turbineNumber == 2)
-            controlPanel.GetComponent<FinalWMPanelController>().Turbine2Power(true);
-        if (turbineNumber ==3)
-            controlPanel.GetComponent<FinalWMPanelController>().Turbine3Power(true);
-        controlPanel.GetComponent<FinalWMPanelController>().Activate();
+            finalControlPanel.GetComponent<FinalWMPanelController>().Turbine2Power(true);
+        if (turbineNumber == 3)
+            finalControlPanel.GetComponent<FinalWMPanelController>().Turbine3Power(true);
+        finalControlPanel.GetComponent<FinalWMPanelController>().Activate();
         turbineAnimator.SetBool("isOn", true);
     }
 
@@ -36,12 +36,12 @@ public class FinalTurbineController : TurbineController {
     {
         isActivated = false;
         if (turbineNumber == 1)
-            controlPanel.GetComponent<FinalWMPanelController>().Turbine1Power(false);
+            finalControlPanel.GetComponent<FinalWMPanelController>().Turbine1Power(false);
         if (turbineNumber == 2)
-            controlPanel.GetComponent<FinalWMPanelController>().Turbine2Power(false);
+            finalControlPanel.GetComponent<FinalWMPanelController>().Turbine2Power(false);
         if (turbineNumber == 3)
-            controlPanel.GetComponent<FinalWMPanelController>().Turbine3Power(false);
-        controlPanel.GetComponent<FinalWMPanelController>().Activate();
+            finalControlPanel.GetComponent<FinalWMPanelController>().Turbine3Power(false);
+        finalControlPanel.GetComponent<FinalWMPanelController>().Deactivate();
         turbineAnimator.SetBool("isOn", false);
     }
 
@@ -50,3 +50,4 @@ public class FinalTurbineController : TurbineController {
         return isActivated;
     }
 }
+
