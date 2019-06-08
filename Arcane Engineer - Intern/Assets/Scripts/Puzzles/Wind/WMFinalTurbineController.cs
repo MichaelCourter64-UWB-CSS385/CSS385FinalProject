@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WMFinalTurbineController : WindMachine {
+public class WMFinalTurbineController : ParentTurbineController {
 
     [SerializeField] GameObject finalControlPanel;
 
@@ -45,7 +45,7 @@ public class WMFinalTurbineController : WindMachine {
         turbineAnimator.SetBool("isOn", false);
     }
 
-    public bool CheckIfRunning()
+    public override bool getIsActivated()
     {
         return isActivated;
     }

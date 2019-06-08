@@ -48,10 +48,10 @@ public class FanController : WindMachine {
 
                 // Check to see if fan is currently hitting a turbine, and if so, 
                 // check if the turbine is running, and if it is not, activate it.
-                if (currentHit.GetComponent<TurbineController>() != null)
+                if (currentHit.GetComponent<ParentTurbineController>() != null)
                 {
-                    if (currentHit.GetComponent<TurbineController>().CheckIfRunning() == false)
-                        currentHit.GetComponent<TurbineController>().Activate();
+                    if (currentHit.GetComponent<ParentTurbineController>().getIsActivated() == false)
+                        currentHit.GetComponent<ParentTurbineController>().Activate();
                 }
 
                 // Set lastHit if this is the first time (it is null)
@@ -63,8 +63,8 @@ public class FanController : WindMachine {
                 // deactivate it since wind is no longer hitting it.
                 if (lastHit != currentHit)
                 {
-                    if (lastHit.GetComponent<TurbineController>() != null)
-                        lastHit.GetComponent<TurbineController>().Deactivate();
+                    if (lastHit.GetComponent<ParentTurbineController>() != null)
+                        lastHit.GetComponent<ParentTurbineController>().Deactivate();
                     lastHit = currentHit;
                 }
             }
@@ -85,9 +85,9 @@ public class FanController : WindMachine {
     {
         if (currentHit != null)
         {
-            if (currentHit.GetComponent<TurbineController>() != null)
+            if (currentHit.GetComponent<ParentTurbineController>() != null)
             {
-                currentHit.GetComponent<TurbineController>().Deactivate();
+                currentHit.GetComponent<ParentTurbineController>().Deactivate();
             }
         }
         fanAnimator.SetBool("isOn", false);
