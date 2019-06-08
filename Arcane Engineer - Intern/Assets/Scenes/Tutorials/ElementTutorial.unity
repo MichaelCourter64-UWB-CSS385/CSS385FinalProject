@@ -3224,7 +3224,7 @@ MonoBehaviour:
   tagOfPlayer: Player
   linkToDontDestroyHolder: {fileID: 354306978}
   marksToMeet: 0b000000
-  sceneToGoTo: 3
+  sceneToGoTo: 4
 --- !u!65 &857914349
 BoxCollider:
   m_ObjectHideFlags: 0
