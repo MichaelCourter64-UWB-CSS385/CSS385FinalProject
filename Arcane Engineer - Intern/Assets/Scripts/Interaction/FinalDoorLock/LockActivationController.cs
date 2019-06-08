@@ -42,18 +42,12 @@ public class LockActivationController : PauseForInteractable
     bool isCorrect;
     float timeoutTimer;
 
-    // Use this for initialization
+
     void Awake() {
-        //hasPower = false;
-        //inTimeout = false;
-        //isCheckingLock = false;
-        //isCorrect = false;
-        //// ----- From Interactable Lever -----
-        //offAngle = leverRotationPoint.transform.eulerAngles.x;
-        //onAngle = offAngle - onAngleDifference;
         ForAwake();
     }
 
+    // Use this for initialization
     protected override void ForAwake()
     {
         hasPower = false;
@@ -86,45 +80,47 @@ public class LockActivationController : PauseForInteractable
 
     void Activate()
     {
-        // ----- From Interactable Lever -----
-        StartCoroutine(ShiftLever(!isOn));
-        isOn = !isOn;
-        // ----- End Interactable Lever -----
-
-        foreach (GameObject go in executionOrder1)
+        if (hasPower)
         {
-            // Ugly, but seemingly the only way to get unity to allow this
-            if (go.GetComponent<LightPanelController>() != null)
-            {
-                go.GetComponent<LightPanelController>().Activate();
-                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - LightPanelController");
-            }
-            if (go.GetComponent<DialController>() != null)
-            {
-                go.GetComponent<DialController>().Activate();
-                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - DialController");
-            }
+            // ----- From Interactable Lever -----
+            StartCoroutine(ShiftLever(!isOn));
+            isOn = !isOn;
+            // ----- End Interactable Lever -----
 
-        }
-        foreach (GameObject go in executionOrder2)
-        {
-            // Ugly, but seemingly the only way to get unity to allow this
-            if (go.GetComponent<LightPanelController>() != null)
+            foreach (GameObject go in executionOrder1)
             {
-                go.GetComponent<LightPanelController>().Activate();
-                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - LightPanelController");
-            }
-            if (go.GetComponent<DialController>() != null)
-            {
-                go.GetComponent<DialController>().Activate();
-                // Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - DialController");
-            }
-        }
-        if (validateLockCombo())
-        {
-            door.GetComponent<DoorController>().Open();
-        }
+                // Ugly, but seemingly the only way to get unity to allow this
+                if (go.GetComponent<LightPanelController>() != null)
+                {
+                    go.GetComponent<LightPanelController>().Activate();
+                    // Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - LightPanelController");
+                }
+                if (go.GetComponent<DialController>() != null)
+                {
+                    go.GetComponent<DialController>().Activate();
+                    // Debug.Log("In Lock Activation - Activate() - ExecutionOrder1 - DialController");
+                }
 
+            }
+            foreach (GameObject go in executionOrder2)
+            {
+                // Ugly, but seemingly the only way to get unity to allow this
+                if (go.GetComponent<LightPanelController>() != null)
+                {
+                    go.GetComponent<LightPanelController>().Activate();
+                    // Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - LightPanelController");
+                }
+                if (go.GetComponent<DialController>() != null)
+                {
+                    go.GetComponent<DialController>().Activate();
+                    // Debug.Log("In Lock Activation - Activate() - ExecutionOrder2 - DialController");
+                }
+            }
+            if (validateLockCombo())
+            {
+                door.GetComponent<DoorController>().Open();
+            }
+        }
     }
 
     void Deactivate()
