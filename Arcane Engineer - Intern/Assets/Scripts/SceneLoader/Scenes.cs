@@ -5,5 +5,6 @@
     InteractionTutorial,
     ElementTutorial,
     ElementSelectionTutorial,
-    Playtest
+    Playtest,
+    EndScreen
 }

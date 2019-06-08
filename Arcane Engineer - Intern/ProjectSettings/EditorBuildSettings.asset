@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Playtest/Playtest.unity
     guid: e3b8a975f32ea4893aca9b410cf5dd66
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 5bfc94fa4867dcd42aa4849800f4ce2e

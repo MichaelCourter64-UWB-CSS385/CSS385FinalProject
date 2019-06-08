@@ -10,7 +10,7 @@ public class AnyKeySceneLoader : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.anyKey)
+		if (Input.anyKeyDown)
         {
             SceneManager.LoadSceneAsync((int)sceneToLoad);
         }
