@@ -44,6 +44,18 @@ public class LockActivationController : PauseForInteractable
 
     // Use this for initialization
     void Awake() {
+        //hasPower = false;
+        //inTimeout = false;
+        //isCheckingLock = false;
+        //isCorrect = false;
+        //// ----- From Interactable Lever -----
+        //offAngle = leverRotationPoint.transform.eulerAngles.x;
+        //onAngle = offAngle - onAngleDifference;
+        ForAwake();
+    }
+
+    protected override void ForAwake()
+    {
         hasPower = false;
         inTimeout = false;
         isCheckingLock = false;
@@ -52,7 +64,7 @@ public class LockActivationController : PauseForInteractable
         offAngle = leverRotationPoint.transform.eulerAngles.x;
         onAngle = offAngle - onAngleDifference;
     }
-	
+
     protected override void ForPauseInteract()
     {
         //Debug.Log("In Lock Activation - ForInteract");

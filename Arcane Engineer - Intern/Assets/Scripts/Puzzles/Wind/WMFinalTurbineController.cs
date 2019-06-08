@@ -5,11 +5,9 @@ using UnityEngine;
 public class WMFinalTurbineController : ParentTurbineController {
 
     [SerializeField] GameObject finalControlPanel;
-
     [SerializeField] int turbineNumber;
 
     Animator turbineAnimator;
-    bool isActivated = false;
 
     // Use this for initialization
     void Awake()
@@ -43,11 +41,6 @@ public class WMFinalTurbineController : ParentTurbineController {
             finalControlPanel.GetComponent<FinalWMPanelController>().Turbine3Power(false);
         finalControlPanel.GetComponent<FinalWMPanelController>().Deactivate();
         turbineAnimator.SetBool("isOn", false);
-    }
-
-    public override bool getIsActivated()
-    {
-        return isActivated;
     }
 }
 

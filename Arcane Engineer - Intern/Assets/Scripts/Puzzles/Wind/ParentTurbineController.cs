@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ParentTurbineController : WindMachine {
-    bool isActivated;
+    protected bool isActivated;
     public virtual void Activate() { }
     public virtual void Deactivate() { }
-    public virtual bool getIsActivated() { return isActivated; }
+    public bool getIsActivated() { return isActivated; }
 }

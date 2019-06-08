@@ -12,7 +12,6 @@ public class TurbineController : ParentTurbineController {
     [SerializeField] float heightMax;
 
     Animator turbineAnimator;
-    bool isActivated = false;
 
     // Use this for initialization
     void Awake ()
@@ -24,7 +23,7 @@ public class TurbineController : ParentTurbineController {
     // directs its flow of air at the turbine.
     public override void Activate()
     {
-        isActivated = true;
+        base.isActivated = true;
         //controlPanel.GetComponent<WMPanelController>().Activate();
         controlPanel.GetComponent<WindMachine>().Activate();
         turbineAnimator.SetBool("isOn", true);
@@ -32,7 +31,7 @@ public class TurbineController : ParentTurbineController {
 
     public override void Deactivate()
     {
-        isActivated = false;
+        base.isActivated = false;
         //controlPanel.GetComponent<WMPanelController>().Deactivate();
         controlPanel.GetComponent<WindMachine>().Deactivate();
         turbineAnimator.SetBool("isOn", false);
@@ -65,10 +64,5 @@ public class TurbineController : ParentTurbineController {
             pos.y += (heightAdjustSpeed * directionModifier);
             parent.transform.position = pos;
         }
-    }
-
-    public override bool getIsActivated()
-    {
-        return isActivated;
     }
 }
