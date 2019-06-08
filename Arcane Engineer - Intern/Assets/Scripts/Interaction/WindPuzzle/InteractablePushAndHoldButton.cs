@@ -40,17 +40,17 @@ public class InteractablePushAndHoldButton : Interactable
         {
             if (buttonUsedFor == "fanRotation")
             {
-                Debug.Log("In InteractablePushAndHoldButton - fanRotation");
+                //Debug.Log("In InteractablePushAndHoldButton - fanRotation");
                 fc.NewRotate(direction);
             }
             if (buttonUsedFor == "fanHeight")
             {
-                Debug.Log("In InteractablePushAndHoldButton - fanHeight");
+                //Debug.Log("In InteractablePushAndHoldButton - fanHeight");
                 fc.MoveVertical(direction);
             }
             if (buttonUsedFor == "turbineheight")
             {
-                Debug.Log("In InteractablePushAndHoldButton - turbineHeight");
+                ///Debug.Log("In InteractablePushAndHoldButton - turbineHeight");
                 tc.MoveVertical(direction);
             }
         }
