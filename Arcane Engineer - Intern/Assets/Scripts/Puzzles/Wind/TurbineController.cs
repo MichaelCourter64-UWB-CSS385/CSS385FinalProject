@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurbineController : WindMachine {
+public class TurbineController : ParentTurbineController {
 
     [SerializeField] GameObject controlPanel;
     [SerializeField] GameObject parent;
@@ -38,11 +38,6 @@ public class TurbineController : WindMachine {
         turbineAnimator.SetBool("isOn", false);
     }
 
-    public bool CheckIfRunning()
-    {
-        return isActivated;
-    }
-
     public void MoveVertical(bool up)
     {
         float currentHeight = parent.transform.position.y;
@@ -70,5 +65,10 @@ public class TurbineController : WindMachine {
             pos.y += (heightAdjustSpeed * directionModifier);
             parent.transform.position = pos;
         }
+    }
+
+    public override bool getIsActivated()
+    {
+        return isActivated;
     }
 }
