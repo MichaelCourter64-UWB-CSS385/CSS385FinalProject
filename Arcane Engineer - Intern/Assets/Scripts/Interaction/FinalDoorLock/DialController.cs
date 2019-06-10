@@ -8,6 +8,8 @@ public class DialController : MonoBehaviour {
     [SerializeField] GameObject upstreamObjectLeft;
     [SerializeField] GameObject upstreamObjectRight;
 
+    [SerializeField] GameObject[] wheels;
+
     // Public so that wheels can modify and initial values can be set in engine if needed
     public int[] WheelPositions = new int[4];
 
@@ -105,6 +107,11 @@ public class DialController : MonoBehaviour {
         hasPower = true;
         GetUpstreamValues(true);
         GetUpstreamValues(false);
+
+        foreach (GameObject wheel in wheels)
+        {
+            wheel.GetComponent<WheelController>().Activate();
+        }
     }
 
     public void Deactivate()

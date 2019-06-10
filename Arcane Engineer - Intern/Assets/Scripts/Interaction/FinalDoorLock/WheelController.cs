@@ -19,7 +19,7 @@ public class WheelController : PauseForInteractable {
 	void Awake () {
 		currentAngle = this.transform.eulerAngles.y;   // Axis may need to be readjusted on asset reimport
         inMotion = false;
-        canInteract = true;
+        canInteract = false;
     }
 	
     // Override method for interacting with this wheel object
@@ -33,7 +33,8 @@ public class WheelController : PauseForInteractable {
             currentPosition = currentPosition % 4;
             // Debug.Log("In WheelController - ForInteract() - currentPosition = " + currentPosition);
             // Debug.Log("In WheelController - ForInteract() - parentname = " + this.transform.parent.transform.parent.name);
-            this.transform.parent.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber - 1] = currentPosition;
+            // this.transform.parent.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber - 1] = currentPosition;
+            this.transform.parent.GetComponent<DialController>().WheelPositions[wheelNumber - 1] = currentPosition;
         }
     }
 
