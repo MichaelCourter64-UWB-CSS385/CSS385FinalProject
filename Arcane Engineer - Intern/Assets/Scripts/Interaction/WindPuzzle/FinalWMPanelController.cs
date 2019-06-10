@@ -53,8 +53,8 @@ public class FinalWMPanelController : WindMachine, ProgressionUser
     public override void Activate()
     {
         if (turbine1.GetComponent<ParentTurbineController>().getIsActivated()
-            && turbine1.GetComponent<ParentTurbineController>().getIsActivated()
-            && turbine1.GetComponent<ParentTurbineController>().getIsActivated())
+            && turbine2.GetComponent<ParentTurbineController>().getIsActivated()
+            && turbine3.GetComponent<ParentTurbineController>().getIsActivated())
         {
             hasPower = true;
             panelPowerLight.GetComponent<Renderer>().material = activeLightMaterial;
